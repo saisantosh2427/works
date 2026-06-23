@@ -196,6 +196,169 @@
         </div>
       </section>
 
+      <section class="device-templates" aria-label="Healthcare mobile and web UI templates">
+        <div class="device-templates-head">
+          <span class="ui-pill">Device Templates</span>
+          <h2>Mobile and web layouts for care teams</h2>
+          <p class="microcopy">A dedicated mobile intake companion and a desktop operations page to match the multi-device pattern used in other samples.</p>
+        </div>
+
+        <div class="device-template-grid">
+          <article class="device-card mobile-card" aria-label="Mobile UI template">
+            <div class="device-card-head">
+              <h3>Healthcare Mobile Flow</h3>
+              <span class="device-badge">3 interactive screens</span>
+            </div>
+
+            <section class="hc-phone-stage" aria-label="Healthcare mobile screens">
+              <div class="hc-phone">
+                <div class="hc-phone-shell">
+                  <div class="hc-phone-notch"></div>
+                  <div class="hc-status-bar">
+                    <span>9:41</span>
+                    <span>5G 100%</span>
+                  </div>
+                  <div class="hc-screen">
+                    <header class="hc-topbar">
+                      <strong>Intake Queue</strong>
+                      <span>3 Waiting</span>
+                    </header>
+                    <div class="hc-card-list">
+                      <article class="hc-mini-card">
+                        <strong>Nina Ross</strong>
+                        <span>Room 104 · Vitals due</span>
+                      </article>
+                      <article class="hc-mini-card">
+                        <strong>Theo Grant</strong>
+                        <span>Room 106 · Allergy review</span>
+                      </article>
+                    </div>
+                    <div class="hc-chip-row">
+                      <button type="button" class="hc-chip is-active" data-triage="Urgent">Urgent</button>
+                      <button type="button" class="hc-chip" data-triage="Standard">Standard</button>
+                      <button type="button" class="hc-chip" data-triage="Fast Track">Fast Track</button>
+                    </div>
+                    <p class="hc-inline-note" id="hcTriageState">Selected: Urgent</p>
+                  </div>
+                </div>
+                <div class="hc-phone-label">Screen 1 - Intake</div>
+              </div>
+
+              <div class="hc-phone">
+                <div class="hc-phone-shell">
+                  <div class="hc-phone-notch"></div>
+                  <div class="hc-status-bar">
+                    <span>9:41</span>
+                    <span>5G 96%</span>
+                  </div>
+                  <div class="hc-screen">
+                    <header class="hc-topbar">
+                      <strong>Medication Check</strong>
+                      <span>2 Alerts</span>
+                    </header>
+                    <article class="hc-mini-card">
+                      <strong>Amoxicillin 250mg</strong>
+                      <span>Theo Grant · Next dose 10:00 AM</span>
+                    </article>
+                    <article class="hc-mini-card">
+                      <strong>Metformin 500mg</strong>
+                      <span>Nina Ross · Food required</span>
+                    </article>
+                    <label class="hc-toggle-row">
+                      <input type="checkbox" id="hcRiskToggle" />
+                      <span>Include allergy risk in confidence score</span>
+                    </label>
+                    <p class="hc-inline-note" id="hcRiskState">Confidence score: 74%</p>
+                  </div>
+                </div>
+                <div class="hc-phone-label">Screen 2 - Med Check</div>
+              </div>
+
+              <div class="hc-phone">
+                <div class="hc-phone-shell">
+                  <div class="hc-phone-notch"></div>
+                  <div class="hc-status-bar">
+                    <span>9:41</span>
+                    <span>5G 92%</span>
+                  </div>
+                  <div class="hc-screen">
+                    <header class="hc-topbar">
+                      <strong>Provider Handoff</strong>
+                      <span>Room 109</span>
+                    </header>
+                    <article class="hc-mini-card">
+                      <strong>Alina Park</strong>
+                      <span>Triage complete · Labs attached</span>
+                    </article>
+                    <div class="hc-check-list">
+                      <label><input type="checkbox" checked disabled /> Vitals captured</label>
+                      <label><input type="checkbox" checked disabled /> Consent signed</label>
+                      <label><input type="checkbox" checked disabled /> Notes synced</label>
+                    </div>
+                    <button type="button" class="hc-action-btn" id="hcHandoffBtn">Complete Handoff</button>
+                    <p class="hc-inline-note" id="hcHandoffState">Waiting for provider acknowledgment.</p>
+                  </div>
+                </div>
+                <div class="hc-phone-label">Screen 3 - Handoff</div>
+              </div>
+            </section>
+          </article>
+
+          <article class="device-card web-card" aria-label="Desktop web UI template">
+            <div class="device-card-head">
+              <h3>Web Operations Console</h3>
+              <span class="device-badge">Clinic coordinator dashboard</span>
+            </div>
+
+            <div class="web-shell">
+              <header class="web-topbar">
+                <strong>CareOps Web</strong>
+                <span>Tuesday, 23 Jun · Capacity: 81%</span>
+              </header>
+
+              <div class="web-layout">
+                <aside class="web-nav" aria-label="Desktop navigation">
+                  <button type="button" class="is-selected">Live Queue</button>
+                  <button type="button">Provider Assignment</button>
+                  <button type="button">Claims Review</button>
+                  <button type="button">Quality Metrics</button>
+                </aside>
+
+                <section class="web-main">
+                  <div class="web-kpi-grid">
+                    <article>
+                      <span>Patients in queue</span>
+                      <strong>27</strong>
+                    </article>
+                    <article>
+                      <span>Avg wait time</span>
+                      <strong>14m</strong>
+                    </article>
+                    <article>
+                      <span>Providers active</span>
+                      <strong>9</strong>
+                    </article>
+                  </div>
+
+                  <div class="web-timeline" aria-label="Web schedule timeline">
+                    <div><strong>09:15</strong><span>Nina Ross intake complete</span></div>
+                    <div><strong>09:22</strong><span>Theo Grant moved to triage</span></div>
+                    <div><strong>09:31</strong><span>Lab callback requested for Alina Park</span></div>
+                    <div><strong>09:40</strong><span>Dr. Patel opened two additional slots</span></div>
+                  </div>
+                </section>
+
+                <aside class="web-alert">
+                  <h4>Critical Alert</h4>
+                  <p id="webAlertState">Room 112 glucose alert not yet acknowledged.</p>
+                  <button type="button" id="webAckAlert">Acknowledge Alert</button>
+                </aside>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
       <footer class="health-footer" aria-label="Comprehensive footer">
         <div class="health-footer-grid">
           <section>
@@ -352,6 +515,14 @@
       const workspaceNote = document.getElementById('workspaceNote');
       const saveWorkspaceNote = document.getElementById('saveWorkspaceNote');
       const workspaceLive = document.getElementById('workspaceLive');
+      const triageButtons = Array.from(document.querySelectorAll('[data-triage]'));
+      const hcTriageState = document.getElementById('hcTriageState');
+      const hcRiskToggle = document.getElementById('hcRiskToggle');
+      const hcRiskState = document.getElementById('hcRiskState');
+      const hcHandoffBtn = document.getElementById('hcHandoffBtn');
+      const hcHandoffState = document.getElementById('hcHandoffState');
+      const webAckAlert = document.getElementById('webAckAlert');
+      const webAlertState = document.getElementById('webAlertState');
 
       function currentPatient() {
         return patients[selectedPatientIndex];
@@ -584,6 +755,38 @@
         workspaceLive.textContent = patient.note ? `Note saved for ${patient.name}.` : `Note cleared for ${patient.name}.`;
       });
 
+      triageButtons.forEach((button) => {
+        button.addEventListener('click', () => {
+          const selected = button.dataset.triage;
+          triageButtons.forEach((item) => item.classList.toggle('is-active', item === button));
+          if (hcTriageState) {
+            hcTriageState.textContent = `Selected: ${selected}`;
+          }
+        });
+      });
+
+      if (hcRiskToggle && hcRiskState) {
+        hcRiskToggle.addEventListener('change', () => {
+          hcRiskState.textContent = hcRiskToggle.checked ? 'Confidence score: 91%' : 'Confidence score: 74%';
+        });
+      }
+
+      if (hcHandoffBtn && hcHandoffState) {
+        hcHandoffBtn.addEventListener('click', () => {
+          hcHandoffState.textContent = 'Handoff completed and provider notified.';
+          hcHandoffBtn.textContent = 'Completed';
+          hcHandoffBtn.disabled = true;
+        });
+      }
+
+      if (webAckAlert && webAlertState) {
+        webAckAlert.addEventListener('click', () => {
+          webAlertState.textContent = 'Room 112 glucose alert acknowledged and escalated to on-call provider.';
+          webAckAlert.textContent = 'Acknowledged';
+          webAckAlert.disabled = true;
+        });
+      }
+
       setAudience('Patients');
       setSpoke('queue');
       updateAll();
@@ -666,6 +869,360 @@
       .anim-hc-fade { animation: hcFadeInUp .5s ease both; }
       .anim-hc-slide { animation: hcSlideInLeft .4s ease both; }
       .anim-hc-pulse { animation: hcPulseWait 2s infinite; }
+
+      /* ── MOBILE + WEB TEMPLATE SHOWCASE ── */
+      .device-templates {
+        margin: 30px 40px 12px;
+        padding: 28px;
+        border-radius: 20px;
+        background:
+          radial-gradient(circle at 10% 20%, rgba(14,116,144,.14) 0%, transparent 38%),
+          radial-gradient(circle at 92% 78%, rgba(16,185,129,.15) 0%, transparent 42%),
+          linear-gradient(160deg, #f8fcff 0%, #eef7fb 100%);
+        border: 1px solid rgba(6, 182, 212, .24);
+        box-shadow: var(--hc-shadow-md);
+      }
+
+      .device-templates-head h2 {
+        margin: 10px 0 8px;
+        color: #0f3f5f;
+        font-size: 29px;
+        letter-spacing: -.4px;
+      }
+
+      .device-template-grid {
+        margin-top: 18px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 18px;
+      }
+
+      .device-card {
+        border-radius: 16px;
+        background: white;
+        border: 1px solid #d7e6ef;
+        box-shadow: 0 8px 24px rgba(2, 44, 69, .08);
+        overflow: hidden;
+      }
+
+      .device-card-head {
+        padding: 14px 16px;
+        border-bottom: 1px solid #e2edf3;
+        display: flex;
+        justify-content: space-between;
+        gap: 10px;
+        align-items: center;
+      }
+
+      .device-card-head h3 {
+        margin: 0;
+        color: #0f3f5f;
+        font-size: 17px;
+      }
+
+      .device-badge {
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: .3px;
+        text-transform: uppercase;
+        color: #0369a1;
+        background: #e0f2fe;
+        border-radius: 999px;
+        padding: 6px 9px;
+      }
+
+      .web-shell {
+        padding: 14px;
+      }
+
+      .hc-phone-stage {
+        display: flex;
+        gap: 14px;
+        justify-content: center;
+        align-items: flex-start;
+        flex-wrap: wrap;
+        padding: 12px;
+        background: linear-gradient(160deg, #062f4a 0%, #0a4c70 55%, #0f766e 100%);
+      }
+
+      .hc-phone {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .hc-phone-shell {
+        width: 210px;
+        min-height: 430px;
+        border-radius: 28px;
+        background: #07090c;
+        padding: 8px;
+        box-shadow: 0 14px 28px rgba(0, 0, 0, .35);
+      }
+
+      .hc-phone-notch {
+        width: 90px;
+        height: 14px;
+        border-radius: 0 0 12px 12px;
+        background: #0f172a;
+        margin: 0 auto 4px;
+      }
+
+      .hc-status-bar {
+        display: flex;
+        justify-content: space-between;
+        color: #e2e8f0;
+        font-size: 10px;
+        padding: 0 8px 6px;
+      }
+
+      .hc-screen {
+        border-radius: 20px;
+        background: linear-gradient(180deg, #f8fafc 0%, #ecf7fb 100%);
+        min-height: 390px;
+        padding: 10px;
+      }
+
+      .hc-topbar,
+      .web-topbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-radius: 10px;
+        padding: 8px 10px;
+        margin-bottom: 10px;
+      }
+
+      .hc-topbar {
+        background: #0f766e;
+        color: #dcfce7;
+        font-size: 12px;
+      }
+
+      .hc-card-list {
+        display: grid;
+        gap: 7px;
+        margin-bottom: 8px;
+      }
+
+      .hc-mini-card {
+        border: 1px solid #d8e7f2;
+        border-radius: 10px;
+        padding: 9px;
+        background: #ffffff;
+      }
+
+      .hc-mini-card strong {
+        display: block;
+        color: #0f3f5f;
+        font-size: 12px;
+      }
+
+      .hc-mini-card span {
+        color: #475569;
+        font-size: 11px;
+      }
+
+      .hc-chip-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+        margin-top: 8px;
+      }
+
+      .hc-chip {
+        border: 1px solid #bae6fd;
+        background: #e0f2fe;
+        color: #0c4a6e;
+        border-radius: 999px;
+        padding: 5px 9px;
+        font-size: 10px;
+        font-weight: 700;
+      }
+
+      .hc-chip.is-active {
+        background: #0f766e;
+        color: #dcfce7;
+        border-color: #0f766e;
+      }
+
+      .hc-toggle-row {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 11px;
+        color: #334155;
+        margin: 10px 0;
+      }
+
+      .hc-check-list {
+        display: grid;
+        gap: 4px;
+        margin: 10px 0;
+      }
+
+      .hc-check-list label {
+        font-size: 11px;
+        color: #334155;
+      }
+
+      .hc-action-btn {
+        width: 100%;
+        border-radius: 8px;
+        border: 1px solid #0f766e;
+        background: #ccfbf1;
+        color: #115e59;
+        padding: 8px;
+        font-size: 12px;
+        font-weight: 700;
+      }
+
+      .hc-action-btn:disabled {
+        border-color: #86efac;
+        background: #dcfce7;
+        color: #166534;
+      }
+
+      .hc-inline-note {
+        margin: 8px 0 0;
+        font-size: 11px;
+        color: #0f766e;
+        font-weight: 600;
+      }
+
+      .hc-phone-label {
+        font-size: 11px;
+        color: #e2e8f0;
+        text-transform: uppercase;
+        letter-spacing: .4px;
+      }
+
+      .web-shell {
+        background: linear-gradient(180deg, #f8fafc 0%, #eff5fa 100%);
+        border-top: 4px solid #10b981;
+      }
+
+      .web-topbar {
+        background: #0f766e;
+        color: #dcfce7;
+        font-size: 13px;
+      }
+
+      .web-layout {
+        display: grid;
+        grid-template-columns: 170px 1fr 210px;
+        gap: 10px;
+      }
+
+      .web-nav,
+      .web-main,
+      .web-alert {
+        background: white;
+        border: 1px solid #dbe7ef;
+        border-radius: 12px;
+        padding: 10px;
+      }
+
+      .web-nav {
+        display: grid;
+        gap: 7px;
+      }
+
+      .web-nav button {
+        border: 1px solid #d3e4f0;
+        border-radius: 9px;
+        padding: 8px;
+        text-align: left;
+        font-size: 12px;
+        color: #155e75;
+        background: #f0f9ff;
+      }
+
+      .web-nav button.is-selected {
+        border-color: #0ea5e9;
+        background: #e0f2fe;
+        font-weight: 700;
+      }
+
+      .web-kpi-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 8px;
+        margin-bottom: 8px;
+      }
+
+      .web-kpi-grid article {
+        border-radius: 9px;
+        padding: 8px;
+        border: 1px solid #d6e5ed;
+        background: #f8fbff;
+      }
+
+      .web-kpi-grid span {
+        display: block;
+        font-size: 11px;
+        color: #4b5563;
+      }
+
+      .web-kpi-grid strong {
+        color: #0f766e;
+        font-size: 21px;
+      }
+
+      .web-timeline {
+        display: grid;
+        gap: 6px;
+      }
+
+      .web-timeline div {
+        display: grid;
+        grid-template-columns: 54px 1fr;
+        gap: 8px;
+        align-items: start;
+        border: 1px dashed #cde1ec;
+        border-radius: 8px;
+        padding: 7px;
+      }
+
+      .web-timeline strong {
+        color: #0369a1;
+        font-size: 11px;
+      }
+
+      .web-timeline span {
+        font-size: 12px;
+        color: #334155;
+      }
+
+      .web-alert h4 {
+        margin: 0 0 8px;
+        color: #9a3412;
+      }
+
+      .web-alert p {
+        margin: 0 0 10px;
+        font-size: 12px;
+        color: #7c2d12;
+      }
+
+      .web-alert button {
+        width: 100%;
+        border-radius: 8px;
+        border: 1px solid #f59e0b;
+        background: #fef3c7;
+        color: #92400e;
+        padding: 8px;
+        font-size: 12px;
+        font-weight: 700;
+      }
+
+      .web-alert button:disabled {
+        border-color: #86efac;
+        background: #dcfce7;
+        color: #166534;
+        cursor: default;
+      }
 
       /* ── HERO SECTION PREMIUM REDESIGN ── */
       .hero-z {
@@ -1113,6 +1670,19 @@
         .hero-z {
           padding: 40px 20px;
           margin: 20px;
+        }
+
+        .device-templates {
+          margin: 20px;
+          padding: 18px;
+        }
+
+        .device-template-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .web-layout {
+          grid-template-columns: 1fr;
         }
 
         .mega-grid {
