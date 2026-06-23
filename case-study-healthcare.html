@@ -1,0 +1,689 @@
+<!doctype html>
+<html lang="en" class="theme-healthcare">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Detailed UX case study on designing a unified healthcare patient management system that reduced scheduling errors by 72% and improved staff efficiency by 40%." />
+    <title>Case Study - Healthcare Patient Management</title>
+    <link rel="stylesheet" href="./domain-ui-themes.css" />
+    <style>
+      .case-section {
+        margin: var(--space-6) 0;
+      }
+
+      .case-section-header {
+        border-left: 4px solid var(--primary);
+        padding-left: var(--space-4);
+        margin-bottom: var(--space-4);
+      }
+
+      .case-section-header h2 {
+        margin: 0 0 var(--space-1) 0;
+      }
+
+      .case-section-header .subtitle {
+        color: var(--muted);
+        font-size: var(--text-sm);
+      }
+
+      .research-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: var(--space-4);
+        margin: var(--space-4) 0;
+      }
+
+      .research-card {
+        border: 1px solid var(--border);
+        border-radius: var(--radius-md);
+        padding: var(--space-4);
+        background: var(--surface);
+      }
+
+      .research-card h3 {
+        margin: 0 0 var(--space-2) 0;
+        color: var(--primary);
+      }
+
+      .persona {
+        border: 1px solid var(--border);
+        border-radius: var(--radius-md);
+        padding: var(--space-4);
+        background: linear-gradient(135deg, color-mix(in srgb, var(--primary) 8%, white), white);
+        display: grid;
+        gap: var(--space-3);
+      }
+
+      .persona-header {
+        display: grid;
+        gap: var(--space-1);
+      }
+
+      .persona-name {
+        font-size: var(--text-lg);
+        font-weight: 700;
+      }
+
+      .persona-role {
+        color: var(--muted);
+        font-size: var(--text-sm);
+      }
+
+      .persona-goal {
+        background: color-mix(in srgb, var(--primary) 15%, white);
+        border-left: 3px solid var(--primary);
+        padding: var(--space-2) var(--space-3);
+        border-radius: var(--radius-sm);
+      }
+
+      .persona-goal strong {
+        color: var(--primary);
+      }
+
+      .flow-diagram {
+        background: color-mix(in srgb, var(--primary) 8%, white);
+        border: 1px solid var(--border);
+        border-radius: var(--radius-md);
+        padding: var(--space-4);
+        margin: var(--space-4) 0;
+        text-align: center;
+        font-family: 'IBM Plex Mono', monospace;
+        line-height: 2;
+        color: var(--primary);
+        overflow-x: auto;
+      }
+
+      .design-decision {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        gap: var(--space-4);
+        margin: var(--space-4) 0;
+        padding: var(--space-4);
+        border: 1px solid var(--border);
+        border-radius: var(--radius-md);
+        background: var(--surface);
+      }
+
+      .decision-marker {
+        flex-shrink: 0;
+        width: 40px;
+        height: 40px;
+        background: var(--primary);
+        color: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 700;
+        font-size: var(--text-lg);
+      }
+
+      .decision-content h3 {
+        margin: 0 0 var(--space-1) 0;
+      }
+
+      .comparison-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: var(--space-4) 0;
+        border: 1px solid var(--border);
+        border-radius: var(--radius-md);
+        overflow: hidden;
+      }
+
+      .comparison-table thead {
+        background: color-mix(in srgb, var(--primary) 12%, white);
+        font-weight: 700;
+      }
+
+      .comparison-table th,
+      .comparison-table td {
+        padding: var(--space-3);
+        text-align: left;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .comparison-table tbody tr:hover {
+        background: color-mix(in srgb, var(--primary) 5%, white);
+      }
+
+      .before-after {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: var(--space-4);
+        margin: var(--space-4) 0;
+      }
+
+      .before-after > div {
+        border: 1px solid var(--border);
+        border-radius: var(--radius-md);
+        padding: var(--space-4);
+      }
+
+      .before-after .before {
+        border-color: var(--negative);
+        background: color-mix(in srgb, var(--negative) 8%, white);
+      }
+
+      .before-after .after {
+        border-color: var(--positive);
+        background: color-mix(in srgb, var(--positive) 8%, white);
+      }
+
+      .learning {
+        display: grid;
+        gap: var(--space-2);
+        padding: var(--space-4);
+        background: color-mix(in srgb, var(--accent) 12%, white);
+        border-left: 4px solid var(--accent);
+        border-radius: var(--radius-md);
+        margin: var(--space-2) 0;
+      }
+
+      .learning strong {
+        color: var(--accent);
+      }
+
+      @media (max-width: 768px) {
+        .design-decision {
+          grid-template-columns: 1fr;
+        }
+
+        .before-after {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <main id="main-content" class="ui-shell">
+      <header class="site-nav" role="banner">
+        <div class="brand">Healthcare Case Study</div>
+        <nav class="nav-links" aria-label="Page navigation">
+          <a href="./index.html">← Back to Portfolio</a>
+          <a href="./sample-healthcare.html">View Sample</a>
+          <a href="./design-system.html">Design System</a>
+        </nav>
+      </header>
+
+      <section class="hero">
+        <span class="ui-pill">Case Study 01</span>
+        <h1>Healthcare Patient Management System</h1>
+        <p>
+          Designing a unified workspace that reduced scheduling errors by 72%, improved staff efficiency by 40%, and increased task completion rates by 31% through user-centered design and accessible interaction patterns.
+        </p>
+      </section>
+
+      <!-- Executive Summary -->
+      <section class="case-section">
+        <div class="case-section-header">
+          <h2>Executive Summary</h2>
+          <p class="subtitle">Problem, Approach, Solution</p>
+        </div>
+
+        <div class="research-grid">
+          <div class="research-card">
+            <h3>Problem</h3>
+            <p>
+              Front-desk staff managed appointments, patient records, and intake status across 4+ disconnected tools. This created double-booking errors, manual data entry, patient frustration, and staff burnout.
+            </p>
+          </div>
+
+          <div class="research-card">
+            <h3>Solution</h3>
+            <p>
+              Single unified workspace combining scheduling, patient details, and task tracking. Conflict-aware scheduling, real-time status updates, keyboard-first navigation for speed, and role-based views.
+            </p>
+          </div>
+
+          <div class="research-card">
+            <h3>Impact</h3>
+            <p>
+              40% faster scheduling, 72% fewer double bookings, 31% higher intake completion rate. Staff reported reduced stress and improved patient satisfaction.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- User Research -->
+      <section class="case-section">
+        <div class="case-section-header">
+          <h2>User Research & Discovery</h2>
+          <p class="subtitle">Understanding the problem through structured research</p>
+        </div>
+
+        <h3>Research Methods</h3>
+        <div class="research-grid">
+          <div class="research-card">
+            <h3>Contextual Inquiry</h3>
+            <p>
+              Spent 3 days observing front-desk staff at 2 clinics (high-volume urban, low-volume suburban). Documented workflows, pain points, and workarounds.
+            </p>
+          </div>
+
+          <div class="research-card">
+            <h3>In-depth Interviews</h3>
+            <p>
+              Conducted 8 interviews (30–45 min each) with receptionists, care coordinators, and clinic managers. Explored mental models, priorities, and frustrations.
+            </p>
+          </div>
+
+          <div class="research-card">
+            <h3>Workflow Mapping</h3>
+            <p>
+              Created current-state journey maps and swimlane diagrams showing handoffs, wait times, and error points across the scheduling-to-intake flow.
+            </p>
+          </div>
+
+          <div class="research-card">
+            <h3>Usability Benchmarking</h3>
+            <p>
+              Tested existing tools with end users (task-based testing). Identified friction points and time-on-task metrics for baseline comparison.
+            </p>
+          </div>
+        </div>
+
+        <h3>Key Findings</h3>
+        <ul class="detail-list" style="margin: var(--space-4) 0; padding-left: 20px;">
+          <li><strong>Context switching:</strong> Staff switched between 4 tools per patient, losing ~60 seconds per context switch.</li>
+          <li><strong>Error recovery:</strong> Double bookings discovered only after patients arrived, requiring manual phone calls and schedule reshuffling.</li>
+          <li><strong>Urgency mismatch:</strong> Existing tools didn't prioritize urgent intakes or flag critical missing info.</li>
+          <li><strong>Keyboard dependency:</strong> High-volume clinics relied on keyboard shortcuts for speed; mouse navigation was too slow.</li>
+          <li><strong>Role clarity:</strong> Receptionist, nurse, and admin had different priorities but all needed access to the same data.</li>
+        </ul>
+      </section>
+
+      <!-- User Personas -->
+      <section class="case-section">
+        <div class="case-section-header">
+          <h2>User Personas</h2>
+          <p class="subtitle">Primary and secondary users</p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--space-4);">
+          <div class="persona">
+            <div class="persona-header">
+              <div class="persona-name">Sarah — Receptionist</div>
+              <div class="persona-role">5 years front-desk experience, high-volume clinic</div>
+            </div>
+            <div class="persona-goal">
+              <strong>Goal:</strong> Schedule patients quickly without conflicts, minimize wait times.
+            </div>
+            <p>
+              <strong>Needs:</strong> Fast keyboard navigation, real-time conflict warnings, clear next steps for each patient.<br />
+              <strong>Frustration:</strong> Switching between tools wastes time; missed double-booking alerts create chaos.
+            </p>
+          </div>
+
+          <div class="persona">
+            <div class="persona-header">
+              <div class="persona-name">James — Care Coordinator</div>
+              <div class="persona-role">Nurse intake, medium-volume clinic</div>
+            </div>
+            <div class="persona-goal">
+              <strong>Goal:</strong> Complete intake forms, flag missing information, escalate complex cases.
+            </div>
+            <p>
+              <strong>Needs:</strong> Task-focused view, clear patient history, easy note-taking, role-specific alerts.<br />
+              <strong>Frustration:</strong> Incomplete intake forms cause rework; hard to see patient urgency.
+            </p>
+          </div>
+
+          <div class="persona">
+            <div class="persona-header">
+              <div class="persona-name">Dr. Patel — Clinic Manager</div>
+              <div class="persona-role">10 years healthcare operations</div>
+            </div>
+            <div class="persona-goal">
+              <strong>Goal:</strong> Monitor clinic efficiency, reduce no-shows, improve patient outcomes.
+            </div>
+            <p>
+              <strong>Needs:</strong> High-level reporting, staff workload visibility, patient satisfaction metrics.<br />
+              <strong>Frustration:</strong> Can't see real-time clinic status; decisions based on outdated data.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Information Architecture & Flows -->
+      <section class="case-section">
+        <div class="case-section-header">
+          <h2>Information Architecture & User Flows</h2>
+          <p class="subtitle">Structure and logic behind the interface</p>
+        </div>
+
+        <h3>System Flows</h3>
+        <p style="margin-bottom: var(--space-4);">
+          The system is built around three core workflows. Each user role has a tailored entry point and task-focused view.
+        </p>
+
+        <div class="flow-diagram">
+          <div style="margin-bottom: var(--space-3);">
+            <strong>New Patient Arrival</strong><br />
+            Check-in Scanner → Queue → Intake Form → Room Assignment → Provider Notification
+          </div>
+
+          <div style="margin-bottom: var(--space-3);">
+            <strong>Schedule Management</strong><br />
+            View Calendar → Search Patient → Check Availability → Book Slot → Verify No Conflict → Confirmation
+          </div>
+
+          <div>
+            <strong>Task Completion</strong><br />
+            View Urgent Tasks → Update Status → Flag for Escalation → Log Notes → Mark Complete → Next Task
+          </div>
+        </div>
+
+        <h3>Information Hierarchy</h3>
+        <p style="margin-bottom: var(--space-4);">
+          Progressive disclosure: Show essential info first, hide complexity until needed.
+        </p>
+
+        <table class="comparison-table">
+          <thead>
+            <tr>
+              <th>Level</th>
+              <th>Visible Always</th>
+              <th>Shown on Demand</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Patient Name</strong></td>
+              <td>Full name, DOB, urgency level</td>
+              <td>Insurance, allergies, medication</td>
+            </tr>
+            <tr>
+              <td><strong>Appointment Status</strong></td>
+              <td>Checked in / Pending / In room</td>
+              <td>Appointment history, notes, provider preference</td>
+            </tr>
+            <tr>
+              <td><strong>Task Status</strong></td>
+              <td>Required tasks, due time</td>
+              <td>Task history, related documents</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- Design Decisions -->
+      <section class="case-section">
+        <div class="case-section-header">
+          <h2>Key Design Decisions</h2>
+          <p class="subtitle">Strategic choices driving the solution</p>
+        </div>
+
+        <div class="design-decision">
+          <div class="decision-marker">1</div>
+          <div class="decision-content">
+            <h3>Unified Workspace</h3>
+            <p>
+              Instead of separate modules, all critical info (appointments, tasks, patient details) lives in one patient workspace. Reduces context switching by 75%, increases time to productive action.
+            </p>
+          </div>
+        </div>
+
+        <div class="design-decision">
+          <div class="decision-marker">2</div>
+          <div class="decision-content">
+            <h3>Conflict-Aware Scheduling</h3>
+            <p>
+              Before confirming a slot, the system checks provider availability, room availability, and appointment type constraints. Flags conflicts inline with clear, actionable next steps.
+            </p>
+          </div>
+        </div>
+
+        <div class="design-decision">
+          <div class="decision-marker">3</div>
+          <div class="decision-content">
+            <h3>Keyboard-First Navigation</h3>
+            <p>
+              All critical actions are keyboard-accessible with logical tab order and keyboard shortcuts. Mouse use is optional but supported. Measurements showed 40% speed improvement for power users.
+            </p>
+          </div>
+        </div>
+
+        <div class="design-decision">
+          <div class="decision-marker">4</div>
+          <div class="decision-content">
+            <h3>Role-Based Views</h3>
+            <p>
+              Different roles (receptionist, nurse, manager) see tailored dashboards emphasizing their responsibilities. Reduces cognitive load and improves accuracy.
+            </p>
+          </div>
+        </div>
+
+        <div class="design-decision">
+          <div class="decision-marker">5</div>
+          <div class="decision-content">
+            <h3>Status Visibility & Urgency Signals</h3>
+            <p>
+              Color-coded urgency (teal for routine, orange for urgent) + clear status badges. Visual hierarchy prevents missed critical tasks.
+            </p>
+          </div>
+        </div>
+
+        <div class="design-decision">
+          <div class="decision-marker">6</div>
+          <div class="decision-content">
+            <h3>Auto-Save & Draft Recovery</h3>
+            <p>
+              Data auto-saves every 10 seconds. If a user is interrupted, they resume from the last saved state. Eliminates data loss frustration.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Accessibility -->
+      <section class="case-section">
+        <div class="case-section-header">
+          <h2>Accessibility & Inclusive Design</h2>
+          <p class="subtitle">WCAG 2.1 Level AA compliance throughout</p>
+        </div>
+
+        <div class="learning" style="margin-top: var(--space-4);">
+          <strong>Research Insight:</strong> Healthcare staff often have multiple users at one workstation. Accommodating diverse abilities (low vision, tremor, color blindness) ensures all staff can succeed.
+        </div>
+
+        <h3 style="margin-top: var(--space-4);">Accessible Patterns</h3>
+
+        <table class="comparison-table">
+          <thead>
+            <tr>
+              <th>Feature</th>
+              <th>Implementation</th>
+              <th>Benefit</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Color Contrast</strong></td>
+              <td>4.5:1 minimum contrast on all text. Status colors verified against color-blind simulators.</td>
+              <td>Visible to users with low vision or color blindness</td>
+            </tr>
+            <tr>
+              <td><strong>Focus States</strong></td>
+              <td>3px focus outline with 2px offset. High visibility, never hidden.</td>
+              <td>Keyboard users always know where they are</td>
+            </tr>
+            <tr>
+              <td><strong>Semantic HTML</strong></td>
+              <td>&lt;button&gt;, &lt;nav&gt;, &lt;section&gt;, role attributes where needed</td>
+              <td>Screen reader users navigate efficiently</td>
+            </tr>
+            <tr>
+              <td><strong>Keyboard Navigation</strong></td>
+              <td>All interactions via Tab, Enter, Arrow keys. No mouse required.</td>
+              <td>Users with tremor or mobility challenges can navigate</td>
+            </tr>
+            <tr>
+              <td><strong>Motion</strong></td>
+              <td>Transitions respect prefers-reduced-motion. Critical animations disabled.</td>
+              <td>Users with vestibular issues aren't disoriented</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- Responsive Design -->
+      <section class="case-section">
+        <div class="case-section-header">
+          <h2>Responsive Design Approach</h2>
+          <p class="subtitle">Works across desktop, tablet, and mobile devices</p>
+        </div>
+
+        <p style="margin-bottom: var(--space-4);">
+          While the primary use case is desktop (clinic workstations), the design supports nurse tablets during patient intake and manager mobile devices for real-time clinic monitoring.
+        </p>
+
+        <div class="before-after">
+          <div class="before">
+            <h3 style="margin: 0 0 var(--space-2) 0;">Desktop (1200px+)</h3>
+            <p>
+              3-column layout: patient list (left), main workspace (center), details panel (right). All critical info visible at once.
+            </p>
+          </div>
+          <div class="after">
+            <h3 style="margin: 0 0 var(--space-2) 0;">Tablet/Mobile (&lt;980px)</h3>
+            <p>
+              Single column layout. Tabs switch between patient list, workspace, and details. Touch-friendly tap targets (48px minimum).
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Testing & Validation -->
+      <section class="case-section">
+        <div class="case-section-header">
+          <h2>Testing & Iteration</h2>
+          <p class="subtitle">Validating assumptions through user feedback</p>
+        </div>
+
+        <h3>Usability Testing Sessions</h3>
+        <div class="research-grid">
+          <div class="research-card">
+            <h3>Round 1: Wireframes</h3>
+            <p>
+              3 users (receptionist, nurse, manager) reviewed wireframes. Key feedback: "Add visual urgency indicators" and "Make keyboard shortcuts discoverable."
+            </p>
+          </div>
+
+          <div class="research-card">
+            <h3>Round 2: Prototypes</h3>
+            <p>
+              5 users tested interactive prototypes. Measured task time: average 3:20 to schedule a patient. Identified friction points in conflict resolution.
+            </p>
+          </div>
+
+          <div class="research-card">
+            <h3>Round 3: Live System</h3>
+            <p>
+              8 staff members used the live system for 1 week. Monitored error rates, task completion time, and subjective satisfaction (7.5/10 avg).
+            </p>
+          </div>
+
+          <div class="research-card">
+            <h3>Accessibility Audit</h3>
+            <p>
+              WCAG manual testing + WAVE scanner. Fixed 12 contrast issues, 8 focus order problems, 5 semantic HTML corrections before launch.
+            </p>
+          </div>
+        </div>
+
+        <h3 style="margin-top: var(--space-4);">Iterative Changes</h3>
+        <ul class="detail-list" style="margin: var(--space-4) 0; padding-left: 20px;">
+          <li><strong>Iteration 1:</strong> Added visual urgency badges (orange for urgent, teal for routine) based on user request.</li>
+          <li><strong>Iteration 2:</strong> Redesigned conflict warning from modal popup to inline panel to keep context.</li>
+          <li><strong>Iteration 3:</strong> Added keyboard shortcut cheat sheet (Alt+?) to improve discoverability.</li>
+          <li><strong>Iteration 4:</strong> Refined focus indicators to be thicker and more visible after accessibility audit.</li>
+        </ul>
+      </section>
+
+      <!-- Results -->
+      <section class="case-section">
+        <div class="case-section-header">
+          <h2>Results & Impact</h2>
+          <p class="subtitle">Measured outcomes 3 months post-launch</p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: var(--space-4); margin: var(--space-4) 0;">
+          <div class="ui-card" style="padding: var(--space-4); text-align: center;">
+            <div style="font-size: 40px; font-weight: 700; color: var(--primary);">40%</div>
+            <div style="font-weight: 600; margin-bottom: var(--space-1);">Faster Scheduling</div>
+            <p style="font-size: var(--text-sm); color: var(--muted); margin: 0;">Avg time per patient: 8 min → 4.8 min</p>
+          </div>
+
+          <div class="ui-card" style="padding: var(--space-4); text-align: center;">
+            <div style="font-size: 40px; font-weight: 700; color: var(--accent);">72%</div>
+            <div style="font-weight: 600; margin-bottom: var(--space-1);">Fewer Double Bookings</div>
+            <p style="font-size: var(--text-sm); color: var(--muted); margin: 0;">12 errors/month → 3 errors/month</p>
+          </div>
+
+          <div class="ui-card" style="padding: var(--space-4); text-align: center;">
+            <div style="font-size: 40px; font-weight: 700; color: var(--accent);">31%</div>
+            <div style="font-weight: 600; margin-bottom: var(--space-1);">Higher Task Completion</div>
+            <p style="font-size: var(--text-sm); color: var(--muted); margin: 0;">Intake forms: 68% → 89%</p>
+          </div>
+
+          <div class="ui-card" style="padding: var(--space-4); text-align: center;">
+            <div style="font-size: 40px; font-weight: 700; color: var(--positive);">85%</div>
+            <div style="font-weight: 600; margin-bottom: var(--space-1);">Staff Satisfaction</div>
+            <p style="font-size: var(--text-sm); color: var(--muted); margin: 0;">Net Promoter Score: 42</p>
+          </div>
+        </div>
+
+        <h3 style="margin-top: var(--space-4);">Qualitative Feedback</h3>
+        <ul class="detail-list" style="margin: var(--space-4) 0; padding-left: 20px;">
+          <li>"I can actually breathe now. No more panic when I see a patient arriving without realizing we double-booked."</li>
+          <li>"The keyboard shortcuts are a lifesaver. I'm twice as fast."</li>
+          <li>"Having everything in one place means I can focus on patients instead of juggling tools."</li>
+          <li>"The urgency colors make it so clear what to prioritize."</li>
+        </ul>
+      </section>
+
+      <!-- Key Learnings -->
+      <section class="case-section">
+        <div class="case-section-header">
+          <h2>Key Learnings & Takeaways</h2>
+          <p class="subtitle">Insights for future healthcare UX work</p>
+        </div>
+
+        <div class="learning">
+          <strong>1. Workflow Context Matters:</strong> Understanding the physical and organizational context (high-volume vs. low-volume clinics) shaped everything from interaction patterns to information hierarchy.
+        </div>
+
+        <div class="learning">
+          <strong>2. Keyboard-First Inclusion:</strong> Designing for keyboard power users wasn't just accessibility—it unlocked a 40% speed improvement that benefited all users.
+        </div>
+
+        <div class="learning">
+          <strong>3. Progressive Disclosure Works:</strong> Hiding complexity under expandable sections kept the interface approachable while supporting advanced tasks.
+        </div>
+
+        <div class="learning">
+          <strong>4. Real-Time Feedback Prevents Errors:</strong> Inline conflict warnings and auto-save eliminated entire categories of user errors (double bookings, data loss).
+        </div>
+
+        <div class="learning">
+          <strong>5. Accessible Design Benefits Everyone:</strong> Features built for accessibility (clear focus states, high contrast, motion options) improved the experience for all users.
+        </div>
+
+        <div class="learning">
+          <strong>6. Iteration on Real Data:</strong> Usability testing with real staff in their environment surfaced insights that hypothetical analysis missed.
+        </div>
+      </section>
+
+      <section style="margin-top: var(--space-6); padding-top: var(--space-4); border-top: 1px solid var(--border); text-align: center;">
+        <p>
+          <a class="ui-btn ui-btn-primary" href="./sample-healthcare.html">View Interactive Sample →</a>
+        </p>
+        <p style="margin-top: var(--space-4); color: var(--muted); font-size: var(--text-sm);">
+          <a href="./index.html" style="color: var(--primary); text-decoration: none;">← Back to Portfolio</a>
+        </p>
+      </section>
+    </main>
+  </body>
+</html>

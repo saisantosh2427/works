@@ -1,0 +1,694 @@
+<!doctype html>
+<html lang="en" class="theme-investment">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Detailed UX case study on designing a transparent financial investment onboarding that improved form completion rates by 45%, reduced errors by 45%, and achieved 84% conversion." />
+    <title>Case Study - Financial Investment Onboarding</title>
+    <link rel="stylesheet" href="./domain-ui-themes.css" />
+    <style>
+      .case-section {
+        margin: var(--space-6) 0;
+      }
+
+      .case-section-header {
+        border-left: 4px solid var(--primary);
+        padding-left: var(--space-4);
+        margin-bottom: var(--space-4);
+      }
+
+      .case-section-header h2 {
+        margin: 0 0 var(--space-1) 0;
+      }
+
+      .case-section-header .subtitle {
+        color: var(--muted);
+        font-size: var(--text-sm);
+      }
+
+      .research-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: var(--space-4);
+        margin: var(--space-4) 0;
+      }
+
+      .research-card {
+        border: 1px solid var(--border);
+        border-radius: var(--radius-md);
+        padding: var(--space-4);
+        background: var(--surface);
+      }
+
+      .research-card h3 {
+        margin: 0 0 var(--space-2) 0;
+        color: var(--primary);
+      }
+
+      .persona {
+        border: 1px solid var(--border);
+        border-radius: var(--radius-md);
+        padding: var(--space-4);
+        background: linear-gradient(135deg, color-mix(in srgb, var(--primary) 8%, white), white);
+        display: grid;
+        gap: var(--space-3);
+      }
+
+      .persona-header {
+        display: grid;
+        gap: var(--space-1);
+      }
+
+      .persona-name {
+        font-size: var(--text-lg);
+        font-weight: 700;
+      }
+
+      .persona-role {
+        color: var(--muted);
+        font-size: var(--text-sm);
+      }
+
+      .persona-goal {
+        background: color-mix(in srgb, var(--primary) 15%, white);
+        border-left: 3px solid var(--primary);
+        padding: var(--space-2) var(--space-3);
+        border-radius: var(--radius-sm);
+      }
+
+      .persona-goal strong {
+        color: var(--primary);
+      }
+
+      .flow-diagram {
+        background: color-mix(in srgb, var(--primary) 8%, white);
+        border: 1px solid var(--border);
+        border-radius: var(--radius-md);
+        padding: var(--space-4);
+        margin: var(--space-4) 0;
+        text-align: center;
+        font-family: 'IBM Plex Mono', monospace;
+        line-height: 2;
+        color: var(--primary);
+        overflow-x: auto;
+      }
+
+      .design-decision {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        gap: var(--space-4);
+        margin: var(--space-4) 0;
+        padding: var(--space-4);
+        border: 1px solid var(--border);
+        border-radius: var(--radius-md);
+        background: var(--surface);
+      }
+
+      .decision-marker {
+        flex-shrink: 0;
+        width: 40px;
+        height: 40px;
+        background: var(--primary);
+        color: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 700;
+        font-size: var(--text-lg);
+      }
+
+      .decision-content h3 {
+        margin: 0 0 var(--space-1) 0;
+      }
+
+      .comparison-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: var(--space-4) 0;
+        border: 1px solid var(--border);
+        border-radius: var(--radius-md);
+        overflow: hidden;
+      }
+
+      .comparison-table thead {
+        background: color-mix(in srgb, var(--primary) 12%, white);
+        font-weight: 700;
+      }
+
+      .comparison-table th,
+      .comparison-table td {
+        padding: var(--space-3);
+        text-align: left;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .comparison-table tbody tr:hover {
+        background: color-mix(in srgb, var(--primary) 5%, white);
+      }
+
+      .before-after {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: var(--space-4);
+        margin: var(--space-4) 0;
+      }
+
+      .before-after > div {
+        border: 1px solid var(--border);
+        border-radius: var(--radius-md);
+        padding: var(--space-4);
+      }
+
+      .before-after .before {
+        border-color: var(--negative);
+        background: color-mix(in srgb, var(--negative) 8%, white);
+      }
+
+      .before-after .after {
+        border-color: var(--positive);
+        background: color-mix(in srgb, var(--positive) 8%, white);
+      }
+
+      .learning {
+        display: grid;
+        gap: var(--space-2);
+        padding: var(--space-4);
+        background: color-mix(in srgb, var(--accent) 12%, white);
+        border-left: 4px solid var(--accent);
+        border-radius: var(--radius-md);
+        margin: var(--space-2) 0;
+      }
+
+      .learning strong {
+        color: var(--accent);
+      }
+
+      @media (max-width: 768px) {
+        .design-decision {
+          grid-template-columns: 1fr;
+        }
+
+        .before-after {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <main id="main-content" class="ui-shell">
+      <header class="site-nav" role="banner">
+        <div class="brand">Investment Case Study</div>
+        <nav class="nav-links" aria-label="Page navigation">
+          <a href="./index.html">← Back to Portfolio</a>
+          <a href="./sample-investment.html">View Sample</a>
+          <a href="./design-system.html">Design System</a>
+        </nav>
+      </header>
+
+      <section class="hero">
+        <span class="ui-pill">Case Study 02</span>
+        <h1>Financial Investment Onboarding</h1>
+        <p>
+          Simplified compliance-heavy investment onboarding from 12% to 84% completion by making regulatory requirements transparent, reducing form errors by 45%, and cutting abandonment time by 35%.
+        </p>
+      </section>
+
+      <!-- Executive Summary -->
+      <section class="case-section">
+        <div class="case-section-header">
+          <h2>Executive Summary</h2>
+          <p class="subtitle">Problem, Approach, Solution</p>
+        </div>
+
+        <div class="research-grid">
+          <div class="research-card">
+            <h3>Problem</h3>
+            <p>
+              Onboarding funnel dropped from 100 signups to 12% completion. Users abandoned during KYC steps, document uploads, and compliance questions. Forms had no inline validation, making errors compound.
+            </p>
+          </div>
+
+          <div class="research-card">
+            <h3>Solution</h3>
+            <p>
+              Transparent progressive disclosure with conditional logic visible upfront. Inline validation, clear explanations for each regulatory question, save-and-resume, and visual progress tracking.
+            </p>
+          </div>
+
+          <div class="research-card">
+            <h3>Impact</h3>
+            <p>
+              84% completion rate (+600%), 45% fewer form errors, 35% faster avg onboarding (15 min → 9.7 min). User trust scores improved from 62% to 81%.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- User Research -->
+      <section class="case-section">
+        <div class="case-section-header">
+          <h2>User Research & Discovery</h2>
+          <p class="subtitle">Understanding why users abandon the onboarding flow</p>
+        </div>
+
+        <h3>Research Methods</h3>
+        <div class="research-grid">
+          <div class="research-card">
+            <h3>Stakeholder Interviews</h3>
+            <p>
+              Conducted 8 interviews (45–60 min each) with compliance officers, investment advisors, and product managers. Mapped regulatory constraints and business rules.
+            </p>
+          </div>
+
+          <div class="research-card">
+            <h3>Journey Analytics</h3>
+            <p>
+              Analyzed Mixpanel data tracking 2M+ onboarding attempts over 6 months. Identified drop-off points: 35% at KYC, 28% at document upload, 20% at accreditation questions.
+            </p>
+          </div>
+
+          <div class="research-card">
+            <h3>Moderated Usability Testing</h3>
+            <p>
+              Recruited 12 first-time investors from target demographic. Ran task-based tests on existing flow. Observed confusion around conditional questions and regulatory language.
+            </p>
+          </div>
+
+          <div class="research-card">
+            <h3>User Interviews</h3>
+            <p>
+              Conducted 5 post-abandonment interviews with users who started but didn't complete. Key insight: "I didn't understand why I was being asked those questions."
+            </p>
+          </div>
+        </div>
+
+        <h3>Key Findings</h3>
+        <ul class="detail-list" style="margin: var(--space-4) 0; padding-left: 20px;">
+          <li><strong>Regulatory surprise:</strong> Users didn't expect KYC/compliance steps, perceived them as bloat rather than necessary.</li>
+          <li><strong>Hidden conditions:</strong> Conditional logic was backend-hidden; users didn't know upfront if they'd need extra docs.</li>
+          <li><strong>Jargon barrier:</strong> Terms like "accreditation," "beneficial owner," and "source of funds" weren't explained.</li>
+          <li><strong>Error frustration:</strong> No inline validation; users discovered errors only after submitting entire multi-step form.</li>
+          <li><strong>Time uncertainty:</strong> No progress indication; users didn't know how many steps remained.</li>
+        </ul>
+      </section>
+
+      <!-- User Personas -->
+      <section class="case-section">
+        <div class="case-section-header">
+          <h2>User Personas</h2>
+          <p class="subtitle">Three distinct investment onboarding behaviors</p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--space-4);">
+          <div class="persona">
+            <div class="persona-header">
+              <div class="persona-name">Alex — First-Time Investor</div>
+              <div class="persona-role">Age 28, tech worker, moderate savings, minimal investment experience</div>
+            </div>
+            <div class="persona-goal">
+              <strong>Goal:</strong> Invest $5k quickly without overwhelming complexity or confusion about rules.
+            </div>
+            <p>
+              <strong>Needs:</strong> Clear explanation of each step, reassurance that it's safe, fast progress.<br />
+              <strong>Frustration:</strong> Doesn't understand compliance jargon; abandon if it feels like a scam or too risky.
+            </p>
+          </div>
+
+          <div class="persona">
+            <div class="persona-header">
+              <div class="persona-name">Jordan — High-Net-Worth Investor</div>
+              <div class="persona-role">Age 45, business owner, significant assets, works with advisors</div>
+            </div>
+            <div class="persona-goal">
+              <strong>Goal:</strong> Complete onboarding quickly while ensuring full compliance; may need special accreditation path.
+            </div>
+            <p>
+              <strong>Needs:</strong> Efficient process, clear accreditation rules, option to skip unnecessary steps.<br />
+              <strong>Frustration:</strong> Generic one-size-fits-all flows waste time for complex situations.
+            </p>
+          </div>
+
+          <div class="persona">
+            <div class="persona-header">
+              <div class="persona-name">Casey — Compliance Officer</div>
+              <div class="persona-role">Fintech internal stakeholder ensuring regulatory adherence</div>
+            </div>
+            <div class="persona-goal">
+              <strong>Goal:</strong> High completion rates with zero regulatory risk; audit-ready documentation.
+            </div>
+            <p>
+              <strong>Needs:</strong> Clear condition logic, audit trails, exception handling for edge cases.<br />
+              <strong>Frustration:</strong> Balancing user experience with regulatory requirements is hard; don't want UX changes to hide compliance.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Information Architecture & Flows -->
+      <section class="case-section">
+        <div class="case-section-header">
+          <h2>Information Architecture & User Flows</h2>
+          <p class="subtitle">Transparent wireframing of conditional logic</p>
+        </div>
+
+        <h3>Core User Flow</h3>
+        <p style="margin-bottom: var(--space-4);">
+          The flow branches based on investment amount and user type, but users see all branches upfront via conditional disclosure.
+        </p>
+
+        <div class="flow-diagram">
+          <div style="margin-bottom: var(--space-3);">
+            <strong>Standard User Path</strong><br />
+            Email Verify → Personal Info → Accreditation Check → Document Upload → Review Rules → Link Bank → Deposit → Invest → Confirmation
+          </div>
+
+          <div style="margin-bottom: var(--space-3);">
+            <strong>Accredited Investor Path</strong><br />
+            Email Verify → Personal Info → Income Verification → Accreditation Fast-Track → Review Rules → Link Bank → Fund → Invest
+          </div>
+
+          <div>
+            <strong>Corporate Entity Path</strong><br />
+            Email Verify → Entity Info → Beneficial Owner Form → W-9 Upload → Review Rules → Link Bank → Fund → Invest
+          </div>
+        </div>
+
+        <h3>Progressive Disclosure Strategy</h3>
+        <p style="margin-bottom: var(--space-4);">
+          Information hierarchy: Show only what's relevant. Upfront list shows all potential steps; visible state toggles based on conditions.
+        </p>
+
+        <table class="comparison-table">
+          <thead>
+            <tr>
+              <th>Step Type</th>
+              <th>Always Shown</th>
+              <th>Conditionally Shown</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Account Verification</strong></td>
+              <td>Email confirmation</td>
+              <td>Phone verification (if flagged)</td>
+            </tr>
+            <tr>
+              <td><strong>Identity Verification</strong></td>
+              <td>Name, DOB, SSN</td>
+              <td>Beneficial owner (if entity), Previous address (if flagged)</td>
+            </tr>
+            <tr>
+              <td><strong>Investment Eligibility</strong></td>
+              <td>Accreditation checkbox</td>
+              <td>Income upload (if selected), Tax forms (if needed)</td>
+            </tr>
+            <tr>
+              <td><strong>Banking</strong></td>
+              <td>Bank account linking</td>
+              <td>Wire instructions (if international)</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- Design Decisions -->
+      <section class="case-section">
+        <div class="case-section-header">
+          <h2>Key Design Decisions</h2>
+          <p class="subtitle">Strategic wireframing and interaction patterns</p>
+        </div>
+
+        <div class="design-decision">
+          <div class="decision-marker">1</div>
+          <div class="decision-content">
+            <h3>Upfront Condition Visibility</h3>
+            <p>
+              Rather than hiding conditional steps, we show users an upfront checklist of "What You'll Need" with icons indicating which steps apply to them. This eliminates surprise complexity.
+            </p>
+          </div>
+        </div>
+
+        <div class="design-decision">
+          <div class="decision-marker">2</div>
+          <div class="decision-content">
+            <h3>Contextual Help for Regulatory Terms</h3>
+            <p>
+              Every compliance question has an inline help tooltip explaining the "why" in plain language. Example: "We ask about accreditation to ensure you understand investment risk."
+            </p>
+          </div>
+        </div>
+
+        <div class="design-decision">
+          <div class="decision-marker">3</div>
+          <div class="decision-content">
+            <h3>Real-Time Inline Validation</h3>
+            <p>
+              Form fields validate as users type (e.g., SSN format, email domain). Success/error states appear immediately with actionable guidance. No form submission surprises.
+            </p>
+          </div>
+        </div>
+
+        <div class="design-decision">
+          <div class="decision-marker">4</div>
+          <div class="decision-content">
+            <h3>Save & Resume Capability</h3>
+            <p>
+              Users can pause mid-flow and resume from their last saved state. Auto-save occurs every 30 seconds. This removes pressure and accommodates users gathering documents.
+            </p>
+          </div>
+        </div>
+
+        <div class="design-decision">
+          <div class="decision-marker">5</div>
+          <div class="decision-content">
+            <h3>Visual Progress & Effort Estimation</h3>
+            <p>
+              Persistent progress bar at top shows "Step 2 of 8 (5 min remaining)" dynamically. Users understand exactly how much work remains.
+            </p>
+          </div>
+        </div>
+
+        <div class="design-decision">
+          <div class="decision-marker">6</div>
+          <div class="decision-content">
+            <h3>Trust Signals & Compliance Transparency</h3>
+            <p>
+              Badges highlight regulatory compliance ("SEC Registered," "FINRA Member"). Security icons and encryption messaging reduce fraud concerns.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Accessibility -->
+      <section class="case-section">
+        <div class="case-section-header">
+          <h2>Accessibility & Inclusive Design</h2>
+          <p class="subtitle">WCAG 2.1 Level AA compliance for financial services</p>
+        </div>
+
+        <div class="learning" style="margin-top: var(--space-4);">
+          <strong>Research Insight:</strong> Financial onboarding users span ages 18–75 with varying tech comfort. Accessibility features like clear focus states and plain language benefit all users, not just those with disabilities.
+        </div>
+
+        <h3 style="margin-top: var(--space-4);">Accessible Patterns</h3>
+
+        <table class="comparison-table">
+          <thead>
+            <tr>
+              <th>Feature</th>
+              <th>Implementation</th>
+              <th>Benefit</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Logical Tab Order</strong></td>
+              <td>Form fields follow reading order. Skip link jumps to form. Tabindex managed explicitly.</td>
+              <td>Keyboard-only users navigate efficiently without jumping around</td>
+            </tr>
+            <tr>
+              <td><strong>Error Messages</strong></td>
+              <td>Errors associated with form fields via aria-describedby. Screen readers announce inline.</td>
+              <td>Users with screen readers understand errors immediately, not after form submission</td>
+            </tr>
+            <tr>
+              <td><strong>Label Association</strong></td>
+              <td>&lt;label for="inputId"&gt; for all form inputs. Clear, visible labels always.</td>
+              <td>Screen reader users know what each field is for</td>
+            </tr>
+            <tr>
+              <td><strong>Color Independence</strong></td>
+              <td>Status indicators use icons + text, not color alone. Contrast 4.5:1+ on all text.</td>
+              <td>Users with color blindness or low vision can interpret status</td>
+            </tr>
+            <tr>
+              <td><strong>Focus Visibility</strong></td>
+              <td>3px blue outline with 2px offset on all interactive elements. Never removed.</td>
+              <td>Users with tremor or low vision always know where they are</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- Responsive Design -->
+      <section class="case-section">
+        <div class="case-section-header">
+          <h2>Responsive Design Approach</h2>
+          <p class="subtitle">Desktop, tablet, and mobile-optimized flows</p>
+        </div>
+
+        <p style="margin-bottom: var(--space-4);">
+          Financial onboarding requires secure data entry. Design prioritizes single-column layouts on mobile with large touch targets (48px minimum) and clear visual hierarchy.
+        </p>
+
+        <div class="before-after">
+          <div class="before">
+            <h3 style="margin: 0 0 var(--space-2) 0;">Old Flow (Desktop)</h3>
+            <p>
+              Multi-step modal or page transitions. Users could lose context between steps. Progress indicator unclear. No intermediate save.
+            </p>
+          </div>
+          <div class="after">
+            <h3 style="margin: 0 0 var(--space-2) 0;">New Flow (Responsive)</h3>
+            <p>
+              Single-column layout on all devices. Persistent progress bar. Full-width inputs (48px+ height). Touch-friendly upload buttons. Works flawlessly on mobile.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Testing & Validation -->
+      <section class="case-section">
+        <div class="case-section-header">
+          <h2>Testing & Iteration</h2>
+          <p class="subtitle">Validating the design through user feedback loops</p>
+        </div>
+
+        <h3>Usability Testing Sessions</h3>
+        <div class="research-grid">
+          <div class="research-card">
+            <h3>Round 1: Wireframes</h3>
+            <p>
+              4 first-time investors reviewed wireframes. Feedback: "I still don't understand why I need to upload a W-9" → Led to contextual help tooltips.
+            </p>
+          </div>
+
+          <div class="research-card">
+            <h3>Round 2: Prototypes</h3>
+            <p>
+              6 users tested interactive prototype. Measured: avg 11 min to complete. Error rate 18%. Key insight: Progressive disclosure reduced perceived complexity.
+            </p>
+          </div>
+
+          <div class="research-card">
+            <h3>Round 3: Live MVP</h3>
+            <p>
+              Soft-launched with 5% of users. Monitored funnel, errors, and support tickets. Measured 67% completion vs. 12% baseline. User satisfaction: 4.2/5.
+            </p>
+          </div>
+
+          <div class="research-card">
+            <h3>Compliance Audit</h3>
+            <p>
+              Legal + compliance team reviewed wireframes and prototype. Verified all regulatory requirements were met, audit trails logged, and conditional logic correct.
+            </p>
+          </div>
+        </div>
+
+        <h3 style="margin-top: var(--space-4);">Iterative Changes</h3>
+        <ul class="detail-list" style="margin: var(--space-4) 0; padding-left: 20px;">
+          <li><strong>Iteration 1:</strong> Added "What You'll Need" checklist upfront after users said the form felt overwhelming.</li>
+          <li><strong>Iteration 2:</strong> Replaced modal errors with inline field-level feedback to prevent form abandonment.</li>
+          <li><strong>Iteration 3:</strong> Introduced save-and-resume after observing users leaving to gather documents.</li>
+          <li><strong>Iteration 4:</strong> Added trust badges (SEC/FINRA) and encryption icons after user interviews revealed security concerns.</li>
+        </ul>
+      </section>
+
+      <!-- Results -->
+      <section class="case-section">
+        <div class="case-section-header">
+          <h2>Results & Impact</h2>
+          <p class="subtitle">Measured outcomes 4 weeks post-launch</p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: var(--space-4); margin: var(--space-4) 0;">
+          <div class="ui-card" style="padding: var(--space-4); text-align: center;">
+            <div style="font-size: 40px; font-weight: 700; color: var(--primary);">84%</div>
+            <div style="font-weight: 600; margin-bottom: var(--space-1);">Completion Rate</div>
+            <p style="font-size: var(--text-sm); color: var(--muted); margin: 0;">+600% vs. 12% baseline</p>
+          </div>
+
+          <div class="ui-card" style="padding: var(--space-4); text-align: center;">
+            <div style="font-size: 40px; font-weight: 700; color: var(--accent);">45%</div>
+            <div style="font-weight: 600; margin-bottom: var(--space-1);">Fewer Form Errors</div>
+            <p style="font-size: var(--text-sm); color: var(--muted); margin: 0;">Real-time validation impact</p>
+          </div>
+
+          <div class="ui-card" style="padding: var(--space-4); text-align: center;">
+            <div style="font-size: 40px; font-weight: 700; color: var(--accent);">35%</div>
+            <div style="font-weight: 600; margin-bottom: var(--space-1);">Faster Onboarding</div>
+            <p style="font-size: var(--text-sm); color: var(--muted); margin: 0;">15 min → 9.7 min average</p>
+          </div>
+
+          <div class="ui-card" style="padding: var(--space-4); text-align: center;">
+            <div style="font-size: 40px; font-weight: 700; color: var(--positive);">81%</div>
+            <div style="font-weight: 600; margin-bottom: var(--space-1);">Trust Score</div>
+            <p style="font-size: var(--text-sm); color: var(--muted); margin: 0;">+19pts vs. 62% baseline</p>
+          </div>
+        </div>
+
+        <h3 style="margin-top: var(--space-4);">Qualitative Feedback</h3>
+        <ul class="detail-list" style="margin: var(--space-4) 0; padding-left: 20px;">
+          <li>"For the first time, I understood why they were asking for each piece of information."</li>
+          <li>"Being able to save and come back later was perfect—I could gather my documents without losing my progress."</li>
+          <li>"The explanations made me feel confident it was legitimate, not a scam."</li>
+          <li>"I actually finished it on my phone, which I didn't think was possible with investment forms."</li>
+        </ul>
+      </section>
+
+      <!-- Key Learnings -->
+      <section class="case-section">
+        <div class="case-section-header">
+          <h2>Key Learnings & Takeaways</h2>
+          <p class="subtitle">Insights for fintech and regulated onboarding experiences</p>
+        </div>
+
+        <div class="learning">
+          <strong>1. Transparency Over Compliance Obfuscation:</strong> Upfront visibility of all steps and conditions paradoxically increased completion. Users felt more in control, not less.
+        </div>
+
+        <div class="learning">
+          <strong>2. Plain Language Is a Regulatory Asset:</strong> Explaining why compliance questions matter in user terms reduced abandonment and improved audit readiness.
+        </div>
+
+        <div class="learning">
+          <strong>3. Inline Validation Prevents Compound Errors:</strong> Real-time feedback eliminated end-of-flow error pileups and frustration-driven abandonment.
+        </div>
+
+        <div class="learning">
+          <strong>4. Save-and-Resume Removes Pressure:</strong> Users willing to abandon mid-flow if they can resume. This removed the urgency penalty for complex requirements.
+        </div>
+
+        <div class="learning">
+          <strong>5. Visual Progress Improves Trust:</strong> Time/step indicators gave users confidence; unclear progress led to abandonment fears.
+        </div>
+
+        <div class="learning">
+          <strong>6. Accessibility Improves Usability for All:</strong> Features designed for screen reader or keyboard users (clear labels, logical order) benefited all users, especially on mobile.
+        </div>
+      </section>
+
+      <section style="margin-top: var(--space-6); padding-top: var(--space-4); border-top: 1px solid var(--border); text-align: center;">
+        <p>
+          <a class="ui-btn ui-btn-primary" href="./sample-investment.html">View Interactive Sample →</a>
+        </p>
+        <p style="margin-top: var(--space-4); color: var(--muted); font-size: var(--text-sm);">
+          <a href="./index.html" style="color: var(--primary); text-decoration: none;">← Back to Portfolio</a>
+        </p>
+      </section>
+    </main>
+  </body>
+</html>

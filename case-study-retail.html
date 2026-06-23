@@ -1,0 +1,694 @@
+<!doctype html>
+<html lang="en" class="theme-retail">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Detailed UX case study on designing a conversion-focused retail checkout and returns experience that improved checkout conversion by 22%, reduced cart abandonment by 18%, and drove 41% more exchanges." />
+    <title>Case Study - Retail Checkout and Returns</title>
+    <link rel="stylesheet" href="./domain-ui-themes.css" />
+    <style>
+      .case-section {
+        margin: var(--space-6) 0;
+      }
+
+      .case-section-header {
+        border-left: 4px solid var(--primary);
+        padding-left: var(--space-4);
+        margin-bottom: var(--space-4);
+      }
+
+      .case-section-header h2 {
+        margin: 0 0 var(--space-1) 0;
+      }
+
+      .case-section-header .subtitle {
+        color: var(--muted);
+        font-size: var(--text-sm);
+      }
+
+      .research-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: var(--space-4);
+        margin: var(--space-4) 0;
+      }
+
+      .research-card {
+        border: 1px solid var(--border);
+        border-radius: var(--radius-md);
+        padding: var(--space-4);
+        background: var(--surface);
+      }
+
+      .research-card h3 {
+        margin: 0 0 var(--space-2) 0;
+        color: var(--primary);
+      }
+
+      .persona {
+        border: 1px solid var(--border);
+        border-radius: var(--radius-md);
+        padding: var(--space-4);
+        background: linear-gradient(135deg, color-mix(in srgb, var(--primary) 8%, white), white);
+        display: grid;
+        gap: var(--space-3);
+      }
+
+      .persona-header {
+        display: grid;
+        gap: var(--space-1);
+      }
+
+      .persona-name {
+        font-size: var(--text-lg);
+        font-weight: 700;
+      }
+
+      .persona-role {
+        color: var(--muted);
+        font-size: var(--text-sm);
+      }
+
+      .persona-goal {
+        background: color-mix(in srgb, var(--primary) 15%, white);
+        border-left: 3px solid var(--primary);
+        padding: var(--space-2) var(--space-3);
+        border-radius: var(--radius-sm);
+      }
+
+      .persona-goal strong {
+        color: var(--primary);
+      }
+
+      .flow-diagram {
+        background: color-mix(in srgb, var(--primary) 8%, white);
+        border: 1px solid var(--border);
+        border-radius: var(--radius-md);
+        padding: var(--space-4);
+        margin: var(--space-4) 0;
+        text-align: center;
+        font-family: 'IBM Plex Mono', monospace;
+        line-height: 2;
+        color: var(--primary);
+        overflow-x: auto;
+      }
+
+      .design-decision {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        gap: var(--space-4);
+        margin: var(--space-4) 0;
+        padding: var(--space-4);
+        border: 1px solid var(--border);
+        border-radius: var(--radius-md);
+        background: var(--surface);
+      }
+
+      .decision-marker {
+        flex-shrink: 0;
+        width: 40px;
+        height: 40px;
+        background: var(--primary);
+        color: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 700;
+        font-size: var(--text-lg);
+      }
+
+      .decision-content h3 {
+        margin: 0 0 var(--space-1) 0;
+      }
+
+      .comparison-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: var(--space-4) 0;
+        border: 1px solid var(--border);
+        border-radius: var(--radius-md);
+        overflow: hidden;
+      }
+
+      .comparison-table thead {
+        background: color-mix(in srgb, var(--primary) 12%, white);
+        font-weight: 700;
+      }
+
+      .comparison-table th,
+      .comparison-table td {
+        padding: var(--space-3);
+        text-align: left;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .comparison-table tbody tr:hover {
+        background: color-mix(in srgb, var(--primary) 5%, white);
+      }
+
+      .before-after {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: var(--space-4);
+        margin: var(--space-4) 0;
+      }
+
+      .before-after > div {
+        border: 1px solid var(--border);
+        border-radius: var(--radius-md);
+        padding: var(--space-4);
+      }
+
+      .before-after .before {
+        border-color: var(--negative);
+        background: color-mix(in srgb, var(--negative) 8%, white);
+      }
+
+      .before-after .after {
+        border-color: var(--positive);
+        background: color-mix(in srgb, var(--positive) 8%, white);
+      }
+
+      .learning {
+        display: grid;
+        gap: var(--space-2);
+        padding: var(--space-4);
+        background: color-mix(in srgb, var(--accent) 12%, white);
+        border-left: 4px solid var(--accent);
+        border-radius: var(--radius-md);
+        margin: var(--space-2) 0;
+      }
+
+      .learning strong {
+        color: var(--accent);
+      }
+
+      @media (max-width: 768px) {
+        .design-decision {
+          grid-template-columns: 1fr;
+        }
+
+        .before-after {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <main id="main-content" class="ui-shell">
+      <header class="site-nav" role="banner">
+        <div class="brand">Retail Case Study</div>
+        <nav class="nav-links" aria-label="Page navigation">
+          <a href="./index.html">← Back to Portfolio</a>
+          <a href="./sample-retail.html">View Sample</a>
+          <a href="./design-system.html">Design System</a>
+        </nav>
+      </header>
+
+      <section class="hero">
+        <span class="ui-pill">Case Study 03</span>
+        <h1>Retail Checkout & Returns Experience</h1>
+        <p>
+          Simplified checkout and returns workflows to build trust, reduce friction, and drive margin-positive exchanges. Improved checkout conversion by 22%, reduced cart abandonment by 18%, and increased exchange-to-refund ratio by 41%.
+        </p>
+      </section>
+
+      <!-- Executive Summary -->
+      <section class="case-section">
+        <div class="case-section-header">
+          <h2>Executive Summary</h2>
+          <p class="subtitle">Problem, Approach, Solution</p>
+        </div>
+
+        <div class="research-grid">
+          <div class="research-card">
+            <h3>Problem</h3>
+            <p>
+              Cart abandonment at 34% (vs. industry 28%). Customers hesitated at checkout due to shipping uncertainty and payment friction. Returns defaulted to refunds, harming margins and repeat purchase intent.
+            </p>
+          </div>
+
+          <div class="research-card">
+            <h3>Solution</h3>
+            <p>
+              Trust-building checkout redesign with inventory certainty, real-time shipping estimates, and simplified payment. Exchange-first returns assistant with intelligent size recommendations. Unified order timeline.
+            </p>
+          </div>
+
+          <div class="research-card">
+            <h3>Impact</h3>
+            <p>
+              22% higher checkout conversion, 18% lower cart abandonment, 41% increase in exchanges vs. refunds, 31% faster checkout (4.2 min → 2.9 min), 78% repeat purchase rate (+8 pts).
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- User Research -->
+      <section class="case-section">
+        <div class="case-section-header">
+          <h2>User Research & Discovery</h2>
+          <p class="subtitle">Understanding checkout abandonment and return behavior</p>
+        </div>
+
+        <h3>Research Methods</h3>
+        <div class="research-grid">
+          <div class="research-card">
+            <h3>Cart Abandonment Analytics</h3>
+            <p>
+              Analyzed 500K+ abandoned carts over 90 days using Amplitude. Identified drop-off points: 28% at shipping cost reveal, 22% at payment entry, 18% at form errors.
+            </p>
+          </div>
+
+          <div class="research-card">
+            <h3>User Interviews</h3>
+            <p>
+              Conducted 16 moderated interviews (45–60 min) with recent buyers, repeat customers, and cart abandoners. Explored trust signals, shipping concerns, and return preferences.
+            </p>
+          </div>
+
+          <div class="research-card">
+            <h3>Returns Flow Analytics</h3>
+            <p>
+              Tracked 20K+ returns over 6 months. Found 78% defaulted to refund without exploring exchanges. Return initiation time: avg 9 days post-purchase (high friction).
+            </p>
+          </div>
+
+          <div class="research-card">
+            <h3>Mobile Usability Testing</h3>
+            <p>
+              Recruited 8 users for mobile checkout task tests. Observed: payment form frustration on tiny screens, shipping costs perceived as "surprise fees," lack of size guidance for returns.
+            </p>
+          </div>
+        </div>
+
+        <h3>Key Findings</h3>
+        <ul class="detail-list" style="margin: var(--space-4) 0; padding-left: 20px;">
+          <li><strong>Shipping surprise:</strong> Customers abandoned when shipping cost exceeded expectations—no real-time estimate visibility upfront.</li>
+          <li><strong>Inventory anxiety:</strong> Uncertainty about "in stock" vs. "out of stock" led to abandonment; no inventory visibility.</li>
+          <li><strong>Payment friction:</strong> Multi-step payment, excessive fields, and poor error recovery caused form abandonment.</li>
+          <li><strong>Returns friction:</strong> No easy way to initiate returns; users didn't know if exchanges were an option, defaulted to refunds.</li>
+          <li><strong>Mobile gaps:</strong> Checkout form not optimized for mobile; payment entry particularly painful on small screens.</li>
+        </ul>
+      </section>
+
+      <!-- User Personas -->
+      <section class="case-section">
+        <div class="case-section-header">
+          <h2>User Personas</h2>
+          <p class="subtitle">Three distinct retail checkout and returns behaviors</p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--space-4);">
+          <div class="persona">
+            <div class="persona-header">
+              <div class="persona-name">Morgan — Budget Shopper</div>
+              <div class="persona-role">Age 32, mom of 2, price-sensitive, shops mobile frequently</div>
+            </div>
+            <div class="persona-goal">
+              <strong>Goal:</strong> Find good deals, minimize costs (including shipping), avoid surprises at checkout.
+            </div>
+            <p>
+              <strong>Needs:</strong> Clear total cost upfront, fast checkout, easy returns if item doesn't fit.<br />
+              <strong>Frustration:</strong> Hidden fees feel dishonest; abandons if shipping > $10 or form takes >2 min.
+            </p>
+          </div>
+
+          <div class="persona">
+            <div class="persona-header">
+              <div class="persona-name">Jamie — Frequent Buyer</div>
+              <div class="persona-role">Age 28, brand loyal, buys regularly, multi-device shopper</div>
+            </div>
+            <div class="persona-goal">
+              <strong>Goal:</strong> Quick reorders, seamless experience, rewards/loyalty recognition.
+            </div>
+            <p>
+              <strong>Needs:</strong> Saved preferences, one-click checkout option, easy re-ordering from past purchases.<br />
+              <strong>Frustration:</strong> Having to re-enter information, slow load times, feels undervalued.
+            </p>
+          </div>
+
+          <div class="persona">
+            <div class="persona-header">
+              <div class="persona-name">Casey — Returns Manager</div>
+              <div class="persona-role">Retail operations stakeholder managing returns/exchanges</div>
+            </div>
+            <div class="persona-goal">
+              <strong>Goal:</strong> Maximize exchange ratio (better margin), reduce refund processing, keep inventory flowing.
+            </div>
+            <p>
+              <strong>Needs:</strong> Streamlined return initiation, size/color guidance to suggest exchanges, clear return window.<br />
+              <strong>Frustration:</strong> Users default to refunds; hard to guide them toward profitable exchanges; processing backlog.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Information Architecture & Flows -->
+      <section class="case-section">
+        <div class="case-section-header">
+          <h2>Information Architecture & User Flows</h2>
+          <p class="subtitle">Wireframing trust-building checkout and returns flows</p>
+        </div>
+
+        <h3>Core Checkout Flow</h3>
+        <p style="margin-bottom: var(--space-4);">
+          Simplified to essential steps with upfront cost visibility. Real-time shipping estimates drive confidence at the critical decision point.
+        </p>
+
+        <div class="flow-diagram">
+          <div style="margin-bottom: var(--space-3);">
+            <strong>Checkout Path</strong><br />
+            Cart Review → Shipping Address → Real-Time Shipping Estimate → Payment → Confirmation → Order Tracking
+          </div>
+
+          <div style="margin-bottom: var(--space-3);">
+            <strong>Returns Path</strong><br />
+            Order Details → Initiate Return → Item Selection → Exchange vs. Refund Choice → Size/Color Recommendation → Shipping Label → Tracking
+          </div>
+
+          <div>
+            <strong>Post-Purchase Path</strong><br />
+            Order Confirmation → Tracking Updates (email + in-app) → Delivery → Returns Window Awareness → Exchange Nudge (30 days)
+          </div>
+        </div>
+
+        <h3>Information Hierarchy</h3>
+        <p style="margin-bottom: var(--space-4);">
+          Progressive trust-building: Show inventory status, real-time cost, and return window early to build confidence.
+        </p>
+
+        <table class="comparison-table">
+          <thead>
+            <tr>
+              <th>Step</th>
+              <th>Always Visible</th>
+              <th>Conditionally Visible</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Cart Summary</strong></td>
+              <td>Items, prices, subtotal</td>
+              <td>Inventory status, in-stock icons, discount codes</td>
+            </tr>
+            <tr>
+              <td><strong>Shipping</strong></td>
+              <td>Real-time estimate, 2–3 day / Next day options</td>
+              <td>International shipping rates, FedEx/UPS tracking</td>
+            </tr>
+            <tr>
+              <td><strong>Total Cost</strong></td>
+              <td>Shipping + tax + items = TOTAL</td>
+              <td>Fee breakdown, promo savings, loyalty discounts</td>
+            </tr>
+            <tr>
+              <td><strong>Return Window</strong></td>
+              <td>Returns window badge (30 days)</td>
+              <td>Return policy link, exchange vs. refund details</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- Design Decisions -->
+      <section class="case-section">
+        <div class="case-section-header">
+          <h2>Key Design Decisions</h2>
+          <p class="subtitle">Strategic patterns for conversion and margin optimization</p>
+        </div>
+
+        <div class="design-decision">
+          <div class="decision-marker">1</div>
+          <div class="decision-content">
+            <h3>Inventory Certainty Signals</h3>
+            <p>
+              Real-time stock indicator under each item ("2 in stock" or "Ships in 3 days"). Reduces purchase anxiety and prevents post-purchase disappointment.
+            </p>
+          </div>
+        </div>
+
+        <div class="design-decision">
+          <div class="decision-marker">2</div>
+          <div class="decision-content">
+            <h3>Real-Time Shipping Estimates</h3>
+            <p>
+              As soon as address is entered, shipping cost and delivery date appear inline. No "surprise fee" shock at final step. Builds trust and reduces abandonment.
+            </p>
+          </div>
+        </div>
+
+        <div class="design-decision">
+          <div class="decision-marker">3</div>
+          <div class="decision-content">
+            <h3>Simplified Payment Experience</h3>
+            <p>
+              Mobile-optimized payment form with large fields (16px+ font), smart field ordering, and clear error recovery. Apple Pay / Google Pay as primary options.
+            </p>
+          </div>
+        </div>
+
+        <div class="design-decision">
+          <div class="decision-marker">4</div>
+          <div class="decision-content">
+            <h3>Exchange-First Returns Assistant</h3>
+            <p>
+              At return initiation, guide users toward exchanges with intelligent size/color recommendations before defaulting to refund option. 30-second process vs. 5-min web form.
+            </p>
+          </div>
+        </div>
+
+        <div class="design-decision">
+          <div class="decision-marker">5</div>
+          <div class="decision-content">
+            <h3>Unified Order Timeline</h3>
+            <p>
+              Single source of truth for order status, shipping, and returns. Users see entire post-purchase journey (ordered → shipped → delivered → return eligible).
+            </p>
+          </div>
+        </div>
+
+        <div class="design-decision">
+          <div class="decision-marker">6</div>
+          <div class="decision-content">
+            <h3>Return Window Awareness</h3>
+            <p>
+              Countdown badge showing "30 days left to return" nudges users toward action. Reduces customer service inquiries and enables data-driven return targeting.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Accessibility -->
+      <section class="case-section">
+        <div class="case-section-header">
+          <h2>Accessibility & Inclusive Design</h2>
+          <p class="subtitle">WCAG 2.1 Level AA compliance for e-commerce</p>
+        </div>
+
+        <div class="learning" style="margin-top: var(--space-4);">
+          <strong>Research Insight:</strong> Retail users include parents shopping during kids' activities, elderly users buying gifts, and busy professionals checking out on commutes. Accessibility features (large touch targets, clear contrast) directly impact all users.
+        </div>
+
+        <h3 style="margin-top: var(--space-4);">Accessible Patterns</h3>
+
+        <table class="comparison-table">
+          <thead>
+            <tr>
+              <th>Feature</th>
+              <th>Implementation</th>
+              <th>Benefit</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Touch Targets</strong></td>
+              <td>All buttons 48px+ minimum. Adequate spacing (16px) between interactive elements.</td>
+              <td>Parents with hands full, elderly users, or users with tremor can tap accurately</td>
+            </tr>
+            <tr>
+              <td><strong>Form Labels</strong></td>
+              <td>All inputs have persistent visible labels. Error messages linked via aria-describedby.</td>
+              <td>Screen readers and users with cognitive load understand each field's purpose</td>
+            </tr>
+            <tr>
+              <td><strong>Color Contrast</strong></td>
+              <td>All text 4.5:1+ contrast. "In stock" vs. "out of stock" use icons + text, not color alone.</td>
+              <td>Users with low vision or color blindness see status clearly</td>
+            </tr>
+            <tr>
+              <td><strong>Keyboard Navigation</strong></td>
+              <td>Checkout form fully keyboard-navigable. Tab order logical. Skip to payment option available.</td>
+              <td>Users with mobility challenges or preference for keyboard can complete purchase</td>
+            </tr>
+            <tr>
+              <td><strong>Mobile-First Responsiveness</strong></td>
+              <td>Single-column layout on mobile, 18px base font, 48px minimum touch targets, full-width inputs.</td>
+              <td>Works reliably on small screens for elderly users or those with low vision using zoom</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- Responsive Design -->
+      <section class="case-section">
+        <div class="case-section-header">
+          <h2>Responsive Design Approach</h2>
+          <p class="subtitle">Mobile-first checkout optimized for conversion</p>
+        </div>
+
+        <p style="margin-bottom: var(--space-4);">
+          65% of traffic is mobile. Design prioritizes frictionless mobile checkout with large form fields, smart autocomplete, and one-hand navigability.
+        </p>
+
+        <div class="before-after">
+          <div class="before">
+            <h3 style="margin: 0 0 var(--space-2) 0;">Old Checkout (Multi-Step)</h3>
+            <p>
+              4-page flow with separate pages for address, shipping, payment. Context loss between steps. Mobile form fields cramped. Shipping cost hidden until final step.
+            </p>
+          </div>
+          <div class="after">
+            <h3 style="margin: 0 0 var(--space-2) 0;">New Checkout (Single Flow)</h3>
+            <p>
+              Single scrollable form with progressive disclosure. Address → immediate shipping estimate (builds trust). Large fields (48px+), smart autocomplete, Apple Pay option. Works flawlessly on all devices.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Testing & Validation -->
+      <section class="case-section">
+        <div class="case-section-header">
+          <h2>Testing & Iteration</h2>
+          <p class="subtitle">Validating design through conversion metrics and user feedback</p>
+        </div>
+
+        <h3>Usability Testing Sessions</h3>
+        <div class="research-grid">
+          <div class="research-card">
+            <h3>Round 1: Wireframes</h3>
+            <p>
+              6 users reviewed checkout wireframes. Feedback: "Show me shipping cost before I enter my address" → Led to real-time cost visibility design.
+            </p>
+          </div>
+
+          <div class="research-card">
+            <h3>Round 2: Prototypes</h3>
+            <p>
+              8 users tested interactive prototype on mobile. Measured: avg 3.1 min checkout time, 0 form errors (vs. 12% error rate in old flow). Satisfaction: 4.4/5.
+            </p>
+          </div>
+
+          <div class="research-card">
+            <h3>Round 3: A/B Test (Live)</h3>
+            <p>
+              Split 20% traffic to new checkout. Measured: 22% higher conversion, 18% lower cart abandonment, 31% faster checkout. Upsold free shipping threshold increased revenue.
+            </p>
+          </div>
+
+          <div class="research-card">
+            <h3>Returns Flow Testing</h3>
+            <p>
+              Tested returns assistant with 6 users. Measured: 41% chose exchange when guided (vs. 22% without prompting). Reduced support tickets by 35%.
+            </p>
+          </div>
+        </div>
+
+        <h3 style="margin-top: var(--space-4);">Iterative Changes</h3>
+        <ul class="detail-list" style="margin: var(--space-4) 0; padding-left: 20px;">
+          <li><strong>Iteration 1:</strong> Added real-time shipping estimate after users complained about "surprise fees."</li>
+          <li><strong>Iteration 2:</strong> Introduced inventory indicators after observing post-purchase disappointment when items were delayed.</li>
+          <li><strong>Iteration 3:</strong> Simplified payment form from 12 fields to 6 after mobile testing revealed high form abandonment.</li>
+          <li><strong>Iteration 4:</strong> Launched exchange-first returns assistant after data showed 78% of returns defaulted to refunds unnecessarily.</li>
+        </ul>
+      </section>
+
+      <!-- Results -->
+      <section class="case-section">
+        <div class="case-section-header">
+          <h2>Results & Impact</h2>
+          <p class="subtitle">Measured outcomes 8 weeks post-launch</p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: var(--space-4); margin: var(--space-4) 0;">
+          <div class="ui-card" style="padding: var(--space-4); text-align: center;">
+            <div style="font-size: 40px; font-weight: 700; color: var(--primary);">22%</div>
+            <div style="font-weight: 600; margin-bottom: var(--space-1);">Higher Conversion</div>
+            <p style="font-size: var(--text-sm); color: var(--muted); margin: 0;">A/B test +600K revenue</p>
+          </div>
+
+          <div class="ui-card" style="padding: var(--space-4); text-align: center;">
+            <div style="font-size: 40px; font-weight: 700; color: var(--accent);">18%</div>
+            <div style="font-weight: 600; margin-bottom: var(--space-1);">Lower Cart Abandonment</div>
+            <p style="font-size: var(--text-sm); color: var(--muted); margin: 0;">34% → 16% abandonment rate</p>
+          </div>
+
+          <div class="ui-card" style="padding: var(--space-4); text-align: center;">
+            <div style="font-size: 40px; font-weight: 700; color: var(--accent);">41%</div>
+            <div style="font-weight: 600; margin-bottom: var(--space-1);">More Exchanges</div>
+            <p style="font-size: var(--text-sm); color: var(--muted); margin: 0;">22% → 63% exchange rate</p>
+          </div>
+
+          <div class="ui-card" style="padding: var(--space-4); text-align: center;">
+            <div style="font-size: 40px; font-weight: 700; color: var(--positive);">78%</div>
+            <div style="font-weight: 600; margin-bottom: var(--space-1);">Repeat Purchase Rate</div>
+            <p style="font-size: var(--text-sm); color: var(--muted); margin: 0;">+8 pts vs. 70% baseline</p>
+          </div>
+        </div>
+
+        <h3 style="margin-top: var(--space-4);">Qualitative Feedback</h3>
+        <ul class="detail-list" style="margin: var(--space-4) 0; padding-left: 20px;">
+          <li>"I finally understand what I'm paying for before I commit. That's huge."</li>
+          <li>"The inventory label made me confident the item would actually arrive."</li>
+          <li>"When I needed to return something, I actually tried the exchange option—saved me money on shipping."</li>
+          <li>"Checkout took 2 minutes on my phone. That's the first time I've felt like an app actually respected my time."</li>
+        </ul>
+      </section>
+
+      <!-- Key Learnings -->
+      <section class="case-section">
+        <div class="case-section-header">
+          <h2>Key Learnings & Takeaways</h2>
+          <p class="subtitle">Insights for e-commerce conversion and retention</p>
+        </div>
+
+        <div class="learning">
+          <strong>1. Transparency Drives Conversion:</strong> Real-time cost visibility and inventory certainty eliminated abandonment triggers. "Surprise fees" were the #1 abandonment reason.
+        </div>
+
+        <div class="learning">
+          <strong>2. Mobile-First Isn't Optional:</strong> 65% of traffic is mobile; design constraints forced us to simplify checkout. This benefited desktop users too.
+        </div>
+
+        <div class="learning">
+          <strong>3. Guidance Beats Default:</strong> Exchange-first nudges converted 41% more users to exchanges (better margin). User guidance changes behavior.
+        </div>
+
+        <div class="learning">
+          <strong>4. Reduce Form Friction:</strong> Cutting payment form from 12 fields to 6 eliminated 68% of validation errors. Less is always better.
+        </div>
+
+        <div class="learning">
+          <strong>5. Trust Signals Matter Early:</strong> Inventory and shipping visibility at the start of checkout reduced cart abandonment before users even reached the payment step.
+        </div>
+
+        <div class="learning">
+          <strong>6. Accessibility Enables Speed:</strong> Large touch targets, clear labels, and keyboard navigation weren't just accessible—they made checkout faster for everyone.
+        </div>
+      </section>
+
+      <section style="margin-top: var(--space-6); padding-top: var(--space-4); border-top: 1px solid var(--border); text-align: center;">
+        <p>
+          <a class="ui-btn ui-btn-primary" href="./sample-retail.html">View Interactive Sample →</a>
+        </p>
+        <p style="margin-top: var(--space-4); color: var(--muted); font-size: var(--text-sm);">
+          <a href="./index.html" style="color: var(--primary); text-decoration: none;">← Back to Portfolio</a>
+        </p>
+      </section>
+    </main>
+  </body>
+</html>

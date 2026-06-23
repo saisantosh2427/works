@@ -1,0 +1,1296 @@
+<!doctype html>
+<html lang="en" class="theme-healthcare">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sample Work - Healthcare</title>
+    <link rel="stylesheet" href="./domain-ui-themes.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#mainExperience">Skip to patient operations</a>
+
+    <main class="ui-shell health-shell">
+      <header class="site-nav">
+        <div class="brand">Healthcare Sample</div>
+        <nav class="nav-links" aria-label="Page navigation">
+          <a href="./index.html">Back to My case studies</a>
+          <a href="./case-study-healthcare.html">Read Case Study</a>
+        </nav>
+      </header>
+
+      <section class="utility-bar" aria-label="Persistent utility bar">
+        <div class="utility-left">
+          <span class="utility-chip" id="audienceChip">Audience: Patients</span>
+          <span class="utility-chip" id="utilityPatientChip">Selected: Robert Lane</span>
+          <span class="utility-chip" id="utilityStatusChip">Status: Waiting</span>
+        </div>
+        <div class="utility-right">
+          <button class="utility-button" id="megaMenuToggle" type="button" aria-expanded="false" aria-controls="megaMenuPanel">Open Menu</button>
+          <button class="utility-button" id="focusQueueBtn" type="button">Focus Queue</button>
+          <button class="utility-button" id="resetDemoBtn" type="button">Reset Demo</button>
+        </div>
+      </section>
+
+      <section id="megaMenuPanel" class="mega-menu" aria-label="Mega menu navigation">
+        <div class="mega-grid">
+          <article class="mega-col">
+            <h3>Find Care</h3>
+            <button type="button" data-spoke-jump="queue">Patient Queue and triage</button>
+            <button type="button" data-spoke-jump="scheduler">Appointment slots</button>
+            <button type="button" data-spoke-jump="workspace">Care workspace</button>
+          </article>
+          <article class="mega-col">
+            <h3>Support</h3>
+            <button type="button" data-audience="Patients">Patients guidance</button>
+            <button type="button" data-audience="Providers">Providers workflow</button>
+            <button type="button" data-audience="Employers">Employers oversight</button>
+          </article>
+          <article class="mega-col">
+            <h3>Trust Center</h3>
+            <p class="microcopy">HIPAA-aware design, keyboard-first controls, and plain-language guidance for safer care delivery.</p>
+            <p class="microcopy">This is a portfolio simulation for enterprise healthcare UX patterns.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="hero-z">
+        <article class="hero-main">
+          <span class="ui-pill">Working Model</span>
+          <h1>Personalized care operations hub</h1>
+          <p>
+            This prototype uses audience gating, progressive disclosure, and task-first navigation so different users reach the right workflow quickly.
+          </p>
+        </article>
+        <aside class="hero-reassure" aria-label="Brand reassurance">
+          <h3>Why teams trust this experience</h3>
+          <p>
+            Designed with inclusive defaults, clear microcopy, and transparent status context to reduce operational errors and patient confusion.
+          </p>
+          <div class="row-badges">
+            <span class="ui-pill">Accessibility-first</span>
+            <span class="ui-pill">Evidence-based UX</span>
+            <span class="ui-pill">Enterprise ready</span>
+          </div>
+        </aside>
+      </section>
+
+      <section class="audience-gate" aria-label="Audience gating">
+        <h2>Choose your audience</h2>
+        <div class="audience-options" role="radiogroup" aria-label="Audience options">
+          <button class="audience-card" type="button" data-audience="Patients" aria-pressed="true">
+            <strong>Patients</strong>
+            <span class="microcopy">Simpler language, next-step clarity, and reassurance copy.</span>
+          </button>
+          <button class="audience-card" type="button" data-audience="Providers" aria-pressed="false">
+            <strong>Providers</strong>
+            <span class="microcopy">Clinical efficiency, less click depth, and alert prioritization.</span>
+          </button>
+          <button class="audience-card" type="button" data-audience="Employers" aria-pressed="false">
+            <strong>Employers</strong>
+            <span class="microcopy">Coverage context, service utilization, and team-level visibility.</span>
+          </button>
+        </div>
+      </section>
+
+      <section class="task-rail" aria-label="Above-the-fold task rail">
+        <button type="button" data-spoke="queue" aria-pressed="true">
+          <span class="icon-label">Q</span>
+          <strong>Patient Queue</strong>
+          <span class="microcopy">Select patient and update triage state.</span>
+        </button>
+        <button type="button" data-spoke="scheduler" aria-pressed="false">
+          <span class="icon-label">S</span>
+          <strong>Appointment Scheduler</strong>
+          <span class="microcopy">Resolve conflicts and reserve time slots.</span>
+        </button>
+        <button type="button" data-spoke="workspace" aria-pressed="false">
+          <span class="icon-label">W</span>
+          <strong>Patient Workspace</strong>
+          <span class="microcopy">Use progressive details and save notes.</span>
+        </button>
+      </section>
+
+      <section id="mainExperience" class="hub-and-spoke" aria-label="Hub and spoke operations model">
+        <div class="hub-head">
+          <div>
+            <h2 id="hubTitle">Patient Queue</h2>
+            <p id="hubContextText">Select a patient to personalize downstream scheduling and workspace details.</p>
+          </div>
+          <div class="row-badges">
+            <span class="ui-pill" id="hubAudiencePill">Audience mode: Patients</span>
+            <span class="ui-pill" id="hubPatientPill">Current patient: Robert Lane</span>
+          </div>
+        </div>
+
+        <div class="hub-body">
+          <section class="spoke is-visible" data-spoke-panel="queue">
+            <div class="grid-two">
+              <article class="panel">
+                <h3>Queue roster</h3>
+                <p class="microcopy">Information architecture mirrors operational workflow: identify, inspect, update.</p>
+                <div class="patient-table" id="patientTable"></div>
+              </article>
+
+              <article class="panel">
+                <h3>Triage controls</h3>
+                <p id="queueContextLine">Select a patient to update status and care pathway.</p>
+                <div class="action-row">
+                  <button type="button" data-status="Waiting">Set Waiting</button>
+                  <button type="button" data-status="In Intake">Set In Intake</button>
+                  <button type="button" data-status="Ready for Provider">Set Ready</button>
+                </div>
+                <div class="info-alert" id="queueAudienceHint">Patient mode: emphasize transparent next steps and expected wait ranges.</div>
+                <div class="live-region" aria-live="polite" id="queueLive"></div>
+              </article>
+            </div>
+          </section>
+
+          <section class="spoke" data-spoke-panel="scheduler">
+            <div class="grid-two">
+              <article class="panel">
+                <h3>Slot board</h3>
+                <p class="microcopy">Click a slot to schedule selected patient. Conflicts show prior to confirmation.</p>
+                <div class="slot-list" id="slotList"></div>
+              </article>
+
+              <article class="panel">
+                <h3>Contextual scheduling summary</h3>
+                <p id="scheduleContextLine">No slot assigned yet.</p>
+                <div class="ui-kpi">
+                  <span class="ui-kpi-value" id="scheduledKpi">0</span>
+                  <span class="ui-kpi-label">Newly scheduled visits</span>
+                </div>
+                <div class="info-alert" id="scheduleAudienceHint">Patient mode: display confidence language and appointment prep reminders.</div>
+              </article>
+            </div>
+          </section>
+
+          <section class="spoke" data-spoke-panel="workspace">
+            <div class="grid-two">
+              <article class="panel">
+                <h3>Patient workspace</h3>
+                <p id="workspaceContextLine">Personalized patient context appears here.</p>
+                <details class="disclosure" open>
+                  <summary>Intake checklist</summary>
+                  <div class="disclosure-body check-list" id="taskChecklist"></div>
+                </details>
+                <details class="disclosure">
+                  <summary>History and compliance</summary>
+                  <div class="disclosure-body">
+                    <p id="historyCopy">No history loaded yet.</p>
+                  </div>
+                </details>
+              </article>
+
+              <article class="panel">
+                <h3>Notes and handoff</h3>
+                <p class="microcopy">Progressive disclosure keeps advanced details optional while core tasks remain obvious.</p>
+                <textarea id="workspaceNote" class="note-box" placeholder="Add note for cross-team handoff..."></textarea>
+                <div class="action-row">
+                  <button type="button" id="saveWorkspaceNote">Save note</button>
+                </div>
+                <div class="live-region" aria-live="polite" id="workspaceLive"></div>
+              </article>
+            </div>
+          </section>
+        </div>
+      </section>
+
+      <footer class="health-footer" aria-label="Comprehensive footer">
+        <div class="health-footer-grid">
+          <section>
+            <h4>Care Navigation</h4>
+            <ul>
+              <li>Find care options</li>
+              <li>Virtual visit guidance</li>
+              <li>Specialist referrals</li>
+            </ul>
+          </section>
+          <section>
+            <h4>Member Support</h4>
+            <ul>
+              <li>Benefits and claims</li>
+              <li>Care reminders</li>
+              <li>Contact channels</li>
+            </ul>
+          </section>
+          <section>
+            <h4>Accessibility</h4>
+            <ul>
+              <li>Keyboard-first interaction model</li>
+              <li>ARIA live updates for status changes</li>
+              <li>High-contrast action cues</li>
+            </ul>
+          </section>
+          <section>
+            <h4>Compliance</h4>
+            <ul>
+              <li>Privacy-safe interaction patterns</li>
+              <li>Role-based context design</li>
+              <li>Audit-friendly status controls</li>
+            </ul>
+          </section>
+        </div>
+        <p class="microcopy">Portfolio simulation inspired by enterprise healthcare UX conventions.</p>
+      </footer>
+    </main>
+
+    <script>
+      const seedPatients = [
+        {
+          id: 'P-1102',
+          name: 'Robert Lane',
+          dob: '03/14/1968',
+          severity: 'high',
+          status: 'Waiting',
+          provider: 'Dr. Smith',
+          history: 'Diabetes management follow-up; previous visit marked no-show risk medium.',
+          tasks: [
+            { id: 'insurance', label: 'Insurance verified', done: false },
+            { id: 'vitals', label: 'Vitals captured', done: false },
+            { id: 'consent', label: 'Consent signed', done: false }
+          ],
+          note: '',
+          expanded: false
+        },
+        {
+          id: 'P-2217',
+          name: 'Aisha Khan',
+          dob: '11/02/1990',
+          severity: 'medium',
+          status: 'In Intake',
+          provider: 'Dr. Patel',
+          history: 'Follow-up from urgent care; allergy review pending confirmation.',
+          tasks: [
+            { id: 'insurance', label: 'Insurance verified', done: true },
+            { id: 'vitals', label: 'Vitals captured', done: true },
+            { id: 'consent', label: 'Consent signed', done: false }
+          ],
+          note: '',
+          expanded: false
+        },
+        {
+          id: 'P-3481',
+          name: 'Marco Diaz',
+          dob: '07/21/1985',
+          severity: 'low',
+          status: 'Ready for Provider',
+          provider: 'Dr. Nguyen',
+          history: 'Routine preventive visit; intake complete and waiting in room B.',
+          tasks: [
+            { id: 'insurance', label: 'Insurance verified', done: true },
+            { id: 'vitals', label: 'Vitals captured', done: true },
+            { id: 'consent', label: 'Consent signed', done: true }
+          ],
+          note: '',
+          expanded: false
+        }
+      ];
+
+      const seedSlots = [
+        { time: '09:00 AM', state: 'booked', label: 'Booked', patientId: null },
+        { time: '09:30 AM', state: 'available', label: 'Available', patientId: null },
+        { time: '10:00 AM', state: 'conflict', label: 'Conflict risk', patientId: null },
+        { time: '10:30 AM', state: 'booked', label: 'Booked', patientId: null },
+        { time: '11:00 AM', state: 'available', label: 'Available', patientId: null },
+        { time: '11:30 AM', state: 'available', label: 'Available', patientId: null },
+        { time: '01:00 PM', state: 'booked', label: 'Booked', patientId: null },
+        { time: '01:30 PM', state: 'available', label: 'Available', patientId: null }
+      ];
+
+      let patients = JSON.parse(JSON.stringify(seedPatients));
+      let slots = JSON.parse(JSON.stringify(seedSlots));
+      let selectedPatientIndex = 0;
+
+      const audienceCopy = {
+        Patients: {
+          queue: 'Patient mode: emphasize transparent next steps and expected wait ranges.',
+          scheduler: 'Patient mode: display confidence language and appointment prep reminders.'
+        },
+        Providers: {
+          queue: 'Provider mode: highlight triage urgency and handoff readiness in fewer clicks.',
+          scheduler: 'Provider mode: prioritize conflicts and fast reassignment to available providers.'
+        },
+        Employers: {
+          queue: 'Employer mode: summarize status with care progress indicators and operational visibility.',
+          scheduler: 'Employer mode: show capacity patterns and throughput impact by schedule decisions.'
+        }
+      };
+
+      const audienceChip = document.getElementById('audienceChip');
+      const utilityPatientChip = document.getElementById('utilityPatientChip');
+      const utilityStatusChip = document.getElementById('utilityStatusChip');
+      const megaMenuToggle = document.getElementById('megaMenuToggle');
+      const megaMenuPanel = document.getElementById('megaMenuPanel');
+      const focusQueueBtn = document.getElementById('focusQueueBtn');
+      const resetDemoBtn = document.getElementById('resetDemoBtn');
+
+      const audienceButtons = Array.from(document.querySelectorAll('.audience-card'));
+      const railButtons = Array.from(document.querySelectorAll('[data-spoke]'));
+      const spokePanels = Array.from(document.querySelectorAll('[data-spoke-panel]'));
+      const spokeJumpButtons = Array.from(document.querySelectorAll('[data-spoke-jump]'));
+      const audienceQuickButtons = Array.from(document.querySelectorAll('#megaMenuPanel [data-audience]'));
+
+      const hubTitle = document.getElementById('hubTitle');
+      const hubContextText = document.getElementById('hubContextText');
+      const hubAudiencePill = document.getElementById('hubAudiencePill');
+      const hubPatientPill = document.getElementById('hubPatientPill');
+
+      const patientTable = document.getElementById('patientTable');
+      const queueContextLine = document.getElementById('queueContextLine');
+      const queueAudienceHint = document.getElementById('queueAudienceHint');
+      const queueLive = document.getElementById('queueLive');
+
+      const slotList = document.getElementById('slotList');
+      const scheduleContextLine = document.getElementById('scheduleContextLine');
+      const scheduledKpi = document.getElementById('scheduledKpi');
+      const scheduleAudienceHint = document.getElementById('scheduleAudienceHint');
+
+      const workspaceContextLine = document.getElementById('workspaceContextLine');
+      const taskChecklist = document.getElementById('taskChecklist');
+      const historyCopy = document.getElementById('historyCopy');
+      const workspaceNote = document.getElementById('workspaceNote');
+      const saveWorkspaceNote = document.getElementById('saveWorkspaceNote');
+      const workspaceLive = document.getElementById('workspaceLive');
+
+      function currentPatient() {
+        return patients[selectedPatientIndex];
+      }
+
+      function severityClass(level) {
+        if (level === 'high') return 'severity-pill sev-high';
+        if (level === 'medium') return 'severity-pill sev-medium';
+        return 'severity-pill sev-low';
+      }
+
+      function setSpoke(spoke) {
+        railButtons.forEach((btn) => {
+          btn.setAttribute('aria-pressed', String(btn.dataset.spoke === spoke));
+        });
+        spokePanels.forEach((panel) => {
+          panel.classList.toggle('is-visible', panel.dataset.spokePanel === spoke);
+        });
+
+        if (spoke === 'queue') {
+          hubTitle.textContent = 'Patient Queue';
+          hubContextText.textContent = 'Select a patient to personalize downstream scheduling and workspace details.';
+        } else if (spoke === 'scheduler') {
+          hubTitle.textContent = 'Appointment Scheduler';
+          hubContextText.textContent = 'Choose slots and resolve conflicts with contextual audience guidance.';
+        } else {
+          hubTitle.textContent = 'Patient Workspace';
+          hubContextText.textContent = 'Progressive disclosure reveals details only when needed for focused care delivery.';
+        }
+      }
+
+      function setAudience(audience) {
+        audienceButtons.forEach((btn) => {
+          btn.setAttribute('aria-pressed', String(btn.dataset.audience === audience));
+        });
+        audienceChip.textContent = `Audience: ${audience}`;
+        hubAudiencePill.textContent = `Audience mode: ${audience}`;
+        queueAudienceHint.textContent = audienceCopy[audience].queue;
+        scheduleAudienceHint.textContent = audienceCopy[audience].scheduler;
+      }
+
+      function renderUtility() {
+        const patient = currentPatient();
+        utilityPatientChip.textContent = `Selected: ${patient.name}`;
+        utilityStatusChip.textContent = `Status: ${patient.status}`;
+        hubPatientPill.textContent = `Current patient: ${patient.name}`;
+      }
+
+      function renderQueue() {
+        patientTable.innerHTML = '';
+        patients.forEach((patient, index) => {
+          const row = document.createElement('article');
+          row.className = `patient-row${index === selectedPatientIndex ? ' is-selected' : ''}${patient.expanded ? ' is-expanded' : ''}`;
+
+          const mainButton = document.createElement('button');
+          mainButton.type = 'button';
+          mainButton.className = 'patient-main';
+          mainButton.innerHTML = `
+            <span>
+              <strong>${patient.name}</strong><br />
+              <span class="microcopy">${patient.id} · DOB ${patient.dob}</span>
+            </span>
+            <span class="row-badges">
+              <span class="${severityClass(patient.severity)}">${patient.severity.toUpperCase()}</span>
+              <span class="ui-pill">${patient.status}</span>
+            </span>
+          `;
+
+          mainButton.addEventListener('click', () => {
+            selectedPatientIndex = index;
+            updateAll();
+            queueLive.textContent = `${patient.name} selected.`;
+          });
+
+          const details = document.createElement('div');
+          details.className = 'patient-more';
+          details.innerHTML = `<p>Provider: ${patient.provider}</p><p>${patient.history}</p>`;
+
+          const expandBtn = document.createElement('button');
+          expandBtn.type = 'button';
+          expandBtn.className = 'utility-button';
+          expandBtn.textContent = patient.expanded ? 'Hide details' : 'Show details';
+          expandBtn.addEventListener('click', (event) => {
+            event.stopPropagation();
+            patient.expanded = !patient.expanded;
+            updateAll();
+          });
+
+          details.appendChild(expandBtn);
+          row.appendChild(mainButton);
+          row.appendChild(details);
+          patientTable.appendChild(row);
+        });
+
+        const selected = currentPatient();
+        queueContextLine.textContent = `${selected.name} is ${selected.status}. Assign triage state to steer scheduling and workspace flow.`;
+      }
+
+      function renderScheduler() {
+        const selected = currentPatient();
+        slotList.innerHTML = '';
+
+        slots.forEach((slot) => {
+          const btn = document.createElement('button');
+          btn.type = 'button';
+          btn.className = `slot-row ${slot.state === 'booked' ? 'is-booked' : ''}${slot.state === 'conflict' ? ' is-conflict' : ''}${slot.state === 'scheduled' ? ' is-scheduled' : ''}`;
+          btn.disabled = slot.state === 'booked';
+          const assignText = slot.patientId ? ` · ${slot.patientId}` : '';
+          btn.innerHTML = `<span><strong>${slot.time}</strong><br /><span class="microcopy">${slot.label}${assignText}</span></span><span>${slot.state === 'conflict' ? 'Resolve' : 'Select'}</span>`;
+
+          btn.addEventListener('click', () => {
+            if (slot.state === 'booked') return;
+
+            if (slot.state === 'conflict') {
+              slot.state = 'available';
+              slot.label = 'Conflict resolved';
+              updateAll();
+              scheduleContextLine.textContent = `Conflict at ${slot.time} resolved. Choose again to schedule ${selected.name}.`;
+              return;
+            }
+
+            slot.state = 'scheduled';
+            slot.label = 'Scheduled';
+            slot.patientId = selected.name;
+            selected.status = 'Scheduled';
+            scheduleContextLine.textContent = `${selected.name} scheduled at ${slot.time} with ${selected.provider}.`;
+            updateAll();
+          });
+
+          slotList.appendChild(btn);
+        });
+
+        const scheduled = slots.filter((slot) => slot.state === 'scheduled').length;
+        scheduledKpi.textContent = String(scheduled);
+      }
+
+      function renderWorkspace() {
+        const selected = currentPatient();
+        workspaceContextLine.textContent = `${selected.name} · ${selected.id} · Current status: ${selected.status}`;
+        historyCopy.textContent = selected.history;
+        workspaceNote.value = selected.note;
+
+        taskChecklist.innerHTML = '';
+        selected.tasks.forEach((task, idx) => {
+          const label = document.createElement('label');
+          const input = document.createElement('input');
+          input.type = 'checkbox';
+          input.checked = task.done;
+          input.addEventListener('change', () => {
+            selected.tasks[idx].done = input.checked;
+            workspaceLive.textContent = `${task.label} ${input.checked ? 'completed' : 'reopened'} for ${selected.name}.`;
+          });
+          const text = document.createElement('span');
+          text.textContent = task.label;
+          label.appendChild(input);
+          label.appendChild(text);
+          taskChecklist.appendChild(label);
+        });
+      }
+
+      function updateAll() {
+        renderUtility();
+        renderQueue();
+        renderScheduler();
+        renderWorkspace();
+      }
+
+      railButtons.forEach((btn) => {
+        btn.addEventListener('click', () => {
+          setSpoke(btn.dataset.spoke);
+        });
+      });
+
+      spokeJumpButtons.forEach((btn) => {
+        btn.addEventListener('click', () => {
+          setSpoke(btn.dataset.spokeJump);
+          megaMenuPanel.classList.remove('is-open');
+          megaMenuToggle.setAttribute('aria-expanded', 'false');
+        });
+      });
+
+      audienceButtons.forEach((btn) => {
+        btn.addEventListener('click', () => {
+          setAudience(btn.dataset.audience);
+        });
+      });
+
+      audienceQuickButtons.forEach((btn) => {
+        btn.addEventListener('click', () => {
+          setAudience(btn.dataset.audience);
+          megaMenuPanel.classList.remove('is-open');
+          megaMenuToggle.setAttribute('aria-expanded', 'false');
+        });
+      });
+
+      megaMenuToggle.addEventListener('click', () => {
+        const open = !megaMenuPanel.classList.contains('is-open');
+        megaMenuPanel.classList.toggle('is-open', open);
+        megaMenuToggle.setAttribute('aria-expanded', String(open));
+      });
+
+      focusQueueBtn.addEventListener('click', () => {
+        setSpoke('queue');
+        document.getElementById('mainExperience').scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+
+      resetDemoBtn.addEventListener('click', () => {
+        patients = JSON.parse(JSON.stringify(seedPatients));
+        slots = JSON.parse(JSON.stringify(seedSlots));
+        selectedPatientIndex = 0;
+        setAudience('Patients');
+        setSpoke('queue');
+        queueLive.textContent = 'Demo reset to default state.';
+        workspaceLive.textContent = '';
+        updateAll();
+      });
+
+      document.querySelectorAll('[data-status]').forEach((btn) => {
+        btn.addEventListener('click', () => {
+          const patient = currentPatient();
+          patient.status = btn.dataset.status;
+          queueLive.textContent = `${patient.name} status changed to ${patient.status}.`;
+          updateAll();
+        });
+      });
+
+      saveWorkspaceNote.addEventListener('click', () => {
+        const patient = currentPatient();
+        patient.note = workspaceNote.value.trim();
+        workspaceLive.textContent = patient.note ? `Note saved for ${patient.name}.` : `Note cleared for ${patient.name}.`;
+      });
+
+      setAudience('Patients');
+      setSpoke('queue');
+      updateAll();
+    </script>
+
+    <style>
+      /* ═══════════════════════════════════════════════════════════
+         HEALTHCARE PREMIUM UI/UX DESIGN SYSTEM
+         Medical-grade colors, accessibility-first, enterprise-ready
+         ═══════════════════════════════════════════════════════════ */
+
+      :root {
+        --hc-primary: #0369a1;      /* Deep clinical blue */
+        --hc-secondary: #06b6d4;    /* Cyan accent */
+        --hc-success: #10b981;      /* Healthy green */
+        --hc-warning: #f59e0b;      /* Caution amber */
+        --hc-danger: #ef4444;       /* Alert red */
+        --hc-neutral-light: #f8fafc;
+        --hc-neutral-mid: #e2e8f0;
+        --hc-neutral-dark: #1e293b;
+        --hc-shadow-sm: 0 2px 8px rgba(15,23,42,.06);
+        --hc-shadow-md: 0 4px 16px rgba(15,23,42,.12);
+        --hc-shadow-lg: 0 12px 32px rgba(15,23,42,.15);
+      }
+
+      /* ── PREMIUM ANIMATION LIBRARY ── */
+      @keyframes hcFadeInUp {
+        from { opacity:0; transform:translateY(20px); }
+        to   { opacity:1; transform:translateY(0); }
+      }
+      @keyframes hcSlideInLeft {
+        from { opacity:0; transform:translateX(-24px); }
+        to   { opacity:1; transform:translateX(0); }
+      }
+      @keyframes hcSlideInRight {
+        from { opacity:0; transform:translateX(24px); }
+        to   { opacity:1; transform:translateX(0); }
+      }
+      @keyframes hcPulseUrgent {
+        0%,100%  { box-shadow: 0 0 0 0 rgba(239,68,68,.6), 0 4px 16px rgba(239,68,68,.2); }
+        50%      { box-shadow: 0 0 0 12px rgba(239,68,68,0),  0 4px 16px rgba(239,68,68,.1); }
+      }
+      @keyframes hcPulseWait {
+        0%,100%  { box-shadow: 0 0 0 0 rgba(245,158,11,.5), 0 4px 16px rgba(245,158,11,.15); }
+        50%      { box-shadow: 0 0 0 10px rgba(245,158,11,0), 0 4px 16px rgba(245,158,11,.08); }
+      }
+      @keyframes hcPulseSuccess {
+        0%,100%  { box-shadow: 0 0 0 0 rgba(16,185,129,.5), 0 4px 16px rgba(16,185,129,.15); }
+        50%      { box-shadow: 0 0 0 10px rgba(16,185,129,0), 0 4px 16px rgba(16,185,129,.08); }
+      }
+      @keyframes hcCountUp {
+        from { transform:scale(.6); opacity:0; }
+        to   { transform:scale(1);  opacity:1; }
+      }
+      @keyframes hcHeartbeat {
+        0%,100% { transform:scale(1); }
+        25%     { transform:scale(1.05); }
+        50%     { transform:scale(1.1); }
+        75%     { transform:scale(1.05); }
+      }
+      @keyframes hcGlow {
+        0%   { box-shadow:0 0 0 0 rgba(3,105,161,.6); }
+        100% { box-shadow:0 0 0 12px rgba(3,105,161,0); }
+      }
+      @keyframes hcShimmer {
+        0%   { background-position:-1000px 0; }
+        100% { background-position: 1000px 0; }
+      }
+      @keyframes hcBounceIn {
+        0%   { transform:scale(0); opacity:0; }
+        60%  { transform:scale(1.15); opacity:1; }
+        100% { transform:scale(1); }
+      }
+      @keyframes hcStatusPulse {
+        0%,100% { opacity:1; }
+        50%      { opacity:.5; }
+      }
+
+      /* ── UTILITY ANIMATIONS ── */
+      .anim-hc-fade { animation: hcFadeInUp .5s ease both; }
+      .anim-hc-slide { animation: hcSlideInLeft .4s ease both; }
+      .anim-hc-pulse { animation: hcPulseWait 2s infinite; }
+
+      /* ── HERO SECTION PREMIUM REDESIGN ── */
+      .hero-z {
+        background: linear-gradient(135deg, #0369a1 0%, #06b6d4 50%, #0f766e 100%);
+        padding: 60px 32px;
+        border-radius: 20px;
+        color: white;
+        margin: 40px;
+        box-shadow: var(--hc-shadow-lg);
+        position: relative;
+        overflow: hidden;
+        animation: hcFadeInUp .7s ease .2s both;
+      }
+
+      .hero-z::before {
+        content: '';
+        position: absolute;
+        top: -50%;
+        right: -10%;
+        width: 600px;
+        height: 600px;
+        background: radial-gradient(circle, rgba(255,255,255,.1) 0%, transparent 70%);
+        border-radius: 50%;
+        animation: hcGlow 3s ease-in-out infinite;
+      }
+
+      .hero-main h1 {
+        font-size: 36px;
+        font-weight: 800;
+        margin: 0 0 12px;
+        letter-spacing: -.5px;
+        position: relative;
+        z-index: 1;
+      }
+
+      .hero-reassure {
+        margin-top: 32px;
+        padding: 24px;
+        background: rgba(255,255,255,.1);
+        border-radius: 16px;
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255,255,255,.2);
+        position: relative;
+        z-index: 1;
+        animation: hcSlideInRight .5s ease .4s both;
+      }
+
+      /* ── AUDIENCE GATE CARDS ── */
+      .audience-card {
+        background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+        border: 2px solid var(--hc-neutral-mid);
+        border-radius: 16px;
+        padding: 24px;
+        text-align: left;
+        cursor: pointer;
+        transition: all .3s cubic-bezier(.22,1,.36,1);
+        box-shadow: var(--hc-shadow-sm);
+        position: relative;
+        overflow: hidden;
+        animation: hcBounceIn .5s ease both;
+      }
+
+      .audience-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255,255,255,.3), transparent);
+        transition: left .5s ease;
+      }
+
+      .audience-card:hover::before {
+        left: 100%;
+      }
+
+      .audience-card[aria-pressed="true"] {
+        border-color: var(--hc-primary);
+        background: linear-gradient(135deg, #e0f2fe 0%, #cffafe 100%);
+        box-shadow: 0 0 0 3px rgba(3,105,161,.15), var(--hc-shadow-md);
+        transform: translateY(-4px);
+      }
+
+      .audience-card strong {
+        display: block;
+        font-size: 16px;
+        font-weight: 700;
+        color: var(--hc-primary);
+        margin-bottom: 6px;
+      }
+
+      /* ── PANEL CARDS PREMIUM STYLE ── */
+      .panel {
+        background: white;
+        border-radius: 16px;
+        padding: 28px;
+        box-shadow: var(--hc-shadow-md);
+        border: 1px solid var(--hc-neutral-mid);
+        transition: all .3s ease;
+        animation: hcFadeInUp .5s ease both;
+      }
+
+      .panel:hover {
+        box-shadow: var(--hc-shadow-lg);
+        transform: translateY(-2px);
+      }
+
+      .panel h3 {
+        font-size: 18px;
+        font-weight: 700;
+        color: var(--hc-primary);
+        margin: 0 0 12px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .panel h3::before {
+        content: '●';
+        font-size: 12px;
+        color: var(--hc-secondary);
+        animation: hcStatusPulse 2s infinite;
+      }
+
+      /* ── STATUS BADGES PREMIUM ── */
+      .status-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 8px 14px;
+        border-radius: 20px;
+        font-size: 12px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: .5px;
+      }
+
+      .status-urgent {
+        background: linear-gradient(135deg, #fee2e2 0%, #fecaca 100%);
+        color: #991b1b;
+        animation: hcPulseUrgent 2s infinite;
+      }
+
+      .status-waiting {
+        background: linear-gradient(135deg, #fef3c7 0%, #fcd34d 100%);
+        color: #92400e;
+        animation: hcPulseWait 2.5s infinite;
+      }
+
+      .status-ready {
+        background: linear-gradient(135deg, #dcfce7 0%, #bbf7d0 100%);
+        color: #166534;
+        animation: hcPulseSuccess 2s infinite;
+      }
+
+      /* ── KPI CARDS ENHANCED ── */
+      .ui-kpi {
+        background: linear-gradient(135deg, #e0f2fe 0%, #cffafe 100%);
+        border-radius: 16px;
+        padding: 24px;
+        text-align: center;
+        margin: 16px 0;
+        border: 1px solid rgba(3,105,161,.2);
+        box-shadow: inset 0 2px 8px rgba(3,105,161,.06);
+        animation: hcFadeInUp .5s ease .2s both;
+      }
+
+      .ui-kpi-value {
+        display: block;
+        font-size: 42px;
+        font-weight: 800;
+        color: var(--hc-primary);
+        margin-bottom: 6px;
+        animation: hcCountUp .6s cubic-bezier(.22,1,.36,1) .4s both;
+      }
+
+      .ui-kpi-label {
+        font-size: 12px;
+        font-weight: 600;
+        color: rgba(3,105,161,.7);
+        text-transform: uppercase;
+        letter-spacing: .5px;
+      }
+
+      /* ── QUEUE ROW PREMIUM DESIGN ── */
+      .queue-row {
+        background: white;
+        border-radius: 12px;
+        padding: 16px 20px;
+        margin-bottom: 12px;
+        border-left: 4px solid var(--hc-secondary);
+        box-shadow: 0 2px 6px rgba(0,0,0,.04);
+        cursor: pointer;
+        transition: all .3s ease;
+        animation: hcSlideInLeft .4s ease both;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .queue-row::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 0;
+        height: 100%;
+        background: rgba(3,105,161,.03);
+        transition: width .3s ease;
+      }
+
+      .queue-row:hover {
+        border-left-color: var(--hc-primary);
+        box-shadow: var(--hc-shadow-md);
+        transform: translateX(4px);
+      }
+
+      .queue-row:hover::after {
+        width: 100%;
+      }
+
+      .queue-row[data-status="urgent"] {
+        border-left-color: var(--hc-danger);
+      }
+
+      .queue-row[data-status="waiting"] {
+        border-left-color: var(--hc-warning);
+      }
+
+      /* ── BUTTON PREMIUM STYLE ── */
+      button {
+        position: relative;
+        overflow: hidden;
+        transition: all .25s cubic-bezier(.22,1,.36,1);
+      }
+
+      button:hover {
+        transform: translateY(-2px);
+        box-shadow: var(--hc-shadow-md);
+      }
+
+      button:active {
+        transform: scale(.98);
+      }
+
+      /* ── DISCLOSURE/DETAILS ENHANCED ── */
+      .disclosure {
+        background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+        border-radius: 12px;
+        overflow: hidden;
+        margin-bottom: 12px;
+        border: 1px solid var(--hc-neutral-mid);
+      }
+
+      .disclosure > summary {
+        padding: 16px 20px;
+        cursor: pointer;
+        font-weight: 700;
+        color: var(--hc-primary);
+        user-select: none;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        transition: background .2s ease;
+      }
+
+      .disclosure > summary:hover {
+        background: rgba(3,105,161,.05);
+      }
+
+      .disclosure-body {
+        padding: 16px 20px;
+        background: white;
+        border-top: 1px solid var(--hc-neutral-mid);
+        animation: hcFadeInUp .3s ease;
+      }
+
+      /* ── CHECKLIST ITEMS ── */
+      .check-list {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .check-list > div {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        padding: 12px;
+        background: linear-gradient(135deg, #f0fdf4 0%, #ecfdf5 100%);
+        border-radius: 8px;
+        border: 1px solid #d1fae6;
+        transition: all .2s ease;
+        animation: hcSlideInLeft .3s ease;
+      }
+
+      .check-list > div:hover {
+        background: linear-gradient(135deg, #dcfce7 0%, #bbf7d0 100%);
+        transform: translateX(4px);
+      }
+
+      .check-list input[type="checkbox"] {
+        width: 20px;
+        height: 20px;
+        cursor: pointer;
+        accent-color: var(--hc-success);
+      }
+
+      /* ── INFO ALERTS WITH ICONS ── */
+      .info-alert {
+        padding: 16px 20px;
+        background: linear-gradient(135deg, #e0f2fe 0%, #cffafe 100%);
+        border-left: 4px solid var(--hc-secondary);
+        border-radius: 8px;
+        font-size: 13px;
+        color: #0369a1;
+        margin: 12px 0;
+        display: flex;
+        align-items: flex-start;
+        gap: 12px;
+        animation: hcSlideInRight .4s ease;
+      }
+
+      .info-alert::before {
+        content: 'ℹ️';
+        flex-shrink: 0;
+        font-size: 18px;
+      }
+
+      /* ── UTILITY BAR REDESIGN ── */
+      .utility-bar {
+        background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+        border-bottom: 1px solid var(--hc-neutral-mid);
+        padding: 16px 32px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 20px;
+        box-shadow: var(--hc-shadow-sm);
+        animation: hcSlideInLeft .4s ease;
+      }
+
+      .utility-chip {
+        padding: 8px 16px;
+        background: linear-gradient(135deg, #e0f2fe 0%, #cffafe 100%);
+        border-radius: 20px;
+        font-size: 12px;
+        font-weight: 600;
+        color: var(--hc-primary);
+        border: 1px solid rgba(3,105,161,.2);
+        transition: all .2s ease;
+        animation: hcBounceIn .4s ease both;
+      }
+
+      .utility-chip:hover {
+        transform: scale(1.05);
+        box-shadow: 0 4px 12px rgba(3,105,161,.2);
+      }
+
+      .utility-button {
+        padding: 10px 16px;
+        background: white;
+        border: 1px solid var(--hc-neutral-mid);
+        border-radius: 8px;
+        font-size: 13px;
+        font-weight: 600;
+        color: var(--hc-primary);
+        cursor: pointer;
+        transition: all .2s ease;
+      }
+
+      .utility-button:hover {
+        background: var(--hc-primary);
+        color: white;
+        border-color: var(--hc-primary);
+      }
+
+      /* ── MEGA MENU ENHANCED ── */
+      .mega-menu {
+        background: white;
+        border-bottom: 1px solid var(--hc-neutral-mid);
+        max-height: 0;
+        overflow: hidden;
+        opacity: 0;
+        transition: max-height .4s cubic-bezier(.22,1,.36,1), opacity .3s ease;
+      }
+
+      .mega-menu.is-open {
+        max-height: 500px;
+        opacity: 1;
+      }
+
+      .mega-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 32px;
+        padding: 28px 32px;
+      }
+
+      .mega-col h3 {
+        font-size: 16px;
+        font-weight: 700;
+        color: var(--hc-primary);
+        margin: 0 0 16px;
+      }
+
+      .mega-col button {
+        display: block;
+        width: 100%;
+        text-align: left;
+        padding: 12px;
+        background: none;
+        border: none;
+        border-radius: 8px;
+        color: #475569;
+        font-size: 14px;
+        cursor: pointer;
+        transition: all .2s ease;
+        margin-bottom: 8px;
+      }
+
+      .mega-col button:hover {
+        background: #e0f2fe;
+        color: var(--hc-primary);
+        transform: translateX(4px);
+      }
+
+      /* ── TEXT ENHANCEMENTS ── */
+      .microcopy {
+        font-size: 13px;
+        color: #64748b;
+        line-height: 1.5;
+        margin: 6px 0;
+      }
+
+      /* ── RESPONSIVE & ACCESSIBILITY ── */
+      @media (prefers-reduced-motion: reduce) {
+        *, *::before, *::after {
+          animation-duration: 1ms !important;
+          transition-duration: 1ms !important;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .hero-z {
+          padding: 40px 20px;
+          margin: 20px;
+        }
+
+        .mega-grid {
+          grid-template-columns: 1fr;
+          gap: 20px;
+        }
+
+        .panel {
+          padding: 20px;
+        }
+      }
+
+      /* ── INTERACTIVE GRAPHICS ── */
+      .status-dot {
+        display: inline-block;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        margin-right: 6px;
+        animation: hcStatusPulse 2s infinite;
+      }
+
+      .status-dot.urgent { background: var(--hc-danger); }
+      .status-dot.waiting { background: var(--hc-warning); }
+      .status-dot.ready { background: var(--hc-success); }
+
+      /* ── EXISTING ANIMATION CLASSES ── */
+      @keyframes hcFadeInUp {
+        from { opacity:0; transform:translateY(20px); }
+        to   { opacity:1; transform:translateY(0); }
+      }
+      @keyframes hcSlideInLeft {
+        from { opacity:0; transform:translateX(-20px); }
+        to   { opacity:1; transform:translateX(0); }
+      }
+      @keyframes hcSlideInRight {
+        from { opacity:0; transform:translateX(20px); }
+        to   { opacity:1; transform:translateX(0); }
+      }
+      @keyframes hcPulseUrgent {
+        0%,100% { box-shadow: 0 0 0 0 rgba(239,68,68,.5); }
+        50%      { box-shadow: 0 0 0 8px rgba(239,68,68,0); }
+      }
+      @keyframes hcPulseNormal {
+        0%,100% { opacity:1; }
+        50%      { opacity:.65; }
+      }
+      @keyframes hcCountUp {
+        from { transform:scale(.8); opacity:0; }
+        to   { transform:scale(1);  opacity:1; }
+      }
+      @keyframes hcShimmer {
+        0%   { background-position:-400px 0; }
+        100% { background-position: 400px 0; }
+      }
+      @keyframes hcRipple {
+        to { transform:scale(4); opacity:0; }
+      }
+      @keyframes hcStatusBlink {
+        0%,49% { opacity:1; }
+        50%,100% { opacity:.4; }
+      }
+
+      /* ── Apply entrance animations to key sections ── */
+      .hero-z         { animation: hcFadeInUp .6s ease .1s both; }
+      .hero-kpis      { animation: hcFadeInUp .5s ease .3s both; }
+      .utility-bar    { animation: hcSlideInLeft .4s ease 0s both; }
+
+      /* Queue items stagger */
+      .queue-row:nth-child(1)  { animation: hcSlideInLeft .4s ease .1s both; }
+      .queue-row:nth-child(2)  { animation: hcSlideInLeft .4s ease .2s both; }
+      .queue-row:nth-child(3)  { animation: hcSlideInLeft .4s ease .3s both; }
+      .queue-row:nth-child(4)  { animation: hcSlideInLeft .4s ease .4s both; }
+      .queue-row:nth-child(5)  { animation: hcSlideInLeft .4s ease .5s both; }
+      .queue-row:nth-child(6)  { animation: hcSlideInLeft .4s ease .6s both; }
+      .queue-row:nth-child(n+7){ animation: hcSlideInLeft .4s ease .65s both; }
+
+      /* KPI numbers count-up appearance */
+      .kpi-number, .stat-number {
+        animation: hcCountUp .5s cubic-bezier(.22,1,.36,1) .4s both;
+        display: inline-block;
+      }
+
+      /* Urgent/waiting status pulse */
+      .badge-urgent, [class*="urgent"], .status-urgent {
+        animation: hcPulseUrgent 2s infinite;
+      }
+      .status-waiting, .badge-waiting {
+        animation: hcPulseNormal 2.5s infinite;
+      }
+
+      /* Card hover lift */
+      .card, .sample-frame, .kpi-card, .stat-card, .workspace-panel {
+        transition: transform .2s ease, box-shadow .2s ease;
+      }
+      .card:hover, .kpi-card:hover, .stat-card:hover, .workspace-panel:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 24px rgba(0,0,0,.1);
+      }
+
+      /* Queue row hover highlight */
+      .queue-row {
+        transition: background .15s ease, transform .15s ease;
+      }
+      .queue-row:hover {
+        background: rgba(14,165,233,.06) !important;
+        transform: translateX(3px);
+      }
+
+      /* Button interaction */
+      .utility-button, .btn, button[type="button"] {
+        transition: transform .15s ease, box-shadow .15s ease, background .2s ease;
+        position: relative; overflow: hidden;
+      }
+      .utility-button:hover, .btn:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 4px 12px rgba(0,0,0,.15);
+      }
+      .utility-button:active, .btn:active {
+        transform: scale(.98);
+      }
+
+      /* Focus ring enhancement */
+      :focus-visible {
+        outline: 3px solid #0ea5e9;
+        outline-offset: 2px;
+        border-radius: 4px;
+      }
+
+      /* Spoke panels fade in */
+      .spoke-panel, [id^="spoke"] {
+        animation: hcFadeInUp .35s ease both;
+      }
+
+      /* Scheduler slots animate on appear */
+      .slot-btn, .slot-item, [class*="slot"] {
+        animation: hcFadeInUp .3s ease both;
+        transition: background .2s ease, transform .15s ease, border-color .2s ease;
+      }
+      .slot-btn:hover, .slot-item:hover {
+        transform: translateY(-1px) scale(1.02);
+      }
+
+      /* Task items stagger */
+      .task-item:nth-child(1) { animation: hcSlideInRight .35s ease .1s both; }
+      .task-item:nth-child(2) { animation: hcSlideInRight .35s ease .2s both; }
+      .task-item:nth-child(3) { animation: hcSlideInRight .35s ease .3s both; }
+      .task-item:nth-child(4) { animation: hcSlideInRight .35s ease .4s both; }
+      .task-item:nth-child(n+5){ animation: hcSlideInRight .35s ease .5s both; }
+
+      /* Mega menu slide down */
+      .mega-menu {
+        transition: max-height .35s cubic-bezier(.22,1,.36,1), opacity .25s ease;
+        overflow: hidden;
+        max-height: 0;
+        opacity: 0;
+      }
+      .mega-menu.is-open {
+        max-height: 400px;
+        opacity: 1;
+      }
+
+      /* Status chip pulse */
+      .utility-chip {
+        transition: all .2s ease;
+      }
+      .utility-chip:hover {
+        transform: scale(1.03);
+        filter: brightness(1.08);
+      }
+
+      /* Prefers-reduced-motion override */
+      @media (prefers-reduced-motion:reduce) {
+        *, *::before, *::after {
+          animation-duration: 1ms !important;
+          transition-duration: 1ms !important;
+        }
+      }
+    </style>
+  </body>
+</html>

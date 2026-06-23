@@ -1,0 +1,737 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="UX Research Methodology and User Flow documentation. Learn about the research frameworks, tools, and processes used to validate user-centered design decisions." />
+    <title>UX Research & User Flows</title>
+    <link rel="stylesheet" href="./domain-ui-themes.css" />
+    <style>
+      .research-container {
+        display: grid;
+        gap: var(--space-6);
+      }
+
+      .method-card {
+        border: 1px solid var(--border);
+        border-radius: var(--radius-md);
+        padding: var(--space-4);
+        display: grid;
+        grid-template-columns: auto 1fr;
+        gap: var(--space-3);
+      }
+
+      .method-icon {
+        font-size: 40px;
+        width: 60px;
+        height: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: color-mix(in srgb, var(--primary) 12%, white);
+        border-radius: var(--radius-md);
+        flex-shrink: 0;
+      }
+
+      .method-content h3 {
+        margin: 0 0 var(--space-1) 0;
+      }
+
+      .research-phase {
+        border-left: 4px solid var(--primary);
+        padding: var(--space-4);
+        padding-left: var(--space-5);
+        background: color-mix(in srgb, var(--primary) 5%, white);
+        border-radius: 0 var(--radius-md) var(--radius-md) 0;
+        margin: var(--space-3) 0;
+      }
+
+      .phase-title {
+        font-size: var(--text-lg);
+        font-weight: 700;
+        color: var(--primary);
+        margin: 0 0 var(--space-2) 0;
+      }
+
+      .phase-content {
+        display: grid;
+        gap: var(--space-2);
+      }
+
+      .phase-timeline {
+        display: flex;
+        gap: var(--space-3);
+        align-items: center;
+        flex-wrap: wrap;
+        font-size: var(--text-sm);
+        color: var(--muted);
+      }
+
+      .timeline-dot {
+        width: 8px;
+        height: 8px;
+        background: var(--primary);
+        border-radius: 50%;
+      }
+
+      .flow-box {
+        border: 2px solid var(--primary);
+        border-radius: var(--radius-md);
+        padding: var(--space-3);
+        text-align: center;
+        background: color-mix(in srgb, var(--primary) 8%, white);
+        font-weight: 600;
+        font-size: var(--text-sm);
+        min-height: 80px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .arrow {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 24px;
+        color: var(--primary);
+        min-width: 40px;
+      }
+
+      .user-flow {
+        display: grid;
+        gap: var(--space-3);
+        margin: var(--space-4) 0;
+      }
+
+      .flow-row {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+        gap: var(--space-2);
+        align-items: center;
+      }
+
+      .research-matrix {
+        width: 100%;
+        border-collapse: collapse;
+        margin: var(--space-4) 0;
+        border: 1px solid var(--border);
+        border-radius: var(--radius-md);
+        overflow: hidden;
+      }
+
+      .research-matrix thead {
+        background: color-mix(in srgb, var(--primary) 12%, white);
+        font-weight: 700;
+      }
+
+      .research-matrix th,
+      .research-matrix td {
+        padding: var(--space-3);
+        text-align: left;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .research-matrix tbody tr:hover {
+        background: color-mix(in srgb, var(--primary) 5%, white);
+      }
+
+      .insight-box {
+        display: grid;
+        grid-template-columns: 40px 1fr;
+        gap: var(--space-3);
+        padding: var(--space-4);
+        background: color-mix(in srgb, var(--accent) 12%, white);
+        border-left: 4px solid var(--accent);
+        border-radius: var(--radius-md);
+        margin: var(--space-3) 0;
+      }
+
+      .insight-icon {
+        font-size: 28px;
+        text-align: center;
+        line-height: 1;
+      }
+
+      .insight-content h3 {
+        margin: 0 0 var(--space-1) 0;
+        color: var(--accent);
+      }
+
+      .tool-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: var(--space-4);
+        margin: var(--space-4) 0;
+      }
+
+      .tool-card {
+        border: 1px solid var(--border);
+        border-radius: var(--radius-md);
+        padding: var(--space-4);
+        display: grid;
+        gap: var(--space-2);
+      }
+
+      .tool-card h3 {
+        margin: 0;
+        color: var(--primary);
+      }
+
+      .tool-card .tag {
+        display: inline-block;
+        background: var(--surface-2);
+        padding: 4px 8px;
+        border-radius: var(--radius-xs);
+        font-size: var(--text-xs);
+        margin-top: var(--space-1);
+        width: fit-content;
+      }
+
+      .decision-tree {
+        border: 1px solid var(--border);
+        border-radius: var(--radius-md);
+        padding: var(--space-4);
+        background: var(--surface-2);
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: var(--text-sm);
+        overflow-x: auto;
+        line-height: 1.8;
+      }
+
+      @media (max-width: 768px) {
+        .method-card {
+          grid-template-columns: 1fr;
+        }
+
+        .method-icon {
+          width: 100%;
+        }
+
+        .flow-row {
+          grid-template-columns: 1fr;
+        }
+
+        .arrow {
+          transform: rotate(90deg);
+        }
+      }
+    </style>
+  </head>
+  <body class="theme-investment">
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <main id="main-content" class="ui-shell">
+      <header class="site-nav" role="banner">
+        <div class="brand">UX Research & User Flows</div>
+        <nav class="nav-links" aria-label="Main navigation">
+          <a href="./index.html">← Back to Portfolio</a>
+          <a href="./design-system.html">Design System</a>
+          <a href="./case-study-healthcare.html">Healthcare Case</a>
+        </nav>
+      </header>
+
+      <section class="hero">
+        <span class="ui-pill">Research Methodology</span>
+        <h1>UX Research &amp; User Flow Framework</h1>
+        <p>
+          Comprehensive overview of user-centered research methods, data collection techniques, and how research informs design decisions across our case studies.
+        </p>
+      </section>
+
+      <!-- Research Phases -->
+      <section class="research-container">
+        <div>
+          <h2 style="margin-bottom: var(--space-4);">Research & Design Process</h2>
+          <p style="margin-bottom: var(--space-4);">
+            Our approach follows a structured 5-phase process that places user research at the center of every decision.
+          </p>
+        </div>
+
+        <div class="research-phase">
+          <div class="phase-title">1. Discover</div>
+          <div class="phase-content">
+            <p><strong>Goal:</strong> Understand users, their context, and their needs.</p>
+            <p><strong>Methods:</strong> Contextual inquiry, interviews, surveys, workflow mapping, competitive analysis.</p>
+            <p><strong>Outcome:</strong> Research findings, user personas, empathy maps, problem statements.</p>
+            <div class="phase-timeline">
+              <span class="timeline-dot"></span> <span>2–3 weeks</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="research-phase">
+          <div class="phase-title">2. Define</div>
+          <div class="phase-content">
+            <p><strong>Goal:</strong> Synthesize insights into clear, actionable problem definitions.</p>
+            <p><strong>Methods:</strong> Affinity mapping, journey mapping, user flows, opportunity matrices, prioritization.</p>
+            <p><strong>Outcome:</strong> Design brief, user flows, information architecture, requirements matrix.</p>
+            <div class="phase-timeline">
+              <span class="timeline-dot"></span> <span>1–2 weeks</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="research-phase">
+          <div class="phase-title">3. Design</div>
+          <div class="phase-content">
+            <p><strong>Goal:</strong> Create solutions that address user needs and business goals.</p>
+            <p><strong>Methods:</strong> Wireframing, prototyping, design systems, interaction design, visual design.</p>
+            <p><strong>Outcome:</strong> Low-fidelity wireframes, high-fidelity prototypes, design specifications.</p>
+            <div class="phase-timeline">
+              <span class="timeline-dot"></span> <span>3–4 weeks</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="research-phase">
+          <div class="phase-title">4. Test & Validate</div>
+          <div class="phase-content">
+            <p><strong>Goal:</strong> Verify solutions work for real users in real contexts.</p>
+            <p><strong>Methods:</strong> Usability testing, A/B testing, accessibility audits, analytics review, feedback loops.</p>
+            <p><strong>Outcome:</strong> Test report, validated design decisions, iteration roadmap.</p>
+            <div class="phase-timeline">
+              <span class="timeline-dot"></span> <span>2–3 weeks</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="research-phase">
+          <div class="phase-title">5. Iterate & Learn</div>
+          <div class="phase-content">
+            <p><strong>Goal:</strong> Continuously improve based on user behavior and feedback.</p>
+            <p><strong>Methods:</strong> Post-launch analytics, user interviews, support feedback, performance metrics.</p>
+            <p><strong>Outcome:</strong> Iteration priorities, performance baseline, learned patterns for future work.</p>
+            <div class="phase-timeline">
+              <span class="timeline-dot"></span> <span>Ongoing</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Research Methods -->
+      <section>
+        <h2 style="margin: var(--space-6) 0 var(--space-4) 0;">Research Methods & Techniques</h2>
+
+        <div style="display: grid; gap: var(--space-4);">
+          <div class="method-card">
+            <div class="method-icon">🔍</div>
+            <div class="method-content">
+              <h3>Contextual Inquiry</h3>
+              <p>
+                Observe users in their natural environment performing real tasks. Capture workflow patterns, pain points, workarounds, and unspoken needs that interviews might miss.
+              </p>
+              <p style="font-size: var(--text-sm); color: var(--muted); margin: 0;">
+                <strong>Best for:</strong> Understanding complex workflows, domain expertise gaps, environmental context
+              </p>
+            </div>
+          </div>
+
+          <div class="method-card">
+            <div class="method-icon">💬</div>
+            <div class="method-content">
+              <h3>In-Depth Interviews</h3>
+              <p>
+                Semi-structured conversations to explore user needs, motivations, frustrations, and mental models. Allows for follow-up questions and deeper understanding.
+              </p>
+              <p style="font-size: var(--text-sm); color: var(--muted); margin: 0;">
+                <strong>Best for:</strong> Exploring motivations, understanding decision-making, discovering edge cases
+              </p>
+            </div>
+          </div>
+
+          <div class="method-card">
+            <div class="method-icon">📋</div>
+            <div class="method-content">
+              <h3>Surveys & Questionnaires</h3>
+              <p>
+                Structured data collection from larger user populations. Quantifies preferences, behaviors, and satisfaction. Complements qualitative research.
+              </p>
+              <p style="font-size: var(--text-sm); color: var(--muted); margin: 0;">
+                <strong>Best for:</strong> Validation, large-scale patterns, demographic insights
+              </p>
+            </div>
+          </div>
+
+          <div class="method-card">
+            <div class="method-icon">🗺️</div>
+            <div class="method-content">
+              <h3>User Journey Mapping</h3>
+              <p>
+                Visualize the end-to-end user experience across touchpoints, channels, and time. Identify moments of truth, pain points, and opportunities for improvement.
+              </p>
+              <p style="font-size: var(--text-sm); color: var(--muted); margin: 0;">
+                <strong>Best for:</strong> Holistic understanding, cross-channel optimization, stakeholder alignment
+              </p>
+            </div>
+          </div>
+
+          <div class="method-card">
+            <div class="method-icon">🎯</div>
+            <div class="method-content">
+              <h3>Usability Testing</h3>
+              <p>
+                Have users attempt defined tasks with prototypes or live systems. Measure success rates, time-on-task, error rates, and gather feedback on usability.
+              </p>
+              <p style="font-size: var(--text-sm); color: var(--muted); margin: 0;">
+                <strong>Best for:</strong> Validating prototypes, identifying friction, prioritizing iterations
+              </p>
+            </div>
+          </div>
+
+          <div class="method-card">
+            <div class="method-icon">📊</div>
+            <div class="method-content">
+              <h3>Analytics & Data Analysis</h3>
+              <p>
+                Analyze user behavior data: click patterns, conversion rates, drop-off points, feature usage. Uncover patterns that self-reported data might miss.
+              </p>
+              <p style="font-size: var(--text-sm); color: var(--muted); margin: 0;">
+                <strong>Best for:</strong> Validating hypotheses, discovering unexpected patterns, measuring impact
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- User Flow Examples -->
+      <section style="margin: var(--space-6) 0;">
+        <h2>User Flow Examples</h2>
+        <p style="margin-bottom: var(--space-4);">
+          User flows visualize the steps users take to complete a task. They reveal decision points, alternate paths, and opportunities for optimization.
+        </p>
+
+        <!-- Healthcare Flow -->
+        <div style="margin: var(--space-5) 0;">
+          <h3 style="margin-bottom: var(--space-3);">Healthcare: New Patient Scheduling Flow</h3>
+
+          <div class="user-flow">
+            <div class="flow-row">
+              <div class="flow-box">Start: Patient Calls</div>
+              <div class="arrow">→</div>
+              <div class="flow-box">Check Availability</div>
+              <div class="arrow">→</div>
+              <div class="flow-box">Search Provider</div>
+            </div>
+
+            <div class="flow-row">
+              <div class="flow-box">Select Time Slot</div>
+              <div class="arrow">→</div>
+              <div class="flow-box">Verify No Conflict</div>
+              <div class="arrow">→</div>
+              <div class="flow-box" style="border-color: var(--negative); background: color-mix(in srgb, var(--negative) 12%, white);">
+                Conflict Detected?
+              </div>
+            </div>
+
+            <div class="flow-row">
+              <div class="flow-box">Create Booking</div>
+              <div class="arrow">→</div>
+              <div class="flow-box">Send Confirmation</div>
+              <div class="arrow">→</div>
+              <div class="flow-box" style="border-color: var(--positive); background: color-mix(in srgb, var(--positive) 12%, white);">
+                End: Confirmed
+              </div>
+            </div>
+          </div>
+
+          <p style="font-size: var(--text-sm); color: var(--muted); margin: 0;">
+            <strong>Key Decision Point:</strong> "Verify No Conflict" prevents double bookings. If conflict detected, show alternatives or escalate.
+          </p>
+        </div>
+
+        <!-- Investment Flow -->
+        <div style="margin: var(--space-5) 0;">
+          <h3 style="margin-bottom: var(--space-3);">Investment: Account Onboarding Flow</h3>
+
+          <div class="user-flow">
+            <div class="flow-row">
+              <div class="flow-box">Start: User Registered</div>
+              <div class="arrow">→</div>
+              <div class="flow-box">Verify Email</div>
+              <div class="arrow">→</div>
+              <div class="flow-box">Answer Profile Questions</div>
+            </div>
+
+            <div class="flow-row">
+              <div class="flow-box">Review Compliance Rules</div>
+              <div class="arrow">→</div>
+              <div class="flow-box">Agree to Terms</div>
+              <div class="arrow">→</div>
+              <div class="flow-box">Link Bank Account</div>
+            </div>
+
+            <div class="flow-row">
+              <div class="flow-box">Deposit Funds</div>
+              <div class="arrow">→</div>
+              <div class="flow-box">Choose Investments</div>
+              <div class="arrow">→</div>
+              <div class="flow-box" style="border-color: var(--positive); background: color-mix(in srgb, var(--positive) 12%, white);">
+                End: Account Active
+              </div>
+            </div>
+          </div>
+
+          <p style="font-size: var(--text-sm); color: var(--muted); margin: 0;">
+            <strong>Key Insight:</strong> Progressive disclosure shows one section at a time. Users can save progress and return later (save-and-resume).
+          </p>
+        </div>
+
+        <!-- Retail Flow -->
+        <div style="margin: var(--space-5) 0;">
+          <h3 style="margin-bottom: var(--space-3);">Retail: Checkout & Post-Purchase Flow</h3>
+
+          <div class="user-flow">
+            <div class="flow-row">
+              <div class="flow-box">Start: Cart Ready</div>
+              <div class="arrow">→</div>
+              <div class="flow-box">Shipping Address</div>
+              <div class="arrow">→</div>
+              <div class="flow-box">Shipping Method</div>
+            </div>
+
+            <div class="flow-row">
+              <div class="flow-box">Payment Info</div>
+              <div class="arrow">→</div>
+              <div class="flow-box">Review Order</div>
+              <div class="arrow">→</div>
+              <div class="flow-box" style="border-color: var(--positive); background: color-mix(in srgb, var(--positive) 12%, white);">
+                Order Placed
+              </div>
+            </div>
+
+            <div class="flow-row">
+              <div class="flow-box">Receive Item</div>
+              <div class="arrow">→</div>
+              <div class="flow-box" style="border-color: var(--accent); background: color-mix(in srgb, var(--accent) 12%, white);">
+                Return Window 30 Days
+              </div>
+              <div class="arrow">→</div>
+              <div class="flow-box">Exchange or Refund</div>
+            </div>
+          </div>
+
+          <p style="font-size: var(--text-sm); color: var(--muted); margin: 0;">
+            <strong>Key Opportunity:</strong> Post-purchase communication emphasizes exchange option (higher margin) before refund. Clear return window reduces support tickets.
+          </p>
+        </div>
+      </section>
+
+      <!-- Research Frameworks -->
+      <section style="margin: var(--space-6) 0;">
+        <h2>Research Frameworks & Tools</h2>
+
+        <div class="tool-grid">
+          <div class="tool-card">
+            <h3>Affinity Mapping</h3>
+            <p>
+              Group research findings into themes. Reveals patterns, priorities, and relationships between insights.
+            </p>
+            <div class="tag">Synthesis</div>
+            <div class="tag">Team Activity</div>
+          </div>
+
+          <div class="tool-card">
+            <h3>Persona Development</h3>
+            <p>
+              Create archetypal user profiles based on research. Use as reference for design decisions and alignment.
+            </p>
+            <div class="tag">Segmentation</div>
+            <div class="tag">Communication</div>
+          </div>
+
+          <div class="tool-card">
+            <h3>Jobs to Be Done</h3>
+            <p>
+              Understand what users are trying to accomplish (the "job"). Reveals deeper motivations than demographic data.
+            </p>
+            <div class="tag">Motivation</div>
+            <div class="tag">Strategy</div>
+          </div>
+
+          <div class="tool-card">
+            <h3>Empathy Mapping</h3>
+            <p>
+              Visualize what users think, feel, say, and do. Captures emotional and behavioral dimensions of user experience.
+            </p>
+            <div class="tag">Empathy</div>
+            <div class="tag">Perspective</div>
+          </div>
+
+          <div class="tool-card">
+            <h3>Competitive Analysis</h3>
+            <p>
+              Study competitor solutions, identify gaps, and opportunities. Benchmark features and UX patterns.
+            </p>
+            <div class="tag">Market</div>
+            <div class="tag">Benchmarking</div>
+          </div>
+
+          <div class="tool-card">
+            <h3>System Usability Scale</h3>
+            <p>
+              10-question survey measuring perceived usability. Provides quantified satisfaction score (0–100).
+            </p>
+            <div class="tag">Measurement</div>
+            <div class="tag">Post-Study</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Key Insights -->
+      <section style="margin: var(--space-6) 0;">
+        <h2>Key Research Insights Framework</h2>
+
+        <table class="research-matrix">
+          <thead>
+            <tr>
+              <th>Insight Type</th>
+              <th>Questions to Ask</th>
+              <th>Output / Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Needs Insights</strong></td>
+              <td>What do users need? What problems are they solving?</td>
+              <td>Prioritized needs list, user stories, requirements</td>
+            </tr>
+            <tr>
+              <td><strong>Behavior Insights</strong></td>
+              <td>How do users currently work? What are their workflows?</td>
+              <td>Journey maps, user flows, context of use</td>
+            </tr>
+            <tr>
+              <td><strong>Mental Model Insights</strong></td>
+              <td>How do users think about the problem? What's their language?</td>
+              <td>IA structure, terminology, conceptual models</td>
+            </tr>
+            <tr>
+              <td><strong>Motivation Insights</strong></td>
+              <td>Why do users care? What are their goals and constraints?</td>
+              <td>Prioritization, messaging, feature decisions</td>
+            </tr>
+            <tr>
+              <td><strong>Friction Insights</strong></td>
+              <td>Where do users struggle? What causes errors or delays?</td>
+              <td>Interaction design improvements, safeguards</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- Research Data Quality -->
+      <section style="margin: var(--space-6) 0;">
+        <h2 style="margin-bottom: var(--space-4);">Ensuring Research Quality</h2>
+
+        <div class="insight-box">
+          <div class="insight-icon">✓</div>
+          <div class="insight-content">
+            <h3>Sample Diversity</h3>
+            <p>
+              Recruit users across different experience levels, demographics, and use contexts. Avoid skewing toward "power users" or biasing toward one persona.
+            </p>
+          </div>
+        </div>
+
+        <div class="insight-box">
+          <div class="insight-icon">✓</div>
+          <div class="insight-content">
+            <h3>Triangulation</h3>
+            <p>
+              Use multiple research methods to validate findings. If interviews, observations, and analytics all point to the same pattern, confidence is high.
+            </p>
+          </div>
+        </div>
+
+        <div class="insight-box">
+          <div class="insight-icon">✓</div>
+          <div class="insight-content">
+            <h3>Bias Awareness</h3>
+            <p>
+              Be aware of confirmation bias (only seeing what we expect), selection bias (recruiting the "wrong" users), and observer bias (affecting user behavior).
+            </p>
+          </div>
+        </div>
+
+        <div class="insight-box">
+          <div class="insight-icon">✓</div>
+          <div class="insight-content">
+            <h3>Iteration & Feedback Loops</h3>
+            <p>
+              Research is never "done." Continuous feedback from users throughout design and post-launch ensures decisions remain grounded in user reality.
+            </p>
+          </div>
+        </div>
+
+        <div class="insight-box">
+          <div class="insight-icon">✓</div>
+          <div class="insight-content">
+            <h3>Documentation & Sharing</h3>
+            <p>
+              Document research findings clearly and share with stakeholders. Makes research insights visible and prevents them from being lost or misinterpreted.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- AI in Research -->
+      <section style="margin: var(--space-6) 0 0 0;">
+        <h2 style="margin-bottom: var(--space-4);">AI-Assisted UX Research</h2>
+        <p style="margin-bottom: var(--space-4);">
+          Leveraging AI tools to scale research, analyze data faster, and identify patterns that might be missed in manual analysis.
+        </p>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: var(--space-4);">
+          <div class="ui-card" style="padding: var(--space-4);">
+            <h3 style="margin: 0 0 var(--space-2) 0; color: var(--primary);">Automated Interview Synthesis</h3>
+            <p>
+              AI transcribes interviews and identifies key themes, quotes, and patterns. Researchers review and validate, then create synthesis docs 3x faster.
+            </p>
+          </div>
+
+          <div class="ui-card" style="padding: var(--space-4);">
+            <h3 style="margin: 0 0 var(--space-2) 0; color: var(--primary);">Survey Analysis</h3>
+            <p>
+              Natural language processing analyzes open-ended survey responses. Surfaces sentiment, themes, and outliers without manual coding.
+            </p>
+          </div>
+
+          <div class="ui-card" style="padding: var(--space-4);">
+            <h3 style="margin: 0 0 var(--space-2) 0; color: var(--primary);">Behavioral Pattern Detection</h3>
+            <p>
+              ML models detect patterns in user analytics that humans might miss. Flags anomalies, predicts churn, segments users by behavior.
+            </p>
+          </div>
+
+          <div class="ui-card" style="padding: var(--space-4);">
+            <h3 style="margin: 0 0 var(--space-2) 0; color: var(--primary);">Competitive Intelligence</h3>
+            <p>
+              AI scrapes and analyzes competitor features, pricing, messaging. Tracks market changes and identifies emerging patterns.
+            </p>
+          </div>
+
+          <div class="ui-card" style="padding: var(--space-4);">
+            <h3 style="margin: 0 0 var(--space-2) 0; color: var(--primary);">Persona Generation</h3>
+            <p>
+              AI synthesizes research data into persona profiles, jobs to be done, and pain point summaries. Provides starting point for team refinement.
+            </p>
+          </div>
+
+          <div class="ui-card" style="padding: var(--space-4);">
+            <h3 style="margin: 0 0 var(--space-2) 0; color: var(--primary);">Research Documentation</h3>
+            <p>
+              Auto-generates research reports, slide decks, and summaries from raw data. Saves time on documentation overhead.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section style="margin-top: var(--space-6); padding-top: var(--space-4); border-top: 1px solid var(--border); text-align: center;">
+        <p style="color: var(--muted); font-size: var(--text-sm);">
+          Research is the foundation of user-centered design. The better we understand users, the better we can serve them.<br />
+          <a href="./index.html" style="color: var(--primary); text-decoration: none;">← Back to Portfolio</a>
+        </p>
+      </section>
+    </main>
+  </body>
+</html>

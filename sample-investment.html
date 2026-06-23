@@ -1,0 +1,1016 @@
+<!doctype html>
+<html lang="en" class="theme-investment">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sample Work - Investment</title>
+    <link rel="stylesheet" href="./domain-ui-themes.css" />
+  </head>
+  <body>
+    <main class="ui-shell">
+      <header class="site-nav">
+        <div class="brand">Investment Sample</div>
+        <nav class="nav-links" aria-label="Page navigation">
+          <a href="./index.html">Back to My case studies</a>
+          <a href="./case-study-investment.html">Read Case Study</a>
+        </nav>
+      </header>
+
+      <section class="hero">
+        <span class="ui-pill">Sample Screens</span>
+        <h1>How the investment work looks</h1>
+        <p>
+          A premium, data-first interface with transparent onboarding progress and clear compliance context.
+        </p>
+      </section>
+
+      <div class="app-preview-label">
+        <span class="ui-pill">Interactive Prototype</span>
+        <p style="font-size:13px;color:#666;margin:8px 0 0;">Click screens to interact — all buttons, forms, and navigation are fully functional</p>
+      </div>
+
+      <section class="phone-stage">
+        <!-- ─── PHONE 1: Account Type ─── -->
+        <div class="phone">
+          <div class="phone-shell">
+            <div class="phone-notch"></div>
+            <div class="status-bar">
+              <span class="status-time">9:41</span>
+              <span class="status-icons">
+                <svg width="15" height="11" viewBox="0 0 15 11" fill="white"><rect x="0" y="4" width="3" height="7" rx="1"/><rect x="4" y="2" width="3" height="9" rx="1"/><rect x="8" y="0" width="3" height="11" rx="1"/><rect x="12" y="0" width="3" height="11" rx="1" opacity=".3"/></svg>
+                <svg width="16" height="12" viewBox="0 0 24 18" fill="white"><path d="M1 5.5C4.8 1.8 10.1 0 12 0s7.2 1.8 11 5.5l-2 2C17.6 4 15 2.5 12 2.5S6.4 4 4 7.5L2 5.5z"/><path d="M5 9.5C7 7.2 9.4 6 12 6s5 1.2 7 3.5l-2 2C15.4 9.7 13.8 8.5 12 8.5S8.6 9.7 7 11.5L5 9.5z"/><circle cx="12" cy="15" r="2.5"/></svg>
+                <svg width="25" height="12" viewBox="0 0 25 12" fill="none"><rect x="0.5" y="0.5" width="21" height="11" rx="3.5" stroke="white" stroke-opacity=".35"/><rect x="2" y="2" width="16" height="8" rx="2" fill="white"/><path d="M23 4v4a2 2 0 000-4z" fill="white" opacity=".4"/></svg>
+              </span>
+            </div>
+
+            <div class="app-screen" id="screen1">
+              <!-- Top bar -->
+              <div class="app-topbar" style="background:linear-gradient(135deg,#7c3aed,#6d28d9);">
+                <div style="width:24px;"></div>
+                <span style="font-size:15px;font-weight:700;color:white;">InvestIQ</span>
+                <div class="avatar">AJ</div>
+              </div>
+
+              <div class="screen-scroll">
+                <!-- Progress -->
+                <div class="progress-section">
+                  <div style="display:flex;justify-content:space-between;margin-bottom:10px;">
+                    <span style="font-size:12px;font-weight:600;color:#7c3aed;">Step 1 of 3 — Account Type</span>
+                    <span style="font-size:11px;color:#999;">~10 min</span>
+                  </div>
+                  <div class="progress-track"><div class="progress-fill" style="width:33%;"></div></div>
+                  <div class="step-dots">
+                    <div class="step-dot active">1</div>
+                    <div class="step-dot">2</div>
+                    <div class="step-dot">3</div>
+                  </div>
+                </div>
+
+                <p style="font-size:13px;color:#555;margin:0 0 14px;line-height:1.5;">Choose the account structure that fits your investment goals.</p>
+
+                <div class="account-type-selector">
+                  <button class="account-btn account-btn-selected" data-account="individual">
+                    <span class="acc-icon">👤</span>
+                    <span class="acc-text">
+                      <span class="acc-title">Individual Investor</span>
+                      <span class="acc-sub">Invest personal funds</span>
+                    </span>
+                    <span class="acc-check">✓</span>
+                  </button>
+                  <button class="account-btn" data-account="joint">
+                    <span class="acc-icon">👥</span>
+                    <span class="acc-text">
+                      <span class="acc-title">Joint Account</span>
+                      <span class="acc-sub">Invest with spouse/partner</span>
+                    </span>
+                    <span class="acc-check" style="opacity:0;">✓</span>
+                  </button>
+                  <button class="account-btn" data-account="corporate">
+                    <span class="acc-icon">🏢</span>
+                    <span class="acc-text">
+                      <span class="acc-title">Business Entity</span>
+                      <span class="acc-sub">Invest through LLC/Corp</span>
+                    </span>
+                    <span class="acc-check" style="opacity:0;">✓</span>
+                  </button>
+                </div>
+
+                <div class="info-tip">
+                  <span style="font-size:16px;">💡</span>
+                  <span style="font-size:12px;color:#5b21b6;line-height:1.5;">Different types have different tax benefits and regulatory steps. We'll guide you.</span>
+                </div>
+
+                <button class="cta-btn" id="ctaBtn1">Continue to Identity →</button>
+              </div>
+
+              <!-- Bottom Nav -->
+              <nav class="bottom-nav">
+                <button class="nav-btn active" aria-label="Home">
+                  <svg width="20" height="20" fill="none" viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z" stroke="currentColor" stroke-width="2"/><polyline points="9 22 9 12 15 12 15 22" stroke="currentColor" stroke-width="2"/></svg>
+                  <span>Home</span>
+                </button>
+                <button class="nav-btn" aria-label="Portfolio">
+                  <svg width="20" height="20" fill="none" viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="12" y1="20" x2="12" y2="4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="6" y1="20" x2="6" y2="14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                  <span>Portfolio</span>
+                </button>
+                <button class="nav-btn" aria-label="Activity">
+                  <svg width="20" height="20" fill="none" viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                  <span>Activity</span>
+                </button>
+                <button class="nav-btn" aria-label="Profile">
+                  <svg width="20" height="20" fill="none" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="7" r="4" stroke="currentColor" stroke-width="2"/></svg>
+                  <span>Profile</span>
+                </button>
+              </nav>
+            </div>
+            <div class="home-indicator"></div>
+          </div>
+          <div class="phone-label">Screen 1 — Account Setup</div>
+        </div>
+
+        <!-- ─── PHONE 2: Identity Verification ─── -->
+        <div class="phone">
+          <div class="phone-shell">
+            <div class="phone-notch"></div>
+            <div class="status-bar">
+              <span class="status-time">9:41</span>
+              <span class="status-icons">
+                <svg width="15" height="11" viewBox="0 0 15 11" fill="white"><rect x="0" y="4" width="3" height="7" rx="1"/><rect x="4" y="2" width="3" height="9" rx="1"/><rect x="8" y="0" width="3" height="11" rx="1"/></svg>
+                <svg width="16" height="12" viewBox="0 0 24 18" fill="white"><path d="M1 5.5C4.8 1.8 10.1 0 12 0s7.2 1.8 11 5.5l-2 2C17.6 4 15 2.5 12 2.5S6.4 4 4 7.5L2 5.5z"/><circle cx="12" cy="15" r="2.5"/></svg>
+                <svg width="25" height="12" viewBox="0 0 25 12" fill="none"><rect x="0.5" y="0.5" width="21" height="11" rx="3.5" stroke="white" stroke-opacity=".35"/><rect x="2" y="2" width="14" height="8" rx="2" fill="white"/><path d="M23 4v4a2 2 0 000-4z" fill="white" opacity=".4"/></svg>
+              </span>
+            </div>
+
+            <div class="app-screen" id="screen2">
+              <div class="app-topbar" style="background:white;border-bottom:1px solid #f0e8ff;">
+                <button style="background:none;border:none;color:#7c3aed;font-size:20px;cursor:pointer;padding:0;">‹</button>
+                <span style="font-size:15px;font-weight:700;color:#1a1a2e;">Identity</span>
+                <div style="width:24px;"></div>
+              </div>
+
+              <div class="screen-scroll">
+                <div class="progress-section">
+                  <div style="display:flex;justify-content:space-between;margin-bottom:10px;">
+                    <span style="font-size:12px;font-weight:600;color:#7c3aed;">Step 2 of 3 — KYC Verification</span>
+                    <span style="font-size:11px;color:#999;">~8 min</span>
+                  </div>
+                  <div class="progress-track"><div class="progress-fill" style="width:66%;"></div></div>
+                  <div class="step-dots">
+                    <div class="step-dot done">✓</div>
+                    <div class="step-dot active">2</div>
+                    <div class="step-dot">3</div>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label">Full Legal Name</label>
+                  <input class="form-input" type="text" value="Alex Johnson" placeholder="Alex Johnson">
+                  <span class="field-valid">✓ Matches government ID</span>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label">Date of Birth</label>
+                  <input class="form-input" type="date" value="1996-05-15">
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label">Social Security Number</label>
+                  <div style="position:relative;">
+                    <input class="form-input" type="password" value="123456789" id="ssnInput" placeholder="XXX-XX-XXXX" style="padding-right:44px;">
+                    <button id="ssnToggle" class="ssn-toggle-btn">👁</button>
+                  </div>
+                  <span class="field-valid">🔒 SSL encrypted • Bank-level security</span>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label">Employment Status</label>
+                  <div class="radio-group">
+                    <label class="radio-option"><input type="radio" name="emp2" checked> Employed</label>
+                    <label class="radio-option"><input type="radio" name="emp2"> Self-Employed</label>
+                    <label class="radio-option"><input type="radio" name="emp2"> Retired</label>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label">Annual Income Range</label>
+                  <select class="form-input" style="appearance:none;background-image:url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%237c3aed' stroke-width='2' fill='none'/%3E%3C/svg%3E\");background-repeat:no-repeat;background-position:right 12px center;padding-right:36px;">
+                    <option>$50k – $100k</option>
+                    <option>$100k – $200k</option>
+                    <option>$200k – $500k</option>
+                    <option>$500k+</option>
+                  </select>
+                </div>
+
+                <div class="info-tip info-tip-green">
+                  <span style="font-size:16px;">🔒</span>
+                  <span style="font-size:12px;color:#047857;line-height:1.5;">Your data is encrypted and never sold. Required for regulatory compliance (SEC).</span>
+                </div>
+
+                <button class="cta-btn" id="ctaBtn2">Continue to Review →</button>
+              </div>
+
+              <nav class="bottom-nav">
+                <button class="nav-btn" aria-label="Home"><svg width="20" height="20" fill="none" viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z" stroke="currentColor" stroke-width="2"/><polyline points="9 22 9 12 15 12 15 22" stroke="currentColor" stroke-width="2"/></svg><span>Home</span></button>
+                <button class="nav-btn active" aria-label="Portfolio"><svg width="20" height="20" fill="none" viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="12" y1="20" x2="12" y2="4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="6" y1="20" x2="6" y2="14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><span>Portfolio</span></button>
+                <button class="nav-btn" aria-label="Activity"><svg width="20" height="20" fill="none" viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><span>Activity</span></button>
+                <button class="nav-btn" aria-label="Profile"><svg width="20" height="20" fill="none" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="7" r="4" stroke="currentColor" stroke-width="2"/></svg><span>Profile</span></button>
+              </nav>
+            </div>
+            <div class="home-indicator"></div>
+          </div>
+          <div class="phone-label">Screen 2 — KYC / Identity</div>
+        </div>
+
+        <!-- ─── PHONE 3: Review & Submit ─── -->
+        <div class="phone">
+          <div class="phone-shell">
+            <div class="phone-notch"></div>
+            <div class="status-bar">
+              <span class="status-time">9:41</span>
+              <span class="status-icons">
+                <svg width="15" height="11" viewBox="0 0 15 11" fill="white"><rect x="0" y="4" width="3" height="7" rx="1"/><rect x="4" y="2" width="3" height="9" rx="1"/><rect x="8" y="0" width="3" height="11" rx="1"/><rect x="12" y="0" width="3" height="11" rx="1"/></svg>
+                <svg width="16" height="12" viewBox="0 0 24 18" fill="white"><path d="M1 5.5C4.8 1.8 10.1 0 12 0s7.2 1.8 11 5.5l-2 2C17.6 4 15 2.5 12 2.5S6.4 4 4 7.5L2 5.5z"/><path d="M5 9.5C7 7.2 9.4 6 12 6s5 1.2 7 3.5l-2 2C15.4 9.7 13.8 8.5 12 8.5S8.6 9.7 7 11.5L5 9.5z"/><circle cx="12" cy="15" r="2.5"/></svg>
+                <svg width="25" height="12" viewBox="0 0 25 12" fill="none"><rect x="0.5" y="0.5" width="21" height="11" rx="3.5" stroke="white" stroke-opacity=".35"/><rect x="2" y="2" width="19" height="8" rx="2" fill="white"/><path d="M23 4v4a2 2 0 000-4z" fill="white" opacity=".4"/></svg>
+              </span>
+            </div>
+
+            <div class="app-screen" id="screen3">
+              <div class="app-topbar" style="background:white;border-bottom:1px solid #f0e8ff;">
+                <button style="background:none;border:none;color:#7c3aed;font-size:20px;cursor:pointer;padding:0;">‹</button>
+                <span style="font-size:15px;font-weight:700;color:#1a1a2e;">Review</span>
+                <div style="width:24px;"></div>
+              </div>
+
+              <div class="screen-scroll">
+                <div class="progress-section">
+                  <div style="display:flex;justify-content:space-between;margin-bottom:10px;">
+                    <span style="font-size:12px;font-weight:600;color:#10b981;">Step 3 of 3 — Final Review</span>
+                    <span style="font-size:11px;color:#999;">~3 min</span>
+                  </div>
+                  <div class="progress-track"><div class="progress-fill" style="width:100%;background:#10b981;"></div></div>
+                  <div class="step-dots">
+                    <div class="step-dot done">✓</div>
+                    <div class="step-dot done">✓</div>
+                    <div class="step-dot active" style="background:#10b981;">3</div>
+                  </div>
+                </div>
+
+                <div style="background:linear-gradient(135deg,#ecfdf5,#d1fae6);border:1px solid #6ee7b7;border-radius:10px;padding:12px;margin-bottom:14px;display:flex;align-items:center;gap:10px;">
+                  <span style="font-size:22px;">✅</span>
+                  <div>
+                    <div style="font-size:13px;font-weight:700;color:#047857;">All verifications passed</div>
+                    <div style="font-size:11px;color:#059669;">Account ready to activate</div>
+                  </div>
+                </div>
+
+                <div class="summary-card">
+                  <div class="summary-row"><span>Account</span><strong>Individual Investor</strong></div>
+                  <div class="summary-row"><span>Name</span><strong>Alex Johnson</strong></div>
+                  <div class="summary-row"><span>DOB</span><strong>May 15, 1996</strong></div>
+                  <div class="summary-row"><span>Status</span><strong style="color:#10b981;">Employed</strong></div>
+                  <div class="summary-row" style="border:none;padding-bottom:0;"><span>Income</span><strong>$50k – $100k</strong></div>
+                </div>
+
+                <div class="checklist">
+                  <div class="check-item"><span class="check-icon">✓</span> Identity verified (KYC)</div>
+                  <div class="check-item"><span class="check-icon">✓</span> Address confirmed</div>
+                  <div class="check-item"><span class="check-icon">✓</span> Employment documented</div>
+                  <div class="check-item"><span class="check-icon">✓</span> Compliance review passed</div>
+                </div>
+
+                <div class="confidence-bar-section">
+                  <div style="display:flex;justify-content:space-between;margin-bottom:8px;">
+                    <span style="font-size:12px;font-weight:700;color:#1e40af;">🎯 Confidence Score</span>
+                    <span style="font-size:13px;font-weight:800;color:#7c3aed;">81%</span>
+                  </div>
+                  <div style="height:8px;background:#e0e7ff;border-radius:4px;overflow:hidden;">
+                    <div class="conf-bar-fill" style="height:100%;background:linear-gradient(90deg,#7c3aed,#10b981);border-radius:4px;"></div>
+                  </div>
+                  <div style="font-size:11px;color:#6b7280;margin-top:5px;">Ready to invest • Strong profile</div>
+                </div>
+
+                <label class="agree-row">
+                  <input type="checkbox" id="agreeBox" checked style="cursor:pointer;">
+                  <span>I confirm all information is accurate and agree to the Terms of Service</span>
+                </label>
+
+                <button class="cta-btn submit-btn" id="submitBtn">Complete Account Setup ✦</button>
+
+                <div style="display:flex;justify-content:center;gap:16px;margin-top:12px;">
+                  <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='20'%3E%3Crect width='60' height='20' rx='4' fill='%23e8f0fe'/%3E%3Ctext x='30' y='14' font-size='9' fill='%231a73e8' text-anchor='middle' font-weight='bold'%3ESEC Registered%3C/text%3E%3C/svg%3E" alt="SEC Registered" style="height:20px;">
+                  <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='70' height='20'%3E%3Crect width='70' height='20' rx='4' fill='%23f0fdf4'/%3E%3Ctext x='35' y='14' font-size='9' fill='%2316a34a' text-anchor='middle' font-weight='bold'%3EFINRA Member%3C/text%3E%3C/svg%3E" alt="FINRA Member" style="height:20px;">
+                  <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='70' height='20'%3E%3Crect width='70' height='20' rx='4' fill='%23faf5ff'/%3E%3Ctext x='35' y='14' font-size='9' fill='%237c3aed' text-anchor='middle' font-weight='bold'%3E256-bit SSL%3C/text%3E%3C/svg%3E" alt="256-bit SSL" style="height:20px;">
+                </div>
+              </div>
+
+              <nav class="bottom-nav">
+                <button class="nav-btn" aria-label="Home"><svg width="20" height="20" fill="none" viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z" stroke="currentColor" stroke-width="2"/><polyline points="9 22 9 12 15 12 15 22" stroke="currentColor" stroke-width="2"/></svg><span>Home</span></button>
+                <button class="nav-btn" aria-label="Portfolio"><svg width="20" height="20" fill="none" viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="12" y1="20" x2="12" y2="4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="6" y1="20" x2="6" y2="14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><span>Portfolio</span></button>
+                <button class="nav-btn" aria-label="Activity"><svg width="20" height="20" fill="none" viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><span>Activity</span></button>
+                <button class="nav-btn active" aria-label="Profile"><svg width="20" height="20" fill="none" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="7" r="4" stroke="currentColor" stroke-width="2"/></svg><span>Profile</span></button>
+              </nav>
+            </div>
+            <div class="home-indicator"></div>
+          </div>
+          <div class="phone-label">Screen 3 — Review &amp; Submit</div>
+        </div>
+      </section>
+
+      <style>
+        /* ── Page layout ── */
+        .app-preview-label { text-align:center; padding: 32px 16px 0; }
+
+        /* ── Keyframe animations ── */
+        @keyframes phoneSlideUp {
+          from { opacity:0; transform:translateY(60px) scale(.96); }
+          to   { opacity:1; transform:translateY(0)    scale(1);   }
+        }
+        @keyframes fadeInUp {
+          from { opacity:0; transform:translateY(14px); }
+          to   { opacity:1; transform:translateY(0); }
+        }
+        @keyframes rippleEffect {
+          to { transform:scale(4); opacity:0; }
+        }
+        @keyframes stepPop {
+          0%  { transform:scale(1); }
+          40% { transform:scale(1.25); }
+          100%{ transform:scale(1); }
+        }
+        @keyframes progressGrow {
+          from { width:0; }
+        }
+        @keyframes floatIn {
+          from { opacity:0; transform:translateX(-8px); }
+          to   { opacity:1; transform:translateX(0); }
+        }
+        @keyframes confidenceFill {
+          from { width:0; }
+          to   { width:81%; }
+        }
+        @keyframes checkBounce {
+          0%   { transform:scale(0) rotate(-20deg); opacity:0; }
+          60%  { transform:scale(1.2) rotate(5deg); opacity:1; }
+          100% { transform:scale(1) rotate(0); }
+        }
+
+        /* ── Animation utility classes ── */
+        .anim-phone {
+          animation: phoneSlideUp .65s cubic-bezier(.22,1,.36,1) both;
+          animation-delay: var(--delay, 0s);
+        }
+        .anim-fade {
+          animation: fadeInUp .45s ease both;
+          animation-delay: var(--delay, 0s);
+        }
+        .progress-fill { animation: progressGrow .8s cubic-bezier(.22,1,.36,1) .4s both; }
+
+        /* Apply phone entrance animation */
+        .phone { animation: phoneSlideUp .65s cubic-bezier(.22,1,.36,1) both; }
+        .phone:nth-child(1) { animation-delay: 0s; }
+        .phone:nth-child(2) { animation-delay: .15s; }
+        .phone:nth-child(3) { animation-delay: .3s; }
+
+        /* Apply fade-in to screen sections */
+        .progress-section { animation: fadeInUp .4s ease .3s both; }
+        .account-type-selector { animation: fadeInUp .4s ease .4s both; }
+        .info-tip { animation: fadeInUp .4s ease .5s both; }
+        .cta-btn { animation: fadeInUp .4s ease .6s both; }
+        .form-group:nth-child(1) { animation: floatIn .35s ease .3s both; }
+        .form-group:nth-child(2) { animation: floatIn .35s ease .4s both; }
+        .form-group:nth-child(3) { animation: floatIn .35s ease .5s both; }
+        .form-group:nth-child(4) { animation: floatIn .35s ease .6s both; }
+        .form-group:nth-child(5) { animation: floatIn .35s ease .7s both; }
+        .summary-card { animation: fadeInUp .4s ease .3s both; }
+        .checklist { animation: fadeInUp .4s ease .45s both; }
+        .confidence-bar-section { animation: fadeInUp .4s ease .55s both; }
+
+        /* Confidence bar fill on load */
+        .confidence-bar-section .conf-bar-fill {
+          animation: confidenceFill 1s cubic-bezier(.22,1,.36,1) .7s both;
+        }
+
+        /* Step dot pop on done state */
+        .step-dot.done { animation: checkBounce .4s ease both; }
+        .step-dot.active { animation: stepPop .3s ease .4s both; }
+
+        /* Button hover animations */
+        .cta-btn { transition: transform .2s ease, box-shadow .2s ease, background .25s ease; }
+        .cta-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(124,58,237,.35); }
+        .cta-btn:active { transform: scale(.98); }
+
+        /* Account btn hover lift */
+        .account-btn:hover { transform: translateY(-2px); box-shadow: 0 4px 16px rgba(124,58,237,.12); }
+        .account-btn:active { transform: scale(.99); }
+
+        /* Ripple button */
+        .ripple-btn { position:relative; overflow:hidden; }
+        .ripple-btn .ripple {
+          position:absolute; border-radius:50%;
+          background:rgba(255,255,255,.4); transform:scale(0);
+          pointer-events:none; animation:rippleEffect .6s linear;
+        }
+
+        /* Nav btn hover */
+        .nav-btn svg { transition:transform .15s ease; }
+        .nav-btn:hover svg { transform:translateY(-2px); }
+
+        .phone-stage {
+          display: flex;
+          gap: 40px;
+          justify-content: center;
+          align-items: flex-start;
+          flex-wrap: wrap;
+          padding: 40px 24px 60px;
+          background: linear-gradient(160deg, #1a1a2e 0%, #16213e 60%, #0f3460 100%);
+          min-height: 600px;
+        }
+
+        /* ── Phone frame ── */
+        .phone { display: flex; flex-direction: column; align-items: center; gap: 14px; }
+
+        .phone-shell {
+          width: 280px;
+          height: 580px;
+          background: #0f0f0f;
+          border-radius: 40px;
+          border: 2px solid #2a2a2a;
+          box-shadow:
+            0 0 0 1px #111,
+            0 30px 60px rgba(0,0,0,0.6),
+            inset 0 0 0 1px #333;
+          display: flex;
+          flex-direction: column;
+          overflow: hidden;
+          position: relative;
+        }
+
+        .phone-notch {
+          position: absolute;
+          top: 0; left: 50%;
+          transform: translateX(-50%);
+          width: 100px; height: 26px;
+          background: #0f0f0f;
+          border-radius: 0 0 18px 18px;
+          z-index: 10;
+        }
+
+        .status-bar {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 6px 20px 2px;
+          background: #0f0f0f;
+          z-index: 5;
+          min-height: 30px;
+        }
+
+        .status-time { font-size: 12px; font-weight: 700; color: white; }
+        .status-icons { display: flex; gap: 6px; align-items: center; }
+
+        .app-screen {
+          flex: 1;
+          background: #f8f7ff;
+          display: flex;
+          flex-direction: column;
+          overflow: hidden;
+          border-radius: 0 0 2px 2px;
+        }
+
+        .app-topbar {
+          padding: 10px 14px;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          flex-shrink: 0;
+        }
+
+        .avatar {
+          width: 30px; height: 30px;
+          background: linear-gradient(135deg,#a855f7,#7c3aed);
+          color: white; font-size: 11px; font-weight: 700;
+          border-radius: 50%;
+          display: flex; align-items: center; justify-content: center;
+        }
+
+        .screen-scroll {
+          flex: 1;
+          overflow-y: auto;
+          padding: 12px 14px 8px;
+          scroll-behavior: smooth;
+        }
+
+        .screen-scroll::-webkit-scrollbar { width: 3px; }
+        .screen-scroll::-webkit-scrollbar-thumb { background: #c4b5fd; border-radius: 2px; }
+
+        .home-indicator {
+          height: 22px;
+          background: #0f0f0f;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+        .home-indicator::after {
+          content: '';
+          width: 100px; height: 4px;
+          background: #444;
+          border-radius: 2px;
+        }
+
+        .phone-label {
+          font-size: 12px; font-weight: 600;
+          color: rgba(255,255,255,0.6);
+          text-align: center;
+          letter-spacing: 0.3px;
+        }
+
+        /* ── Progress ── */
+        .progress-section { margin-bottom: 14px; }
+
+        .progress-track {
+          height: 4px; background: #e5e7eb; border-radius: 2px; overflow: hidden; margin-bottom: 10px;
+        }
+        .progress-fill { height: 100%; background: #7c3aed; border-radius: 2px; transition: width 0.5s ease; }
+
+        .step-dots { display: flex; gap: 6px; }
+        .step-dot {
+          width: 24px; height: 24px; border-radius: 50%;
+          background: #e5e7eb; color: #999;
+          font-size: 11px; font-weight: 700;
+          display: flex; align-items: center; justify-content: center;
+        }
+        .step-dot.active { background: #7c3aed; color: white; }
+        .step-dot.done { background: #10b981; color: white; }
+
+        /* ── Account type selector ── */
+        .account-type-selector { display: flex; flex-direction: column; gap: 8px; margin-bottom: 14px; }
+
+        .account-btn {
+          display: flex; align-items: center; gap: 10px;
+          padding: 12px; border: 2px solid #e5e7eb;
+          background: white; border-radius: 10px;
+          cursor: pointer; text-align: left;
+          transition: all 0.25s ease;
+        }
+        .account-btn:hover { border-color: #c4b5fd; box-shadow: 0 2px 8px rgba(124,58,237,.1); }
+        .account-btn.account-btn-selected {
+          border-color: #7c3aed;
+          background: linear-gradient(135deg,#f5f0ff,#ede9fe);
+        }
+        .acc-icon { font-size: 20px; flex-shrink: 0; }
+        .acc-text { display: flex; flex-direction: column; flex: 1; }
+        .acc-title { font-size: 13px; font-weight: 700; color: #1a1a2e; }
+        .acc-sub { font-size: 11px; color: #888; }
+        .acc-check { color: #7c3aed; font-weight: 700; font-size: 14px; }
+
+        /* ── Info tip ── */
+        .info-tip {
+          display: flex; gap: 8px; align-items: flex-start;
+          background: #f3e8ff; border: 1px solid #ddd6fe;
+          padding: 10px; border-radius: 8px; margin-bottom: 14px;
+        }
+
+        /* ── CTA Button ── */
+        .cta-btn {
+          width: 100%; padding: 14px;
+          background: linear-gradient(135deg,#7c3aed,#6d28d9);
+          color: white; border: none; border-radius: 10px;
+          font-size: 14px; font-weight: 700; cursor: pointer;
+          box-shadow: 0 4px 14px rgba(124,58,237,0.35);
+          transition: all 0.25s ease;
+        }
+        .cta-btn:hover { transform: translateY(-1px); box-shadow: 0 6px 20px rgba(124,58,237,0.45); }
+        .cta-btn:active { transform: scale(0.98); }
+
+        /* ── Form elements ── */
+        .form-group { margin-bottom: 12px; }
+        .form-label { display: block; font-size: 11px; font-weight: 700; color: #555; margin-bottom: 5px; text-transform: uppercase; letter-spacing: 0.5px; }
+        .form-input {
+          width: 100%; padding: 10px 12px;
+          border: 1.5px solid #e5e7eb; border-radius: 8px;
+          font-size: 14px; box-sizing: border-box;
+          background: white; color: #1a1a2e;
+          transition: border-color 0.2s;
+        }
+        .form-input:focus { outline: none; border-color: #7c3aed; box-shadow: 0 0 0 3px rgba(124,58,237,.12); }
+        .field-valid { font-size: 11px; color: #059669; margin-top: 4px; display: block; }
+
+        .radio-group { display: flex; flex-direction: column; gap: 6px; }
+        .radio-option {
+          display: flex; align-items: center; gap: 8px;
+          font-size: 13px; color: #333; cursor: pointer;
+          padding: 8px 10px; border-radius: 6px;
+          transition: background 0.15s;
+        }
+        .radio-option:hover { background: #f5f0ff; }
+
+        /* ── Summary card ── */
+        .summary-card {
+          background: white; border: 1px solid #ede9fe;
+          border-radius: 10px; padding: 12px; margin-bottom: 12px;
+        }
+        .summary-row {
+          display: flex; justify-content: space-between;
+          font-size: 12px; padding-bottom: 8px; margin-bottom: 8px;
+          border-bottom: 1px solid #f3f4f6;
+        }
+        .summary-row span { color: #888; }
+        .summary-row strong { color: #1a1a2e; font-weight: 600; }
+
+        /* ── Checklist ── */
+        .checklist { display: flex; flex-direction: column; gap: 6px; margin-bottom: 12px; }
+        .check-item { display: flex; align-items: center; gap: 8px; font-size: 12px; color: #333; }
+        .check-icon { color: #10b981; font-weight: 700; font-size: 14px; }
+
+        /* ── Confidence ── */
+        .confidence-bar-section {
+          background: linear-gradient(135deg,#ede9fe,#dbeafe);
+          border: 1px solid #c4b5fd; border-radius: 10px;
+          padding: 10px 12px; margin-bottom: 12px;
+        }
+
+        /* ── Agree row ── */
+        .agree-row {
+          display: flex; align-items: flex-start; gap: 8px;
+          font-size: 11px; color: #555; line-height: 1.4;
+          margin-bottom: 12px; cursor: pointer;
+        }
+
+        /* ── Bottom Nav ── */
+        .bottom-nav {
+          display: flex;
+          background: white;
+          border-top: 1px solid #f0e8ff;
+          padding: 6px 0 2px;
+          flex-shrink: 0;
+        }
+        .nav-btn {
+          flex: 1; display: flex; flex-direction: column;
+          align-items: center; gap: 3px;
+          background: none; border: none; cursor: pointer;
+          color: #bbb; font-size: 10px; font-weight: 500;
+          padding: 4px 0; transition: color 0.2s;
+        }
+        .nav-btn:hover, .nav-btn.active { color: #7c3aed; }
+        .nav-btn svg { transition: transform 0.15s; }
+        .nav-btn:hover svg { transform: translateY(-1px); }
+
+        /* ── Responsive ── */
+        @media (max-width: 900px) {
+          .phone-stage { gap: 24px; padding: 28px 16px 40px; }
+          .phone-shell { width: 240px; height: 500px; }
+          .phone-notch { width: 80px; height: 22px; }
+        }
+
+        @media (max-width: 600px) {
+          .phone-stage { flex-direction: column; align-items: center; padding: 20px 12px 32px; }
+          .phone-shell { width: 300px; height: 600px; border-radius: 44px; }
+        }
+      </style>
+
+          <div class="mobile-content">
+            <div style="margin-bottom: 16px;">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+                <span style="font-size: 13px; font-weight: 600; color: #666;">Step 1 of 3</span>
+                <span style="font-size: 12px; color: #999;">10 min remaining</span>
+              </div>
+              <div style="height: 4px; background: #e5e7eb; border-radius: 2px; overflow: hidden;">
+                <div style="height: 100%; width: 33%; background: #7c3aed; border-radius: 2px;"></div>
+              </div>
+            </div>
+
+            <h3 style="font-size: 16px; font-weight: 600; margin: 0 0 12px 0;">Account Type</h3>
+            <p style="font-size: 13px; color: #666; margin: 0 0 16px 0;">Choose the account type that best fits your investment goals.</p>
+
+            <div class="account-type-selector" style="margin-bottom: 20px;">
+              <button class="account-btn account-btn-selected" data-account="individual" style="width: 100%; padding: 16px; background: linear-gradient(135deg, #7c3aed 0%, #6d28d9 100%); color: white; border: 2px solid #7c3aed; border-radius: 8px; cursor: pointer; margin-bottom: 12px; text-align: left; transition: all 0.3s ease;">
+                <div style="font-weight: 600; margin-bottom: 4px;">👤 Individual Investor</div>
+                <div style="font-size: 12px; opacity: 0.9;">Invest personal funds</div>
+              </button>
+
+              <button class="account-btn" data-account="joint" style="width: 100%; padding: 16px; background: white; color: #333; border: 2px solid #e5e7eb; border-radius: 8px; cursor: pointer; margin-bottom: 12px; text-align: left; transition: all 0.3s ease;">
+                <div style="font-weight: 600; margin-bottom: 4px;">👥 Joint Account</div>
+                <div style="font-size: 12px; color: #666;">Invest with spouse/partner</div>
+              </button>
+
+              <button class="account-btn" data-account="corporate" style="width: 100%; padding: 16px; background: white; color: #333; border: 2px solid #e5e7eb; border-radius: 8px; cursor: pointer; text-align: left; transition: all 0.3s ease;">
+                <div style="font-weight: 600; margin-bottom: 4px;">🏢 Business Entity</div>
+                <div style="font-size: 12px; color: #666;">Invest through LLC/Corp</div>
+              </button>
+            </div>
+
+            <div style="background: #f3e8ff; border-left: 3px solid #7c3aed; padding: 12px; border-radius: 4px; margin-bottom: 16px;">
+              <div style="font-size: 12px; color: #5b21b6; line-height: 1.5;">
+                <strong>💡 Why account type matters:</strong> Different account types have different regulatory requirements and tax benefits. We'll help you through each step.
+              </div>
+            </div>
+
+            <button style="width: 100%; padding: 16px; background: #7c3aed; color: white; border: none; font-size: 16px; font-weight: 600; border-radius: 8px; cursor: pointer;">Continue to Identity</button>
+          </div>
+        </article>
+
+        <!-- SCREEN 2: COMPLIANCE/KYC STEP -->
+        <article class="mobile-frame">
+          <div class="mobile-header">
+            <button aria-label="Back">← Back</button>
+            <span>Identity Verification</span>
+            <div style="width: 24px;"></div>
+          </div>
+
+          <div class="mobile-content">
+            <div style="margin-bottom: 16px;">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+                <span style="font-size: 13px; font-weight: 600; color: #666;">Step 2 of 3</span>
+                <span style="font-size: 12px; color: #999;">8 min remaining</span>
+              </div>
+              <div style="height: 4px; background: #e5e7eb; border-radius: 2px; overflow: hidden;">
+                <div style="height: 100%; width: 66%; background: #7c3aed; border-radius: 2px;"></div>
+              </div>
+            </div>
+
+            <h3 style="font-size: 16px; font-weight: 600; margin: 0 0 12px 0;">Personal Information</h3>
+
+            <div style="margin-bottom: 16px;">
+              <label style="display: block; font-size: 13px; font-weight: 600; margin-bottom: 8px; color: #333;">Full Legal Name</label>
+              <input type="text" placeholder="Alex Johnson" value="Alex Johnson" style="width: 100%; padding: 12px; border: 1px solid #d1d5db; border-radius: 6px; font-size: 16px; box-sizing: border-box;">
+            </div>
+
+            <div style="margin-bottom: 16px;">
+              <label style="display: block; font-size: 13px; font-weight: 600; margin-bottom: 8px; color: #333;">Date of Birth</label>
+              <input type="date" value="1996-05-15" style="width: 100%; padding: 12px; border: 1px solid #d1d5db; border-radius: 6px; font-size: 16px; box-sizing: border-box;">
+            </div>
+
+            <div style="margin-bottom: 16px;">
+              <label style="display: block; font-size: 13px; font-weight: 600; margin-bottom: 8px; color: #333;">Social Security Number</label>
+              <input type="text" placeholder="XXX-XX-1234" value="XXX-XX-1234" style="width: 100%; padding: 12px; border: 1px solid #d1d5db; border-radius: 6px; font-size: 16px; box-sizing: border-box;">
+              <div style="font-size: 11px; color: #059669; margin-top: 4px;">✓ Secure • SSL Encrypted</div>
+            </div>
+
+            <div style="margin-bottom: 16px;">
+              <label style="display: block; font-size: 13px; font-weight: 600; margin-bottom: 8px; color: #333;">Employment Status</label>
+              <div class="employment-selector" style="display: flex; flex-direction: column; gap: 8px;">
+                <label style="display: flex; align-items: center; gap: 10px; cursor: pointer;">
+                  <input type="radio" name="employment" value="employed" checked style="cursor: pointer;">
+                  <span style="font-size: 14px;">Employed</span>
+                </label>
+                <label style="display: flex; align-items: center; gap: 10px; cursor: pointer;">
+                  <input type="radio" name="employment" value="self" style="cursor: pointer;">
+                  <span style="font-size: 14px;">Self-Employed</span>
+                </label>
+                <label style="display: flex; align-items: center; gap: 10px; cursor: pointer;">
+                  <input type="radio" name="employment" value="retired" style="cursor: pointer;">
+                  <span style="font-size: 14px;">Retired</span>
+                </label>
+              </div>
+            </div>
+
+            <div style="background: #ecfdf5; border: 1px solid #d1fae6; padding: 12px; border-radius: 6px; margin-bottom: 16px;">
+              <div style="font-size: 12px; color: #047857; line-height: 1.5;">
+                <strong>🔒 Your Information is Safe:</strong> We use bank-level encryption. Never shared without your consent.
+              </div>
+            </div>
+
+            <button style="width: 100%; padding: 16px; background: #7c3aed; color: white; border: none; font-size: 16px; font-weight: 600; border-radius: 8px; cursor: pointer;">Review & Submit</button>
+          </div>
+        </article>
+
+        <!-- SCREEN 3: REVIEW & SUBMIT -->
+        <article class="mobile-frame">
+          <div class="mobile-header">
+            <button aria-label="Back">← Back</button>
+            <span>Review & Submit</span>
+            <div style="width: 24px;"></div>
+          </div>
+
+          <div class="mobile-content">
+            <div style="margin-bottom: 20px;">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+                <span style="font-size: 13px; font-weight: 600; color: #666;">Step 3 of 3</span>
+                <span style="font-size: 12px; color: #999;">3 min remaining</span>
+              </div>
+              <div style="height: 4px; background: #e5e7eb; border-radius: 2px; overflow: hidden;">
+                <div style="height: 100%; width: 100%; background: #7c3aed; border-radius: 2px;"></div>
+              </div>
+            </div>
+
+            <div style="background: #ecfdf5; border-left: 3px solid #10b981; padding: 12px; border-radius: 4px; margin-bottom: 16px;">
+              <div style="font-size: 13px; font-weight: 600; color: #047857; margin-bottom: 4px;">✓ All information verified</div>
+              <div style="font-size: 12px; color: #059669;">Your account is ready to activate</div>
+            </div>
+
+            <h3 style="font-size: 14px; font-weight: 600; margin: 0 0 12px 0; color: #333;">Summary</h3>
+
+            <div style="background: #f9fafb; border: 1px solid #e5e7eb; border-radius: 6px; padding: 12px; margin-bottom: 16px;">
+              <div style="display: flex; justify-content: space-between; margin-bottom: 10px; padding-bottom: 10px; border-bottom: 1px solid #e5e7eb;">
+                <span style="font-size: 13px; color: #666;">Account Type</span>
+                <span style="font-weight: 600; color: #333;">Individual Investor</span>
+              </div>
+              <div style="display: flex; justify-content: space-between; margin-bottom: 10px; padding-bottom: 10px; border-bottom: 1px solid #e5e7eb;">
+                <span style="font-size: 13px; color: #666;">Name</span>
+                <span style="font-weight: 600; color: #333;">Alex Johnson</span>
+              </div>
+              <div style="display: flex; justify-content: space-between; margin-bottom: 10px; padding-bottom: 10px; border-bottom: 1px solid #e5e7eb;">
+                <span style="font-size: 13px; color: #666;">Age</span>
+                <span style="font-weight: 600; color: #333;">28 years old</span>
+              </div>
+              <div style="display: flex; justify-content: space-between;">
+                <span style="font-size: 13px; color: #666;">Status</span>
+                <span style="font-weight: 600; color: #10b981;">Employed</span>
+              </div>
+            </div>
+
+            <h4 style="font-size: 13px; font-weight: 600; margin: 0 0 12px 0; color: #333;">Items Checklist</h4>
+            
+            <div style="display: flex; flex-direction: column; gap: 8px; margin-bottom: 16px;">
+              <div style="display: flex; align-items: center; gap: 8px;">
+                <span style="color: #10b981; font-size: 16px;">✓</span>
+                <span style="font-size: 13px; color: #333;">Identity verified</span>
+              </div>
+              <div style="display: flex; align-items: center; gap: 8px;">
+                <span style="color: #10b981; font-size: 16px;">✓</span>
+                <span style="font-size: 13px; color: #333;">Address confirmed</span>
+              </div>
+              <div style="display: flex; align-items: center; gap: 8px;">
+                <span style="color: #10b981; font-size: 16px;">✓</span>
+                <span style="font-size: 13px; color: #333;">Employment status</span>
+              </div>
+              <div style="display: flex; align-items: center; gap: 8px;">
+                <span style="color: #10b981; font-size: 16px;">✓</span>
+                <span style="font-size: 13px; color: #333;">Compliance review</span>
+              </div>
+            </div>
+
+            <div style="background: linear-gradient(135deg, #dbeafe 0%, #e0e7ff 100%); border: 1px solid #bfdbfe; padding: 12px; border-radius: 6px; margin-bottom: 16px;">
+              <div style="font-size: 13px; font-weight: 600; color: #1e40af; margin-bottom: 4px;">🎯 Confidence Score</div>
+              <div style="display: flex; gap: 4px; margin-bottom: 8px;">
+                <div style="flex: 1; height: 6px; background: #10b981; border-radius: 2px;"></div>
+                <div style="flex: 1; height: 6px; background: #10b981; border-radius: 2px;"></div>
+                <div style="flex: 1; height: 6px; background: #10b981; border-radius: 2px;"></div>
+                <div style="flex: 1; height: 6px; background: #10b981; border-radius: 2px;"></div>
+                <div style="flex: 1; height: 6px; background: #d1d5db; border-radius: 2px;"></div>
+              </div>
+              <div style="font-size: 11px; color: #1e40af;">81% confidence • Ready to invest</div>
+            </div>
+
+            <label style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 16px; cursor: pointer;">
+              <input type="checkbox" checked style="cursor: pointer; margin-top: 3px;">
+              <span style="font-size: 12px; color: #333; line-height: 1.4;">I agree to the terms and confirm all information is accurate</span>
+            </label>
+
+            <button class="submit-btn" style="width: 100%; padding: 16px; background: #7c3aed; color: white; border: none; font-size: 16px; font-weight: 600; border-radius: 8px; cursor: pointer; transition: all 0.3s ease;">Complete Account Setup</button>
+          </div>
+        </article>
+      </section>
+
+      <style>
+        .mobile-screens {
+          display: grid;
+          gap: 32px;
+          max-width: 1000px;
+          margin: 0 auto;
+          padding: 40px 16px;
+        }
+
+        .mobile-frame {
+          background: white;
+          border: 1px solid #e5e7eb;
+          border-radius: 12px;
+          overflow: hidden;
+          box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+
+        .mobile-header {
+          background: #f9fafb;
+          border-bottom: 1px solid #e5e7eb;
+          padding: 12px 16px;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          font-size: 14px;
+          font-weight: 600;
+          color: #333;
+        }
+
+        .mobile-header button {
+          background: none;
+          border: none;
+          color: #7c3aed;
+          cursor: pointer;
+          font-size: 14px;
+          padding: 0;
+        }
+
+        .mobile-content {
+          padding: 20px 16px;
+          max-height: 600px;
+          overflow-y: auto;
+        }
+
+        .account-btn {
+          transition: all 0.3s ease;
+        }
+
+        .account-btn:hover {
+          transform: translateY(-2px);
+          box-shadow: 0 4px 12px rgba(124, 58, 237, 0.15);
+        }
+
+        .account-btn-selected {
+          background: linear-gradient(135deg, #7c3aed 0%, #6d28d9 100%) !important;
+          color: white !important;
+          border: 2px solid #7c3aed !important;
+        }
+
+        .submit-btn:hover {
+          background: #6d28d9 !important;
+          transform: translateY(-2px);
+          box-shadow: 0 4px 12px rgba(124, 58, 237, 0.3);
+        }
+        .info-tip-green { background: #ecfdf5; border-color: #a7f3d0; }
+        .ssn-toggle-btn { position: absolute; right: 12px; top: 50%; transform: translateY(-50%); background: none; border: none; color: #7c3aed; cursor: pointer; font-size: 13px; }
+
+        @media (max-width: 768px) {
+          .mobile-screens {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+            padding: 20px 12px;
+          }
+
+          .mobile-frame {
+            border-radius: 8px;
+          }
+
+          .mobile-content {
+            padding: 16px 14px;
+            max-height: none;
+          }
+        }
+      </style>
+
+      <footer class="page-footer">This sample page is meant for visual preview during portfolio review.</footer>
+    </main>
+
+    <script>
+      // CTA button 1 (Screen 1)
+      document.getElementById('ctaBtn1').addEventListener('click', function () {
+        var btn = this;
+        btn.textContent = 'Saved \u2713';
+        window.setTimeout(function () { btn.textContent = 'Continue to Identity \u2192'; }, 1500);
+      });
+
+      // SSN toggle (Screen 2)
+      document.getElementById('ssnToggle').addEventListener('click', function () {
+        var i = document.getElementById('ssnInput');
+        i.type = i.type === 'password' ? 'text' : 'password';
+      });
+
+      // CTA button 2 (Screen 2)
+      document.getElementById('ctaBtn2').addEventListener('click', function () {
+        var btn = this;
+        btn.textContent = 'Verified \u2713';
+        window.setTimeout(function () { btn.textContent = 'Continue to Review \u2192'; }, 1500);
+      });
+
+      // Submit button (Screen 3)
+      document.getElementById('submitBtn').addEventListener('click', function () {
+        var btn = this;
+        var box = document.getElementById('agreeBox');
+        if (!box.checked) {
+          btn.style.background = '#ef4444';
+          btn.textContent = 'Please agree to terms';
+          window.setTimeout(function () {
+            btn.style.background = '#7c3aed';
+            btn.textContent = 'Complete Account Setup \u2726';
+          }, 1800);
+        } else {
+          btn.style.background = '#10b981';
+          btn.textContent = '\ud83c\udf89 Account Created!';
+          btn.style.transform = 'scale(1.02)';
+        }
+      });
+
+      // Account type selection with animated check mark
+      document.querySelectorAll('.account-btn').forEach(btn => {
+        btn.addEventListener('click', function () {
+          document.querySelectorAll('.account-btn').forEach(b => {
+            b.classList.remove('account-btn-selected');
+            var chk = b.querySelector('.acc-check');
+            if (chk) chk.style.opacity = '0';
+          });
+          this.classList.add('account-btn-selected');
+          var chk = this.querySelector('.acc-check');
+          if (chk) chk.style.opacity = '1';
+        });
+      });
+
+      // Bottom nav tab switching
+      document.querySelectorAll('.nav-btn').forEach(btn => {
+        btn.addEventListener('click', function () {
+          this.closest('.bottom-nav').querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+          this.classList.add('active');
+        });
+      });
+    </script>
+  </body>
+</html>

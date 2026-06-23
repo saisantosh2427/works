@@ -1,0 +1,1101 @@
+<!doctype html>
+<html lang="en" class="theme-retail">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sample Work - Retail</title>
+    <link rel="stylesheet" href="./domain-ui-themes.css" />
+  </head>
+  <body>
+    <main class="ui-shell">
+      <header class="site-nav">
+        <div class="brand">Retail Sample</div>
+        <nav class="nav-links" aria-label="Page navigation">
+          <a href="./index.html">Back to My case studies</a>
+          <a href="./case-study-retail.html">Read Case Study</a>
+        </nav>
+      </header>
+
+      <div class="app-preview-label">
+        <span class="ui-pill">Interactive Prototype</span>
+        <p style="font-size:13px;color:#666;margin:8px 0 0;">Click screens to interact — sizes, colors, checkout, and returns are all functional</p>
+      </div>
+
+      <section class="phone-stage">
+
+        <!-- ─── PHONE 1: PRODUCT DETAIL ─── -->
+        <div class="phone anim-phone" style="--delay:0s">
+          <div class="phone-shell">
+            <div class="phone-notch"></div>
+            <div class="status-bar">
+              <span class="status-time">9:41</span>
+              <span class="status-icons">
+                <svg width="15" height="11" viewBox="0 0 15 11" fill="white"><rect x="0" y="4" width="3" height="7" rx="1"/><rect x="4" y="2" width="3" height="9" rx="1"/><rect x="8" y="0" width="3" height="11" rx="1"/><rect x="12" y="0" width="3" height="11" rx="1" opacity=".4"/></svg>
+                <svg width="16" height="12" viewBox="0 0 24 18" fill="white"><path d="M1 5.5C4.8 1.8 10.1 0 12 0s7.2 1.8 11 5.5l-2 2C17.6 4 15 2.5 12 2.5S6.4 4 4 7.5L2 5.5z"/><path d="M5 9.5C7 7.2 9.4 6 12 6s5 1.2 7 3.5l-2 2C15.4 9.7 13.8 8.5 12 8.5S8.6 9.7 7 11.5L5 9.5z"/><circle cx="12" cy="15" r="2.5"/></svg>
+                <svg width="25" height="12" viewBox="0 0 25 12" fill="none"><rect x="0.5" y="0.5" width="21" height="11" rx="3.5" stroke="white" stroke-opacity=".35"/><rect x="2" y="2" width="19" height="8" rx="2" fill="white"/><path d="M23 4v4a2 2 0 000-4z" fill="white" opacity=".4"/></svg>
+              </span>
+            </div>
+
+            <div class="app-screen">
+              <div class="app-topbar app-topbar-white">
+                <button class="icon-btn">
+                  <svg width="18" height="14" viewBox="0 0 18 14" fill="none"><line x1="0" y1="1" x2="18" y2="1" stroke="#333" stroke-width="2" stroke-linecap="round"/><line x1="0" y1="7" x2="18" y2="7" stroke="#333" stroke-width="2" stroke-linecap="round"/><line x1="0" y1="13" x2="18" y2="13" stroke="#333" stroke-width="2" stroke-linecap="round"/></svg>
+                </button>
+                <span class="app-brand-text">ShopIQ</span>
+                <div style="position:relative;">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z" stroke="#14b8a6" stroke-width="2"/><line x1="3" y1="6" x2="21" y2="6" stroke="#14b8a6" stroke-width="2"/><path d="M16 10a4 4 0 01-8 0" stroke="#14b8a6" stroke-width="2"/></svg>
+                  <span id="cartBadge" class="cart-badge">2</span>
+                </div>
+              </div>
+
+              <div class="screen-scroll">
+                <!-- Product hero image -->
+                <div class="product-hero anim-fade" style="--delay:.2s">
+                  <div class="hero-badges">
+                    <span class="badge-bestseller">Best Seller</span>
+                    <span class="badge-sale">-31%</span>
+                  </div>
+                  <div style="font-size:48px;text-align:center;padding-top:60px;filter:drop-shadow(0 4px 12px rgba(0,0,0,.2))">🧥</div>
+                  <div style="text-align:center;font-size:12px;font-weight:600;color:rgba(255,255,255,.85);padding-bottom:16px;">Coastal Windbreaker</div>
+                </div>
+
+                <!-- Product info -->
+                <div class="product-info-panel anim-fade" style="--delay:.3s">
+                  <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:6px;">
+                    <h2 class="product-title">Coastal Windbreaker</h2>
+                    <button class="wishlist-btn" id="wishlistBtn">♡</button>
+                  </div>
+                  <div class="rating-row">
+                    <span class="stars">★★★★★</span>
+                    <span class="rating-count">284 reviews</span>
+                  </div>
+
+                  <div class="price-row">
+                    <span class="price-current">$89</span>
+                    <span class="price-original">$129</span>
+                    <span class="price-badge">Save $40</span>
+                  </div>
+
+                  <div class="stock-indicator anim-pulse">
+                    <span class="stock-dot"></span>
+                    <span class="stock-text">Only 2 left — selling fast!</span>
+                  </div>
+
+                  <!-- Size selector -->
+                  <div class="selector-group anim-fade" style="--delay:.4s">
+                    <div class="selector-label">Size <span style="color:#14b8a6;font-weight:400;">Size Guide →</span></div>
+                    <div class="size-grid">
+                      <button class="size-btn" data-size="XS">XS</button>
+                      <button class="size-btn" data-size="S">S</button>
+                      <button class="size-btn size-btn-selected" data-size="M">M</button>
+                      <button class="size-btn" data-size="L">L</button>
+                      <button class="size-btn" data-size="XL">XL</button>
+                    </div>
+                  </div>
+
+                  <!-- Color selector -->
+                  <div class="selector-group anim-fade" style="--delay:.5s">
+                    <div class="selector-label">Color — <span id="selectedColorName" style="color:#14b8a6;">Teal</span></div>
+                    <div class="color-row">
+                      <button class="color-swatch color-swatch-selected" data-color="Teal" style="background:#14b8a6;"></button>
+                      <button class="color-swatch" data-color="Storm" style="background:#64748b;"></button>
+                      <button class="color-swatch" data-color="Ivory" style="background:#f5f0e8;border:1px solid #e5e7eb;"></button>
+                      <button class="color-swatch" data-color="Navy" style="background:#1e3a5f;"></button>
+                    </div>
+                  </div>
+
+                  <!-- CTA -->
+                  <button class="add-to-cart-btn ripple-btn" id="addToCartBtn">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" style="margin-right:8px;"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z" stroke="white" stroke-width="2"/><line x1="3" y1="6" x2="21" y2="6" stroke="white" stroke-width="2"/><path d="M16 10a4 4 0 01-8 0" stroke="white" stroke-width="2"/></svg>
+                    Add to Cart
+                  </button>
+
+                  <div class="trust-row">
+                    <div class="trust-item"><span>📦</span> Free over $50</div>
+                    <div class="trust-item"><span>🔄</span> 30-day returns</div>
+                    <div class="trust-item"><span>🛡️</span> Secure checkout</div>
+                  </div>
+                </div>
+              </div>
+
+              <nav class="bottom-nav">
+                <button class="nav-btn active"><svg width="20" height="20" fill="none" viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z" stroke="currentColor" stroke-width="2"/></svg><span>Home</span></button>
+                <button class="nav-btn"><svg width="20" height="20" fill="none" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8" stroke="currentColor" stroke-width="2"/><line x1="21" y1="21" x2="16.65" y2="16.65" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><span>Search</span></button>
+                <button class="nav-btn" style="position:relative;"><svg width="20" height="20" fill="none" viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z" stroke="currentColor" stroke-width="2"/></svg><span>Cart</span></button>
+                <button class="nav-btn"><svg width="20" height="20" fill="none" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="7" r="4" stroke="currentColor" stroke-width="2"/></svg><span>Profile</span></button>
+              </nav>
+            </div>
+            <div class="home-indicator"></div>
+          </div>
+          <div class="phone-label">Screen 1 — Product Detail</div>
+        </div>
+
+        <!-- ─── PHONE 2: CHECKOUT ─── -->
+        <div class="phone anim-phone" style="--delay:.15s">
+          <div class="phone-shell">
+            <div class="phone-notch"></div>
+            <div class="status-bar">
+              <span class="status-time">9:41</span>
+              <span class="status-icons">
+                <svg width="15" height="11" viewBox="0 0 15 11" fill="white"><rect x="0" y="4" width="3" height="7" rx="1"/><rect x="4" y="2" width="3" height="9" rx="1"/><rect x="8" y="0" width="3" height="11" rx="1"/></svg>
+                <svg width="16" height="12" viewBox="0 0 24 18" fill="white"><path d="M1 5.5C4.8 1.8 10.1 0 12 0s7.2 1.8 11 5.5l-2 2C17.6 4 15 2.5 12 2.5S6.4 4 4 7.5L2 5.5z"/><circle cx="12" cy="15" r="2.5"/></svg>
+                <svg width="25" height="12" viewBox="0 0 25 12" fill="none"><rect x="0.5" y="0.5" width="21" height="11" rx="3.5" stroke="white" stroke-opacity=".35"/><rect x="2" y="2" width="15" height="8" rx="2" fill="white"/><path d="M23 4v4a2 2 0 000-4z" fill="white" opacity=".4"/></svg>
+              </span>
+            </div>
+
+            <div class="app-screen">
+              <div class="app-topbar app-topbar-white">
+                <button class="icon-btn" style="color:#14b8a6;font-size:20px;">‹</button>
+                <span class="app-brand-text" style="font-size:15px;">Checkout</span>
+                <div style="width:24px;"></div>
+              </div>
+
+              <div class="screen-scroll">
+                <!-- Checkout steps -->
+                <div class="checkout-steps anim-fade" style="--delay:.2s">
+                  <div class="checkout-step done"><div class="cs-dot done-dot">✓</div><span>Cart</span></div>
+                  <div class="checkout-line done-line"></div>
+                  <div class="checkout-step active"><div class="cs-dot active-dot">2</div><span>Shipping</span></div>
+                  <div class="checkout-line"></div>
+                  <div class="checkout-step"><div class="cs-dot">3</div><span>Payment</span></div>
+                </div>
+
+                <!-- Order summary mini -->
+                <div class="order-mini anim-fade" style="--delay:.3s">
+                  <span style="font-size:20px;">🧥</span>
+                  <div style="flex:1;">
+                    <div style="font-size:12px;font-weight:700;color:#111;">Coastal Windbreaker</div>
+                    <div style="font-size:11px;color:#999;">Size M · Teal · Qty 1</div>
+                  </div>
+                  <span style="font-weight:700;color:#14b8a6;font-size:14px;">$89</span>
+                </div>
+
+                <!-- Form fields -->
+                <div class="anim-fade" style="--delay:.35s">
+                  <div class="float-group">
+                    <input class="float-input" type="text" id="nameInput" value="Morgan Lee" placeholder=" ">
+                    <label class="float-label">Full Name</label>
+                  </div>
+                  <div class="float-group">
+                    <input class="float-input" type="email" id="emailInput" value="morgan@email.com" placeholder=" ">
+                    <label class="float-label">Email</label>
+                  </div>
+                  <div class="float-group">
+                    <input class="float-input" type="text" id="addressInput" value="123 Ocean Drive" placeholder=" ">
+                    <label class="float-label">Street Address</label>
+                  </div>
+                  <div style="display:grid;grid-template-columns:2fr 1fr;gap:8px;">
+                    <div class="float-group" style="margin-bottom:0;">
+                      <input class="float-input" type="text" value="San Diego" placeholder=" ">
+                      <label class="float-label">City</label>
+                    </div>
+                    <div class="float-group" style="margin-bottom:0;">
+                      <input class="float-input" type="text" value="92101" placeholder=" ">
+                      <label class="float-label">Zip</label>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Shipping options -->
+                <div class="shipping-options anim-fade" style="--delay:.5s;margin-top:14px;">
+                  <div class="section-label">Shipping Method</div>
+                  <label class="ship-option ship-option-selected" id="shipStandard">
+                    <input type="radio" name="shipping" checked style="cursor:pointer;">
+                    <div style="flex:1;">
+                      <div style="font-size:13px;font-weight:700;">Standard</div>
+                      <div style="font-size:11px;color:#666;">2–3 business days</div>
+                    </div>
+                    <span class="ship-price free">FREE</span>
+                  </label>
+                  <label class="ship-option" id="shipExpress">
+                    <input type="radio" name="shipping" style="cursor:pointer;">
+                    <div style="flex:1;">
+                      <div style="font-size:13px;font-weight:700;">Express</div>
+                      <div style="font-size:11px;color:#666;">Next business day</div>
+                    </div>
+                    <span class="ship-price">$9.99</span>
+                  </label>
+                </div>
+
+                <!-- Order total -->
+                <div class="order-total anim-fade" style="--delay:.6s">
+                  <div class="total-row"><span>Subtotal</span><span>$89.00</span></div>
+                  <div class="total-row"><span>Shipping</span><span id="shippingCost" style="color:#059669;font-weight:700;">FREE</span></div>
+                  <div class="total-row total-row-final"><span>Total</span><span id="totalAmount" style="color:#14b8a6;font-size:18px;font-weight:800;">$89.00</span></div>
+                </div>
+
+                <button class="retail-cta-btn ripple-btn" id="checkoutBtn">Continue to Payment →</button>
+              </div>
+
+              <nav class="bottom-nav">
+                <button class="nav-btn"><svg width="20" height="20" fill="none" viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z" stroke="currentColor" stroke-width="2"/></svg><span>Home</span></button>
+                <button class="nav-btn"><svg width="20" height="20" fill="none" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8" stroke="currentColor" stroke-width="2"/><line x1="21" y1="21" x2="16.65" y2="16.65" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><span>Search</span></button>
+                <button class="nav-btn active"><svg width="20" height="20" fill="none" viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z" stroke="currentColor" stroke-width="2"/></svg><span>Cart</span></button>
+                <button class="nav-btn"><svg width="20" height="20" fill="none" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="7" r="4" stroke="currentColor" stroke-width="2"/></svg><span>Profile</span></button>
+              </nav>
+            </div>
+            <div class="home-indicator"></div>
+          </div>
+          <div class="phone-label">Screen 2 — Checkout</div>
+        </div>
+
+        <!-- ─── PHONE 3: RETURNS/EXCHANGE ─── -->
+        <div class="phone anim-phone" style="--delay:.3s">
+          <div class="phone-shell">
+            <div class="phone-notch"></div>
+            <div class="status-bar">
+              <span class="status-time">9:41</span>
+              <span class="status-icons">
+                <svg width="15" height="11" viewBox="0 0 15 11" fill="white"><rect x="0" y="4" width="3" height="7" rx="1"/><rect x="4" y="2" width="3" height="9" rx="1"/><rect x="8" y="0" width="3" height="11" rx="1"/><rect x="12" y="0" width="3" height="11" rx="1"/></svg>
+                <svg width="16" height="12" viewBox="0 0 24 18" fill="white"><path d="M1 5.5C4.8 1.8 10.1 0 12 0s7.2 1.8 11 5.5l-2 2C17.6 4 15 2.5 12 2.5S6.4 4 4 7.5L2 5.5z"/><path d="M5 9.5C7 7.2 9.4 6 12 6s5 1.2 7 3.5l-2 2C15.4 9.7 13.8 8.5 12 8.5S8.6 9.7 7 11.5L5 9.5z"/><circle cx="12" cy="15" r="2.5"/></svg>
+                <svg width="25" height="12" viewBox="0 0 25 12" fill="none"><rect x="0.5" y="0.5" width="21" height="11" rx="3.5" stroke="white" stroke-opacity=".35"/><rect x="2" y="2" width="19" height="8" rx="2" fill="white"/><path d="M23 4v4a2 2 0 000-4z" fill="white" opacity=".4"/></svg>
+              </span>
+            </div>
+
+            <div class="app-screen">
+              <div class="app-topbar app-topbar-white">
+                <button class="icon-btn" style="color:#14b8a6;font-size:20px;">‹</button>
+                <span class="app-brand-text" style="font-size:15px;">Returns</span>
+                <div style="width:24px;"></div>
+              </div>
+
+              <div class="screen-scroll">
+                <!-- Return countdown -->
+                <div class="return-countdown anim-fade" style="--delay:.2s">
+                  <div class="countdown-icon">⏳</div>
+                  <div>
+                    <div class="countdown-main">27 days left to return</div>
+                    <div class="countdown-sub">Ordered Jun 15 · Delivered Jun 17</div>
+                  </div>
+                </div>
+
+                <!-- Order card -->
+                <div class="return-order-card anim-fade" style="--delay:.3s">
+                  <span style="font-size:28px;">🧥</span>
+                  <div style="flex:1;">
+                    <div style="font-size:13px;font-weight:700;color:#111;">Coastal Windbreaker</div>
+                    <div style="font-size:11px;color:#888;margin-top:2px;">Size M · Teal · Qty 1</div>
+                    <div style="font-size:11px;color:#14b8a6;margin-top:4px;font-weight:600;">Order #ORD-2847</div>
+                  </div>
+                  <div style="text-align:right;">
+                    <div style="font-size:14px;font-weight:800;color:#111;">$89</div>
+                    <div style="font-size:10px;color:#10b981;margin-top:2px;">Delivered</div>
+                  </div>
+                </div>
+
+                <div class="section-label anim-fade" style="--delay:.4s;margin:14px 0 10px;">What would you like to do?</div>
+
+                <!-- Exchange first (highlighted) -->
+                <button class="return-option exchange-option anim-fade" id="exchangeBtn" style="--delay:.45s">
+                  <div class="return-option-icon">🔄</div>
+                  <div style="flex:1;text-align:left;">
+                    <div class="return-option-title">Exchange for different size/color</div>
+                    <div class="return-option-sub">Recommended · Faster · Free shipping</div>
+                  </div>
+                  <span class="return-arrow">→</span>
+                </button>
+
+                <!-- Refund option -->
+                <button class="return-option refund-option anim-fade" id="refundBtn" style="--delay:.55s">
+                  <div class="return-option-icon">💰</div>
+                  <div style="flex:1;text-align:left;">
+                    <div class="return-option-title">Request a refund</div>
+                    <div class="return-option-sub">5–7 business days to original payment</div>
+                  </div>
+                  <span class="return-arrow">→</span>
+                </button>
+
+                <!-- Exchange panel (hidden, shows on click) -->
+                <div id="exchangePanel" class="exchange-panel">
+                  <div class="section-label" style="margin-bottom:10px;">Select new size:</div>
+                  <div class="size-grid" style="margin-bottom:14px;">
+                    <button class="size-btn" data-size="XS">XS</button>
+                    <button class="size-btn" data-size="S">S</button>
+                    <button class="size-btn size-btn-selected" data-size="L">L</button>
+                    <button class="size-btn" data-size="XL">XL</button>
+                  </div>
+                  <button class="retail-cta-btn" style="font-size:13px;padding:12px 16px;" id="confirmExchangeBtn">Confirm Exchange ✓</button>
+                </div>
+
+                <!-- Policy accordion -->
+                <div class="policy-accordion anim-fade" style="--delay:.65s">
+                  <details>
+                    <summary class="policy-summary">📋 Return & Exchange Policy</summary>
+                    <div class="policy-body">
+                      Free returns within 30 days. Items must be unworn with original tags. We provide a free prepaid shipping label. Exchanges ship immediately. Refunds processed in 5–7 business days.
+                    </div>
+                  </details>
+                </div>
+              </div>
+
+              <nav class="bottom-nav">
+                <button class="nav-btn"><svg width="20" height="20" fill="none" viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z" stroke="currentColor" stroke-width="2"/></svg><span>Home</span></button>
+                <button class="nav-btn"><svg width="20" height="20" fill="none" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8" stroke="currentColor" stroke-width="2"/><line x1="21" y1="21" x2="16.65" y2="16.65" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><span>Search</span></button>
+                <button class="nav-btn"><svg width="20" height="20" fill="none" viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z" stroke="currentColor" stroke-width="2"/></svg><span>Cart</span></button>
+                <button class="nav-btn active"><svg width="20" height="20" fill="none" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="7" r="4" stroke="currentColor" stroke-width="2"/></svg><span>Profile</span></button>
+              </nav>
+            </div>
+            <div class="home-indicator"></div>
+          </div>
+          <div class="phone-label">Screen 3 — Returns &amp; Exchange</div>
+        </div>
+      </section>
+
+      <style>
+        /* ─── Page layout ─── */
+        .app-preview-label { text-align:center; padding: 32px 16px 0; }
+
+        /* ─── Keyframe animations ─── */
+        @keyframes phoneSlideUp {
+          from { opacity:0; transform:translateY(60px) scale(.96); }
+          to   { opacity:1; transform:translateY(0)    scale(1);   }
+        }
+        @keyframes fadeInUp {
+          from { opacity:0; transform:translateY(16px); }
+          to   { opacity:1; transform:translateY(0);    }
+        }
+        @keyframes rippleEffect {
+          to { transform:scale(4); opacity:0; }
+        }
+        @keyframes pulseDot {
+          0%,100% { box-shadow: 0 0 0 0 rgba(20,184,166,.5); }
+          50%      { box-shadow: 0 0 0 6px rgba(20,184,166,0); }
+        }
+        @keyframes countdownPulse {
+          0%,100% { opacity:1; }
+          50%      { opacity:.7; }
+        }
+        @keyframes shimmer {
+          0%   { background-position:-200px 0; }
+          100% { background-position: 200px 0; }
+        }
+        @keyframes bounceIn {
+          0%   { transform:scale(0); opacity:0; }
+          60%  { transform:scale(1.2); opacity:1; }
+          100% { transform:scale(1); }
+        }
+
+        .anim-phone {
+          animation: phoneSlideUp .6s cubic-bezier(.22,1,.36,1) both;
+          animation-delay: var(--delay, 0s);
+        }
+        .anim-fade {
+          animation: fadeInUp .5s ease both;
+          animation-delay: var(--delay, 0s);
+        }
+        .anim-pulse { animation: pulseDot 2s infinite; }
+
+        /* ─── Phone stage ─── */
+        .phone-stage {
+          display:flex; gap:36px; justify-content:center; align-items:flex-start; flex-wrap:wrap;
+          padding:40px 24px 60px;
+          background:linear-gradient(160deg,#0d1b2a 0%,#0a2540 55%,#0e3d2f 100%);
+          min-height:600px;
+        }
+
+        .phone { display:flex; flex-direction:column; align-items:center; gap:14px; }
+
+        .phone-shell {
+          width:280px; height:590px;
+          background:#0a0a0a;
+          border-radius:44px;
+          border:2px solid #2a2a2a;
+          box-shadow: 0 0 0 1px #111, 0 32px 64px rgba(0,0,0,.65), inset 0 0 0 1px #333;
+          display:flex; flex-direction:column; overflow:hidden; position:relative;
+        }
+
+        .phone-notch {
+          position:absolute; top:0; left:50%; transform:translateX(-50%);
+          width:100px; height:26px; background:#0a0a0a;
+          border-radius:0 0 18px 18px; z-index:10;
+        }
+
+        .status-bar {
+          display:flex; justify-content:space-between; align-items:center;
+          padding:6px 20px 2px; background:#0a0a0a; z-index:5; min-height:30px;
+        }
+        .status-time { font-size:12px; font-weight:700; color:white; }
+        .status-icons { display:flex; gap:6px; align-items:center; }
+
+        .app-screen { flex:1; background:#f8fffe; display:flex; flex-direction:column; overflow:hidden; }
+
+        .app-topbar {
+          padding:10px 14px; display:flex; justify-content:space-between;
+          align-items:center; flex-shrink:0;
+        }
+        .app-topbar-white { background:white; border-bottom:1px solid #e6faf8; }
+        .app-brand-text { font-size:16px; font-weight:800; color:#0d9488; letter-spacing:-.3px; }
+        .icon-btn { background:none; border:none; cursor:pointer; padding:4px; border-radius:6px; display:flex; align-items:center; }
+        .cart-badge {
+          position:absolute; top:-5px; right:-6px;
+          width:16px; height:16px; background:#f97316; color:white;
+          font-size:10px; font-weight:700; border-radius:50%;
+          display:flex; align-items:center; justify-content:center;
+          animation: bounceIn .4s ease .8s both;
+        }
+
+        .screen-scroll {
+          flex:1; overflow-y:auto; scroll-behavior:smooth;
+        }
+        .screen-scroll::-webkit-scrollbar { width:3px; }
+        .screen-scroll::-webkit-scrollbar-thumb { background:#99f6e4; border-radius:2px; }
+
+        .home-indicator { height:22px; background:#0a0a0a; display:flex; align-items:center; justify-content:center; }
+        .home-indicator::after { content:''; width:100px; height:4px; background:#444; border-radius:2px; }
+
+        .phone-label { font-size:12px; font-weight:600; color:rgba(255,255,255,.6); text-align:center; }
+
+        /* ─── Product detail styles ─── */
+        .product-hero {
+          background:linear-gradient(160deg,#0d9488,#14b8a6);
+          height:180px; position:relative; overflow:hidden;
+        }
+        .hero-badges { position:absolute; top:12px; left:12px; display:flex; gap:6px; }
+        .badge-bestseller {
+          background:rgba(255,255,255,.25); color:white; font-size:10px;
+          font-weight:700; padding:3px 8px; border-radius:20px; backdrop-filter:blur(4px);
+        }
+        .badge-sale {
+          background:#f97316; color:white; font-size:10px;
+          font-weight:700; padding:3px 8px; border-radius:20px;
+          animation:bounceIn .4s ease .5s both;
+        }
+
+        .product-info-panel { padding:14px; }
+
+        .product-title { font-size:17px; font-weight:800; color:#0f172a; margin:0 0 4px; flex:1; }
+
+        .wishlist-btn {
+          background:none; border:none; font-size:20px; cursor:pointer;
+          color:#e2e8f0; transition:all .3s ease; padding:4px;
+        }
+        .wishlist-btn:hover, .wishlist-btn.liked { color:#f43f5e; transform:scale(1.2); }
+
+        .rating-row { display:flex; gap:8px; align-items:center; margin-bottom:10px; }
+        .stars { color:#f59e0b; font-size:13px; }
+        .rating-count { font-size:12px; color:#64748b; }
+
+        .price-row { display:flex; gap:8px; align-items:baseline; margin-bottom:10px; }
+        .price-current { font-size:26px; font-weight:800; color:#14b8a6; }
+        .price-original { font-size:14px; color:#94a3b8; text-decoration:line-through; }
+        .price-badge {
+          font-size:11px; background:#fef3c7; color:#92400e;
+          padding:3px 8px; border-radius:20px; font-weight:700;
+        }
+
+        .stock-indicator {
+          display:flex; align-items:center; gap:7px;
+          background:#ecfdf5; border-radius:6px; padding:8px 10px; margin-bottom:12px;
+        }
+        .stock-dot {
+          width:8px; height:8px; background:#10b981; border-radius:50%;
+          animation:pulseDot 1.5s infinite;
+        }
+        .stock-text { font-size:12px; font-weight:600; color:#047857; }
+
+        .selector-group { margin-bottom:12px; }
+        .selector-label { font-size:12px; font-weight:700; color:#64748b; text-transform:uppercase; letter-spacing:.5px; margin-bottom:8px; }
+
+        .size-grid { display:flex; gap:6px; flex-wrap:wrap; }
+        .size-btn {
+          min-width:40px; padding:8px 10px; border:1.5px solid #ccfbf1;
+          background:white; color:#0f766e; font-weight:700; font-size:12px;
+          border-radius:8px; cursor:pointer; transition:all .2s ease;
+        }
+        .size-btn:hover { border-color:#14b8a6; background:#f0fdfa; }
+        .size-btn.size-btn-selected { background:#14b8a6; color:white; border-color:#14b8a6; box-shadow:0 0 0 3px rgba(20,184,166,.2); }
+
+        .color-row { display:flex; gap:10px; }
+        .color-swatch {
+          width:32px; height:32px; border-radius:50%;
+          cursor:pointer; transition:all .25s ease;
+          border:2px solid transparent;
+        }
+        .color-swatch:hover { transform:scale(1.1); }
+        .color-swatch.color-swatch-selected { box-shadow:0 0 0 2px white, 0 0 0 4px #14b8a6; }
+
+        .add-to-cart-btn {
+          width:100%; padding:14px; margin-top:6px; margin-bottom:10px;
+          background:linear-gradient(135deg,#14b8a6,#0d9488);
+          color:white; border:none; border-radius:12px;
+          font-size:14px; font-weight:700; cursor:pointer;
+          display:flex; align-items:center; justify-content:center;
+          box-shadow:0 4px 16px rgba(20,184,166,.4);
+          transition:all .25s ease; position:relative; overflow:hidden;
+        }
+        .add-to-cart-btn:hover { transform:translateY(-1px); box-shadow:0 6px 20px rgba(20,184,166,.5); }
+
+        .trust-row { display:flex; gap:0; justify-content:space-between; }
+        .trust-item { display:flex; gap:4px; align-items:center; font-size:10px; color:#64748b; }
+
+        /* ─── Checkout styles ─── */
+        .checkout-steps {
+          display:flex; align-items:center; padding:14px 14px 10px; background:white;
+          border-bottom:1px solid #f0fdfa;
+        }
+        .checkout-step { display:flex; flex-direction:column; align-items:center; gap:3px; }
+        .checkout-step span { font-size:10px; color:#94a3b8; font-weight:600; }
+        .checkout-step.active span { color:#14b8a6; }
+        .checkout-step.done span { color:#10b981; }
+        .cs-dot {
+          width:22px; height:22px; border-radius:50%; background:#e5e7eb;
+          display:flex; align-items:center; justify-content:center; font-size:11px; font-weight:700; color:#94a3b8;
+        }
+        .active-dot { background:#14b8a6; color:white; }
+        .done-dot { background:#10b981; color:white; font-size:11px; }
+        .checkout-line { flex:1; height:2px; background:#e5e7eb; margin:0 4px 14px; }
+        .done-line { background:#10b981; }
+
+        .order-mini {
+          display:flex; align-items:center; gap:10px;
+          background:#f0fdfa; border:1px solid #ccfbf1;
+          padding:10px 14px; margin:10px 14px;
+          border-radius:10px;
+        }
+
+        .float-group { position:relative; margin-bottom:12px; padding:0 14px; }
+        .float-input {
+          width:100%; padding:16px 12px 6px; border:1.5px solid #e5e7eb;
+          border-radius:8px; font-size:14px; background:white;
+          transition:border-color .2s; box-sizing:border-box;
+        }
+        .float-input:focus { outline:none; border-color:#14b8a6; box-shadow:0 0 0 3px rgba(20,184,166,.12); }
+        .float-label {
+          position:absolute; left:26px; top:50%; transform:translateY(-50%);
+          font-size:14px; color:#9ca3af; pointer-events:none; transition:all .2s ease;
+        }
+        .float-input:focus + .float-label,
+        .float-input:not(:placeholder-shown) + .float-label {
+          top:8px; font-size:10px; color:#14b8a6; font-weight:700; text-transform:uppercase; letter-spacing:.5px;
+        }
+
+        .section-label { font-size:11px; font-weight:700; color:#64748b; text-transform:uppercase; letter-spacing:.5px; padding:0 14px; }
+
+        .shipping-options { padding:0 14px; display:flex; flex-direction:column; gap:8px; }
+        .ship-option {
+          display:flex; align-items:center; gap:10px; padding:12px;
+          border:1.5px solid #e5e7eb; border-radius:10px; background:white; cursor:pointer; transition:all .2s;
+        }
+        .ship-option-selected { border-color:#14b8a6; background:#f0fdfa; }
+        .ship-price { font-size:13px; font-weight:700; color:#333; }
+        .ship-price.free { color:#059669; }
+
+        .order-total { padding:12px 14px; border-top:1px solid #f1f5f9; margin-top:12px; }
+        .total-row { display:flex; justify-content:space-between; font-size:13px; color:#555; margin-bottom:8px; }
+        .total-row-final { font-size:14px; font-weight:700; color:#0f172a; border-top:1px solid #e5e7eb; padding-top:10px; margin-top:4px; }
+
+        .retail-cta-btn {
+          width:calc(100% - 28px); margin:10px 14px 14px; padding:14px;
+          background:linear-gradient(135deg,#14b8a6,#0d9488);
+          color:white; border:none; border-radius:12px; font-size:14px; font-weight:700; cursor:pointer;
+          box-shadow:0 4px 16px rgba(20,184,166,.4); transition:all .25s ease; position:relative; overflow:hidden;
+        }
+        .retail-cta-btn:hover { transform:translateY(-1px); box-shadow:0 6px 20px rgba(20,184,166,.5); }
+
+        /* ─── Returns styles ─── */
+        .return-countdown {
+          display:flex; align-items:center; gap:10px;
+          background:linear-gradient(135deg,#fef3c7,#fde68a);
+          border:1px solid #fcd34d; border-radius:10px;
+          padding:12px 14px; margin:12px 14px;
+          animation:countdownPulse 3s ease infinite;
+        }
+        .countdown-icon { font-size:20px; }
+        .countdown-main { font-size:13px; font-weight:700; color:#92400e; }
+        .countdown-sub { font-size:11px; color:#b45309; margin-top:2px; }
+
+        .return-order-card {
+          display:flex; align-items:center; gap:12px;
+          background:white; border:1px solid #e5e7eb; border-radius:12px;
+          padding:12px 14px; margin:0 14px 4px;
+          box-shadow:0 1px 4px rgba(0,0,0,.06);
+        }
+
+        .return-option {
+          width:calc(100% - 28px); margin:6px 14px; padding:14px;
+          border-radius:12px; cursor:pointer; display:flex; align-items:center; gap:10px;
+          transition:all .25s ease; text-align:left;
+        }
+        .exchange-option {
+          background:linear-gradient(135deg,#f0fdfa,#ccfbf1);
+          border:2px solid #14b8a6;
+          box-shadow:0 4px 14px rgba(20,184,166,.2);
+        }
+        .exchange-option:hover { transform:translateY(-2px); box-shadow:0 6px 20px rgba(20,184,166,.3); }
+        .refund-option { background:white; border:1.5px solid #e5e7eb; }
+        .refund-option:hover { border-color:#14b8a6; background:#f8fafc; }
+
+        .return-option-icon { font-size:22px; }
+        .return-option-title { font-size:13px; font-weight:700; color:#0f172a; margin-bottom:2px; }
+        .return-option-sub { font-size:11px; color:#64748b; }
+        .return-arrow { font-size:16px; color:#14b8a6; font-weight:700; }
+
+        .exchange-panel {
+          background:#f0fdfa; border:1px solid #ccfbf1; border-radius:12px;
+          padding:14px; margin:4px 14px;
+          max-height:0; overflow:hidden;
+          transition:max-height .4s cubic-bezier(.22,1,.36,1), padding .3s ease, opacity .3s ease;
+          opacity:0;
+        }
+        .exchange-panel.open { max-height:200px; opacity:1; }
+
+        .policy-accordion { margin:8px 14px 14px; }
+        .policy-summary {
+          font-size:12px; font-weight:700; color:#334155; cursor:pointer;
+          padding:10px 12px; background:#f8fafc; border-radius:8px;
+          list-style:none; user-select:none;
+        }
+        .policy-body { font-size:11px; color:#64748b; line-height:1.6; padding:10px 12px 4px; }
+
+        /* ─── Bottom nav ─── */
+        .bottom-nav {
+          display:flex; background:white;
+          border-top:1px solid #f0fdfa; padding:6px 0 2px; flex-shrink:0;
+        }
+        .nav-btn {
+          flex:1; display:flex; flex-direction:column; align-items:center; gap:3px;
+          background:none; border:none; cursor:pointer; color:#bbb;
+          font-size:10px; font-weight:500; padding:4px 0; transition:color .2s;
+        }
+        .nav-btn:hover, .nav-btn.active { color:#14b8a6; }
+        .nav-btn svg { transition:transform .15s; }
+        .nav-btn:hover svg { transform:translateY(-1px); }
+
+        /* ─── Ripple effect ─── */
+        .ripple-btn { position:relative; overflow:hidden; }
+        .ripple-btn .ripple {
+          position:absolute; border-radius:50%;
+          background:rgba(255,255,255,.4); transform:scale(0);
+          pointer-events:none; animation:rippleEffect .6s linear;
+        }
+
+        /* ─── Responsive ─── */
+        @media (max-width:900px) {
+          .phone-stage { gap:20px; padding:24px 12px 40px; }
+          .phone-shell { width:240px; height:510px; }
+          .phone-notch { width:80px; }
+        }
+        @media (max-width:600px) {
+          .phone-stage { flex-direction:column; align-items:center; }
+          .phone-shell { width:300px; height:620px; border-radius:48px; }
+        }
+      </style>
+
+      <footer class="page-footer">This sample page is meant for visual preview during portfolio review.</footer>
+    </main>
+
+    <script>
+      // ── Ripple effect helper ──
+      function addRipple(btn) {
+        btn.addEventListener('click', function(e) {
+          var r = document.createElement('span');
+          r.className = 'ripple';
+          var size = Math.max(btn.offsetWidth, btn.offsetHeight);
+          r.style.width = r.style.height = size + 'px';
+          r.style.left = (e.clientX - btn.getBoundingClientRect().left - size/2) + 'px';
+          r.style.top  = (e.clientY - btn.getBoundingClientRect().top  - size/2) + 'px';
+          btn.appendChild(r);
+          window.setTimeout(function() { r.remove(); }, 700);
+        });
+      }
+      document.querySelectorAll('.ripple-btn').forEach(addRipple);
+
+      // ── Size buttons ──
+      document.querySelectorAll('.size-btn').forEach(function(btn) {
+        btn.addEventListener('click', function() {
+          var parent = this.closest('.size-grid');
+          parent.querySelectorAll('.size-btn').forEach(function(b) { b.classList.remove('size-btn-selected'); });
+          this.classList.add('size-btn-selected');
+        });
+      });
+
+      // ── Color swatches ──
+      document.querySelectorAll('.color-swatch').forEach(function(s) {
+        s.addEventListener('click', function() {
+          document.querySelectorAll('.color-swatch').forEach(function(b) { b.classList.remove('color-swatch-selected'); });
+          this.classList.add('color-swatch-selected');
+          var nameEl = document.getElementById('selectedColorName');
+          if (nameEl) nameEl.textContent = this.getAttribute('data-color');
+        });
+      });
+
+      // ── Wishlist toggle ──
+      var wishBtn = document.getElementById('wishlistBtn');
+      if (wishBtn) {
+        wishBtn.addEventListener('click', function() {
+          this.classList.toggle('liked');
+          this.textContent = this.classList.contains('liked') ? '♥' : '♡';
+        });
+      }
+
+      // ── Add to Cart → update badge ──
+      var cartBadge = document.getElementById('cartBadge');
+      var addBtn = document.getElementById('addToCartBtn');
+      if (addBtn && cartBadge) {
+        var cartCount = 2;
+        addBtn.addEventListener('click', function() {
+          cartCount++;
+          cartBadge.textContent = cartCount;
+          cartBadge.style.animation = 'none';
+          cartBadge.offsetHeight; // reflow
+          cartBadge.style.animation = 'bounceIn .3s ease';
+          this.textContent = '✓ Added to Cart!';
+          this.style.background = '#10b981';
+          var self = this;
+          window.setTimeout(function() {
+            self.innerHTML = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" style="margin-right:8px;"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z" stroke="white" stroke-width="2"/><line x1="3" y1="6" x2="21" y2="6" stroke="white" stroke-width="2"/><path d="M16 10a4 4 0 01-8 0" stroke="white" stroke-width="2"/></svg>Add to Cart';
+            self.style.background = '';
+          }, 1800);
+        });
+      }
+
+      // ── Shipping option toggle ──
+      document.querySelectorAll('input[name="shipping"]').forEach(function(radio) {
+        radio.addEventListener('change', function() {
+          document.querySelectorAll('.ship-option').forEach(function(o) { o.classList.remove('ship-option-selected'); });
+          this.closest('.ship-option').classList.add('ship-option-selected');
+          var costEl = document.getElementById('shippingCost');
+          var totalEl = document.getElementById('totalAmount');
+          if (this.value === undefined) return;
+          var isExpress = this.closest('#shipExpress') !== null;
+          if (costEl) costEl.textContent = isExpress ? '$9.99' : 'FREE';
+          if (costEl) costEl.style.color = isExpress ? '#333' : '#059669';
+          if (totalEl) totalEl.textContent = isExpress ? '$98.99' : '$89.00';
+        });
+      });
+
+      // ── Checkout button ──
+      var checkoutBtn = document.getElementById('checkoutBtn');
+      if (checkoutBtn) {
+        checkoutBtn.addEventListener('click', function() {
+          this.textContent = '✓ Order Placed!';
+          this.style.background = '#10b981';
+          var self = this;
+          window.setTimeout(function() {
+            self.textContent = 'Continue to Payment →';
+            self.style.background = '';
+          }, 2000);
+        });
+      }
+
+      // ── Exchange flow ──
+      var exchangeBtn = document.getElementById('exchangeBtn');
+      var exchangePanel = document.getElementById('exchangePanel');
+      if (exchangeBtn && exchangePanel) {
+        exchangeBtn.addEventListener('click', function() {
+          exchangePanel.classList.toggle('open');
+        });
+      }
+
+      var confirmExchangeBtn = document.getElementById('confirmExchangeBtn');
+      if (confirmExchangeBtn) {
+        confirmExchangeBtn.addEventListener('click', function() {
+          this.textContent = '🎉 Exchange Confirmed!';
+          this.style.background = '#10b981';
+        });
+      }
+
+      // ── Refund button ──
+      var refundBtn = document.getElementById('refundBtn');
+      if (refundBtn) {
+        refundBtn.addEventListener('click', function() {
+          this.querySelector('.return-option-title').textContent = '✓ Refund Requested';
+          this.querySelector('.return-option-sub').textContent = 'You\'ll receive $89 in 5–7 days';
+          this.style.background = '#f0fdf4';
+          this.style.borderColor = '#10b981';
+        });
+      }
+
+      // ── Bottom nav tab switching ──
+      document.querySelectorAll('.nav-btn').forEach(function(btn) {
+        btn.addEventListener('click', function() {
+          this.closest('.bottom-nav').querySelectorAll('.nav-btn').forEach(function(b) { b.classList.remove('active'); });
+          this.classList.add('active');
+        });
+      });
+    </script>
+  </body>
+</html>
+              <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='300'%3E%3Crect fill='%2314b8a6' width='100%25' height='100%25'/%3E%3Ctext x='50%25' y='50%25' font-size='48' fill='white' text-anchor='middle' dy='.3em'%3EPremium Jacket%3C/text%3E%3C/svg%3E" alt="Premium Jacket" style="width: 100%; height: 300px; display: block; background: #14b8a6;">
+            </div>
+
+            <div class="product-info">
+              <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 12px;">
+                <div>
+                  <h2 style="font-size: 20px; font-weight: 600; margin: 0 0 4px 0;">Coastal Windbreaker</h2>
+                  <div style="display: flex; gap: 8px; align-items: center;">
+                    <span style="color: #f59e0b; font-size: 14px;">★★★★★ (284)</span>
+                  </div>
+                </div>
+              </div>
+
+              <div style="display: flex; gap: 8px; margin-bottom: 16px; align-items: baseline;">
+                <span style="font-size: 24px; font-weight: 700; color: #14b8a6;">$89</span>
+                <span style="font-size: 14px; color: #999; text-decoration: line-through;">$129</span>
+                <span style="font-size: 12px; background: #fef3c7; color: #92400e; padding: 4px 8px; border-radius: 4px;">Save 31%</span>
+              </div>
+
+              <div style="background: #ecfdf5; border-left: 3px solid #14b8a6; padding: 12px; margin-bottom: 16px; border-radius: 4px;">
+                <div style="font-size: 13px; font-weight: 600; color: #047857; margin-bottom: 4px;">✓ In Stock (2 available)</div>
+                <div style="font-size: 12px; color: #059669;">Ships in 1-2 business days</div>
+              </div>
+
+              <div style="margin-bottom: 16px;">
+                <label style="display: block; font-size: 13px; font-weight: 600; margin-bottom: 8px; color: #333;">Size</label>
+                <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px;" class="size-selector">
+                  <button class="size-btn" data-size="XS" style="padding: 12px; border: 2px solid #14b8a6; background: white; color: #14b8a6; font-weight: 600; border-radius: 6px; cursor: pointer; transition: all 0.3s ease;">XS</button>
+                  <button class="size-btn" data-size="S" style="padding: 12px; border: 2px solid #14b8a6; background: white; color: #14b8a6; font-weight: 600; border-radius: 6px; cursor: pointer; transition: all 0.3s ease;">S</button>
+                  <button class="size-btn size-btn-selected" data-size="M" style="padding: 12px; border: 2px solid #14b8a6; background: #14b8a6; color: white; font-weight: 600; border-radius: 6px; cursor: pointer; box-shadow: 0 0 0 3px rgba(20, 184, 166, 0.1); transition: all 0.3s ease;">M</button>
+                  <button class="size-btn" data-size="L" style="padding: 12px; border: 2px solid #14b8a6; background: white; color: #14b8a6; font-weight: 600; border-radius: 6px; cursor: pointer; transition: all 0.3s ease;">L</button>
+                </div>
+              </div>
+
+              <div style="margin-bottom: 16px;">
+                <label style="display: block; font-size: 13px; font-weight: 600; margin-bottom: 8px; color: #333;">Color</label>
+                <div style="display: flex; gap: 12px;" class="color-selector">
+                  <button class="color-btn color-btn-selected" data-color="teal" data-hex="#14b8a6" style="width: 48px; height: 48px; border-radius: 50%; background: #14b8a6; border: 3px solid #14b8a6; cursor: pointer; box-shadow: 0 0 0 2px white, 0 0 0 4px #14b8a6; transition: all 0.3s ease;"></button>
+                  <button class="color-btn" data-color="gray" data-hex="#64748b" style="width: 48px; height: 48px; border-radius: 50%; background: #64748b; border: 2px solid #d1d5db; cursor: pointer; transition: all 0.3s ease;"></button>
+                  <button class="color-btn" data-color="white" data-hex="#f5f5f4" style="width: 48px; height: 48px; border-radius: 50%; background: #f5f5f4; border: 2px solid #d1d5db; cursor: pointer; transition: all 0.3s ease;"></button>
+                </div>
+              </div>
+
+              <button style="width: 100%; padding: 16px; background: #14b8a6; color: white; border: none; font-size: 16px; font-weight: 600; border-radius: 8px; cursor: pointer; margin-bottom: 12px;">Add to Cart</button>
+              
+              <div style="display: flex; gap: 12px; font-size: 13px;">
+                <div style="flex: 1; display: flex; gap: 6px; align-items: center;"><span>📦</span> Free shipping over $50</div>
+                <div style="flex: 1; display: flex; gap: 6px; align-items: center;"><span>🔄</span> 30-day returns</div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- SCREEN 2: CHECKOUT FLOW -->
+        <article class="mobile-frame">
+          <div class="mobile-header">
+            <button aria-label="Back">← Back</button>
+            <span>Checkout</span>
+            <div style="width: 24px;"></div>
+          </div>
+
+          <div class="mobile-content">
+            <div style="margin-bottom: 16px;">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+                <span style="font-size: 13px; font-weight: 600; color: #666;">Step 2 of 3</span>
+                <span style="font-size: 12px; color: #999;">5 min remaining</span>
+              </div>
+              <div style="height: 4px; background: #e5e7eb; border-radius: 2px; overflow: hidden;">
+                <div style="height: 100%; width: 66%; background: #14b8a6; border-radius: 2px;"></div>
+              </div>
+            </div>
+
+            <h3 style="font-size: 16px; font-weight: 600; margin: 0 0 16px 0;">Shipping Details</h3>
+
+            <div style="margin-bottom: 16px;">
+              <label style="display: block; font-size: 13px; font-weight: 600; margin-bottom: 8px; color: #333;">Email</label>
+              <input type="email" placeholder="morgan@example.com" value="morgan@example.com" style="width: 100%; padding: 12px; border: 1px solid #d1d5db; border-radius: 6px; font-size: 16px; box-sizing: border-box;">
+            </div>
+
+            <div style="margin-bottom: 16px;">
+              <label style="display: block; font-size: 13px; font-weight: 600; margin-bottom: 8px; color: #333;">Full Name</label>
+              <input type="text" placeholder="Morgan Lee" value="Morgan Lee" style="width: 100%; padding: 12px; border: 1px solid #d1d5db; border-radius: 6px; font-size: 16px; box-sizing: border-box;">
+            </div>
+
+            <div style="margin-bottom: 16px;">
+              <label style="display: block; font-size: 13px; font-weight: 600; margin-bottom: 8px; color: #333;">Address</label>
+              <input type="text" placeholder="123 Ocean Drive" value="123 Ocean Drive" style="width: 100%; padding: 12px; border: 1px solid #d1d5db; border-radius: 6px; font-size: 16px; box-sizing: border-box;">
+            </div>
+
+            <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 12px; margin-bottom: 16px;">
+              <div>
+                <label style="display: block; font-size: 13px; font-weight: 600; margin-bottom: 8px; color: #333;">City</label>
+                <input type="text" placeholder="San Diego" value="San Diego" style="width: 100%; padding: 12px; border: 1px solid #d1d5db; border-radius: 6px; font-size: 16px; box-sizing: border-box;">
+              </div>
+              <div>
+                <label style="display: block; font-size: 13px; font-weight: 600; margin-bottom: 8px; color: #333;">Zip</label>
+                <input type="text" placeholder="92101" value="92101" style="width: 100%; padding: 12px; border: 1px solid #d1d5db; border-radius: 6px; font-size: 16px; box-sizing: border-box;">
+              </div>
+            </div>
+
+            <div style="background: #ecfdf5; border: 1px solid #d1fae6; padding: 12px; border-radius: 6px; margin-bottom: 16px;">
+              <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
+                <span style="font-size: 13px; color: #333;">Subtotal</span>
+                <span style="font-weight: 600; color: #333;">$89.00</span>
+              </div>
+              <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
+                <span style="font-size: 13px; color: #333;">Shipping</span>
+                <span style="font-weight: 600; color: #059669;">FREE</span>
+              </div>
+              <div style="display: flex; justify-content: space-between; border-top: 1px solid #d1fae6; padding-top: 8px;">
+                <span style="font-size: 14px; font-weight: 600; color: #333;">Total</span>
+                <span style="font-size: 18px; font-weight: 700; color: #14b8a6;">$89.00</span>
+              </div>
+            </div>
+
+            <button style="width: 100%; padding: 16px; background: #14b8a6; color: white; border: none; font-size: 16px; font-weight: 600; border-radius: 8px; cursor: pointer;">Continue to Payment</button>
+          </div>
+        </article>
+
+        <!-- SCREEN 3: RETURNS FLOW -->
+        <article class="mobile-frame">
+          <div class="mobile-header">
+            <button aria-label="Back">← Back</button>
+            <span>Returns</span>
+            <div style="width: 24px;"></div>
+          </div>
+
+          <div class="mobile-content">
+            <div style="background: #fef3c7; border-left: 3px solid #f59e0b; padding: 12px; margin-bottom: 16px; border-radius: 4px;">
+              <div style="font-size: 12px; font-weight: 600; color: #92400e;">⏳ 27 days left to return</div>
+              <div style="font-size: 11px; color: #b45309; margin-top: 2px;">Ordered on June 15 • Delivered June 17</div>
+            </div>
+
+            <h3 style="font-size: 16px; font-weight: 600; margin: 0 0 12px 0;">Coastal Windbreaker</h3>
+            <p style="font-size: 13px; color: #666; margin: 0 0 16px 0; line-height: 1.5;">Size M • Teal • Qty: 1</p>
+
+            <div style="margin-bottom: 20px;">
+              <h4 style="font-size: 14px; font-weight: 600; margin: 0 0 12px 0; color: #333;">What would you like to do?</h4>
+              
+              <button style="width: 100%; padding: 14px; background: white; border: 2px solid #14b8a6; border-radius: 8px; cursor: pointer; margin-bottom: 10px; text-align: left;">
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                  <div>
+                    <div style="font-weight: 600; color: #333; margin-bottom: 2px;">🔄 Exchange for different size/color</div>
+                    <div style="font-size: 12px; color: #666;">Save 63% vs refund + rebuy</div>
+                  </div>
+                  <div style="font-size: 18px;">→</div>
+                </div>
+              </button>
+
+              <button style="width: 100%; padding: 14px; background: white; border: 1px solid #d1d5db; border-radius: 8px; cursor: pointer; margin-bottom: 10px; text-align: left;">
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                  <div>
+                    <div style="font-weight: 600; color: #333; margin-bottom: 2px;">💰 Request refund</div>
+                    <div style="font-size: 12px; color: #666;">Full refund to original payment</div>
+                  </div>
+                  <div style="font-size: 18px;">→</div>
+                </div>
+              </button>
+            </div>
+
+            <div style="background: #f3f4f6; padding: 12px; border-radius: 6px; margin-bottom: 12px;">
+              <details style="cursor: pointer;">
+                <summary style="font-size: 13px; font-weight: 600; color: #333; user-select: none;">📋 Return policy</summary>
+                <div style="font-size: 12px; color: #666; margin-top: 8px; line-height: 1.5;">
+                  Free returns within 30 days. Unworn items with tags. Free return shipping label provided. Refunds processed in 5-7 business days.
+                </div>
+              </details>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <style>
+        .mobile-screens {
+          display: grid;
+          gap: 32px;
+          max-width: 1000px;
+          margin: 0 auto;
+          padding: 40px 16px;
+        }
+
+        .mobile-frame {
+          background: white;
+          border: 1px solid #e5e7eb;
+          border-radius: 12px;
+          overflow: hidden;
+          box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+
+        .mobile-header {
+          background: #f9fafb;
+          border-bottom: 1px solid #e5e7eb;
+          padding: 12px 16px;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          font-size: 14px;
+          font-weight: 600;
+          color: #333;
+        }
+
+        .mobile-header button {
+          background: none;
+          border: none;
+          color: #14b8a6;
+          cursor: pointer;
+          font-size: 14px;
+          padding: 0;
+        }
+
+        .mobile-content {
+          padding: 20px 16px;
+          max-height: 600px;
+          overflow-y: auto;
+        }
+
+        .product-image-container {
+          margin: -20px -16px 16px -16px;
+        }
+
+        .product-info h2 {
+          color: #111827;
+        }
+
+        @media (max-width: 768px) {
+          .mobile-screens {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+            padding: 20px 12px;
+          }
+
+          .mobile-frame {
+            border-radius: 8px;
+          }
+
+          .mobile-content {
+            padding: 16px 14px;
+            max-height: none;
+          }
+
+          .product-image-container {
+            margin: -16px -14px 14px -14px;
+          }
+        }
+      </style>
+
+      <footer class="page-footer">This sample page is meant for visual preview during portfolio review.</footer>
+    </main>
+
+    <script>
+      // Size button selection
+      document.querySelectorAll('.size-btn').forEach(btn => {
+        btn.addEventListener('click', function() {
+          document.querySelectorAll('.size-btn').forEach(b => {
+            b.classList.remove('size-btn-selected');
+            b.style.background = 'white';
+            b.style.color = '#14b8a6';
+            b.style.boxShadow = 'none';
+          });
+          this.classList.add('size-btn-selected');
+          this.style.background = '#14b8a6';
+          this.style.color = 'white';
+          this.style.boxShadow = '0 0 0 3px rgba(20, 184, 166, 0.1)';
+        });
+      });
+
+      // Color button selection
+      document.querySelectorAll('.color-btn').forEach(btn => {
+        btn.addEventListener('click', function() {
+          document.querySelectorAll('.color-btn').forEach(b => {
+            b.classList.remove('color-btn-selected');
+            b.style.border = '2px solid #d1d5db';
+            b.style.boxShadow = 'none';
+          });
+          this.classList.add('color-btn-selected');
+          this.style.border = '3px solid ' + this.getAttribute('data-hex');
+          this.style.boxShadow = '0 0 0 2px white, 0 0 0 4px ' + this.getAttribute('data-hex');
+        });
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Domain UI Themes Demo</title>
+    <link rel="stylesheet" href="./domain-ui-themes.css" />
+    <style>
+      .demo-stack {
+        display: grid;
+        gap: 24px;
+      }
+
+      .demo-title {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 16px;
+      }
+
+      .demo-grid {
+        padding: 16px;
+      }
+
+      .demo-list {
+        display: grid;
+        gap: 10px;
+      }
+
+      .demo-item {
+        padding: 12px;
+        border-radius: 10px;
+        border: 1px solid var(--border);
+        background: var(--surface);
+      }
+
+      .demo-actions {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+        margin-top: 16px;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="ui-shell demo-stack">
+      <section class="theme-healthcare ui-card demo-grid">
+        <div class="demo-title">
+          <h2>Healthcare Pattern: Triage Workspace</h2>
+          <span class="ui-pill">Calm + Clinical</span>
+        </div>
+        <div class="pattern-healthcare">
+          <aside class="ui-card demo-item">
+            <h3>Queue Filters</h3>
+            <p>Critical, High, Medium, Low</p>
+          </aside>
+          <section class="ui-card demo-item">
+            <h3>Patient Timeline</h3>
+            <p class="ui-record-id">MRN-11482-AX</p>
+            <p>Vitals updated 2m ago. Escalation risk: medium.</p>
+            <div class="demo-actions">
+              <button class="ui-btn ui-btn-primary">Open Chart</button>
+              <button class="ui-btn ui-btn-ghost">Assign Nurse</button>
+            </div>
+          </section>
+          <aside class="ui-card demo-item">
+            <h3>Action Panel</h3>
+            <div class="ui-kpi">
+              <span class="ui-kpi-value">-22%</span>
+              <span class="ui-kpi-label">Wait time breach rate</span>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section class="theme-investment ui-card demo-grid">
+        <div class="demo-title">
+          <h2>Investment Pattern: Advisor Command Center</h2>
+          <span class="ui-pill">Analytical + Premium</span>
+        </div>
+        <div class="pattern-investment">
+          <section class="ui-card ui-card-wide demo-item">
+            <h3>Portfolio Drift Heatmap</h3>
+            <p>17 accounts exceed drift thresholds this week.</p>
+            <div class="demo-actions">
+              <button class="ui-btn ui-btn-primary">Review Rebalance</button>
+              <button class="ui-btn ui-btn-ghost">Open Audit Trail</button>
+            </div>
+          </section>
+          <aside class="ui-card ui-card-side demo-item">
+            <h3>Impact</h3>
+            <div class="demo-list">
+              <div class="ui-kpi">
+                <span class="ui-kpi-value ui-numeric">47%</span>
+                <span class="ui-kpi-label">Less review time</span>
+              </div>
+              <div class="ui-kpi">
+                <span class="ui-kpi-value ui-numeric">24%</span>
+                <span class="ui-kpi-label">Faster action on drift</span>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section class="theme-retail ui-card demo-grid">
+        <div class="demo-title">
+          <h2>Retail Pattern: Conversion Grid</h2>
+          <span class="ui-pill">Energetic + Fast</span>
+        </div>
+        <div class="pattern-retail">
+          <article class="ui-card demo-item">
+            <h3>Wireless Earbuds</h3>
+            <p class="ui-price">$79.00</p>
+            <p>Delivery by tomorrow. Only 3 left.</p>
+            <div class="demo-actions">
+              <button class="ui-btn ui-btn-primary">Add to Cart</button>
+            </div>
+          </article>
+          <article class="ui-card demo-item">
+            <h3>Casual Sneakers</h3>
+            <p class="ui-price">$109.00</p>
+            <p>High return-to-exchange rate with size assistant.</p>
+            <div class="demo-actions">
+              <button class="ui-btn ui-btn-primary">Try Size Match</button>
+            </div>
+          </article>
+          <article class="ui-card demo-item">
+            <h3>Home Blender</h3>
+            <p class="ui-price">$129.00</p>
+            <p>Bundle discount auto-applied in checkout.</p>
+            <div class="demo-actions">
+              <button class="ui-btn ui-btn-primary">View Bundle</button>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
