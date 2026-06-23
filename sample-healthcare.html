@@ -199,161 +199,27 @@
       <section class="device-templates" aria-label="Healthcare mobile and web UI templates">
         <div class="device-templates-head">
           <span class="ui-pill">Device Templates</span>
-          <h2>Mobile and web layouts for care teams</h2>
-          <p class="microcopy">A dedicated mobile intake companion and a desktop operations page to match the multi-device pattern used in other samples.</p>
+          <h2>Mobile UI</h2>
+          <p class="microcopy">Open the interactive healthcare mobile prototype.</p>
         </div>
 
         <div class="device-template-grid">
           <article class="device-card mobile-card" aria-label="Mobile UI template">
             <div class="device-card-head">
-              <h3>Healthcare Mobile Flow</h3>
-              <span class="device-badge">3 interactive screens</span>
+              <h3>Healthcare Mobile UI</h3>
+              <span class="device-badge">Figma prototype</span>
             </div>
 
-            <section class="hc-phone-stage" aria-label="Healthcare mobile screens">
-              <div class="hc-phone">
-                <div class="hc-phone-shell">
-                  <div class="hc-phone-notch"></div>
-                  <div class="hc-status-bar">
-                    <span>9:41</span>
-                    <span>5G 100%</span>
-                  </div>
-                  <div class="hc-screen">
-                    <header class="hc-topbar">
-                      <strong>Intake Queue</strong>
-                      <span>3 Waiting</span>
-                    </header>
-                    <div class="hc-card-list">
-                      <article class="hc-mini-card">
-                        <strong>Nina Ross</strong>
-                        <span>Room 104 · Vitals due</span>
-                      </article>
-                      <article class="hc-mini-card">
-                        <strong>Theo Grant</strong>
-                        <span>Room 106 · Allergy review</span>
-                      </article>
-                    </div>
-                    <div class="hc-chip-row">
-                      <button type="button" class="hc-chip is-active" data-triage="Urgent">Urgent</button>
-                      <button type="button" class="hc-chip" data-triage="Standard">Standard</button>
-                      <button type="button" class="hc-chip" data-triage="Fast Track">Fast Track</button>
-                    </div>
-                    <p class="hc-inline-note" id="hcTriageState">Selected: Urgent</p>
-                  </div>
-                </div>
-                <div class="hc-phone-label">Screen 1 - Intake</div>
-              </div>
-
-              <div class="hc-phone">
-                <div class="hc-phone-shell">
-                  <div class="hc-phone-notch"></div>
-                  <div class="hc-status-bar">
-                    <span>9:41</span>
-                    <span>5G 96%</span>
-                  </div>
-                  <div class="hc-screen">
-                    <header class="hc-topbar">
-                      <strong>Medication Check</strong>
-                      <span>2 Alerts</span>
-                    </header>
-                    <article class="hc-mini-card">
-                      <strong>Amoxicillin 250mg</strong>
-                      <span>Theo Grant · Next dose 10:00 AM</span>
-                    </article>
-                    <article class="hc-mini-card">
-                      <strong>Metformin 500mg</strong>
-                      <span>Nina Ross · Food required</span>
-                    </article>
-                    <label class="hc-toggle-row">
-                      <input type="checkbox" id="hcRiskToggle" />
-                      <span>Include allergy risk in confidence score</span>
-                    </label>
-                    <p class="hc-inline-note" id="hcRiskState">Confidence score: 74%</p>
-                  </div>
-                </div>
-                <div class="hc-phone-label">Screen 2 - Med Check</div>
-              </div>
-
-              <div class="hc-phone">
-                <div class="hc-phone-shell">
-                  <div class="hc-phone-notch"></div>
-                  <div class="hc-status-bar">
-                    <span>9:41</span>
-                    <span>5G 92%</span>
-                  </div>
-                  <div class="hc-screen">
-                    <header class="hc-topbar">
-                      <strong>Provider Handoff</strong>
-                      <span>Room 109</span>
-                    </header>
-                    <article class="hc-mini-card">
-                      <strong>Alina Park</strong>
-                      <span>Triage complete · Labs attached</span>
-                    </article>
-                    <div class="hc-check-list">
-                      <label><input type="checkbox" checked disabled /> Vitals captured</label>
-                      <label><input type="checkbox" checked disabled /> Consent signed</label>
-                      <label><input type="checkbox" checked disabled /> Notes synced</label>
-                    </div>
-                    <button type="button" class="hc-action-btn" id="hcHandoffBtn">Complete Handoff</button>
-                    <p class="hc-inline-note" id="hcHandoffState">Waiting for provider acknowledgment.</p>
-                  </div>
-                </div>
-                <div class="hc-phone-label">Screen 3 - Handoff</div>
-              </div>
-            </section>
-          </article>
-
-          <article class="device-card web-card" aria-label="Desktop web UI template">
-            <div class="device-card-head">
-              <h3>Web Operations Console</h3>
-              <span class="device-badge">Clinic coordinator dashboard</span>
-            </div>
-
-            <div class="web-shell">
-              <header class="web-topbar">
-                <strong>CareOps Web</strong>
-                <span>Tuesday, 23 Jun · Capacity: 81%</span>
-              </header>
-
-              <div class="web-layout">
-                <aside class="web-nav" aria-label="Desktop navigation">
-                  <button type="button" class="is-selected">Live Queue</button>
-                  <button type="button">Provider Assignment</button>
-                  <button type="button">Claims Review</button>
-                  <button type="button">Quality Metrics</button>
-                </aside>
-
-                <section class="web-main">
-                  <div class="web-kpi-grid">
-                    <article>
-                      <span>Patients in queue</span>
-                      <strong>27</strong>
-                    </article>
-                    <article>
-                      <span>Avg wait time</span>
-                      <strong>14m</strong>
-                    </article>
-                    <article>
-                      <span>Providers active</span>
-                      <strong>9</strong>
-                    </article>
-                  </div>
-
-                  <div class="web-timeline" aria-label="Web schedule timeline">
-                    <div><strong>09:15</strong><span>Nina Ross intake complete</span></div>
-                    <div><strong>09:22</strong><span>Theo Grant moved to triage</span></div>
-                    <div><strong>09:31</strong><span>Lab callback requested for Alina Park</span></div>
-                    <div><strong>09:40</strong><span>Dr. Patel opened two additional slots</span></div>
-                  </div>
-                </section>
-
-                <aside class="web-alert">
-                  <h4>Critical Alert</h4>
-                  <p id="webAlertState">Room 112 glucose alert not yet acknowledged.</p>
-                  <button type="button" id="webAckAlert">Acknowledge Alert</button>
-                </aside>
-              </div>
+            <div class="mobile-ui-link-wrap">
+              <a
+                class="mobile-ui-link"
+                href="https://banjo-thud-73129812.figma.site/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Open Healthcare mobile UI prototype"
+              >
+                Mobile UI
+              </a>
             </div>
           </article>
         </div>
@@ -893,7 +759,7 @@
       .device-template-grid {
         margin-top: 18px;
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr;
         gap: 18px;
       }
 
@@ -929,6 +795,48 @@
         background: #e0f2fe;
         border-radius: 999px;
         padding: 6px 9px;
+      }
+
+      .mobile-ui-link-wrap {
+        padding: 26px;
+        background:
+          radial-gradient(circle at 12% 20%, rgba(14, 116, 144, .22) 0%, transparent 36%),
+          radial-gradient(circle at 85% 76%, rgba(16, 185, 129, .24) 0%, transparent 42%),
+          linear-gradient(145deg, #e8f7ff 0%, #ecfff6 100%);
+      }
+
+      .mobile-ui-link {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        min-height: 240px;
+        border-radius: 18px;
+        border: 1px solid rgba(15, 118, 110, .45);
+        background:
+          linear-gradient(135deg, rgba(255,255,255,.92) 0%, rgba(219, 245, 255, .94) 45%, rgba(205, 255, 237, .94) 100%);
+        color: #0f3f5f;
+        padding: 24px;
+        font-size: clamp(22px, 5vw, 44px);
+        font-weight: 700;
+        letter-spacing: .02em;
+        box-shadow: 0 20px 38px rgba(6, 90, 120, .24);
+        text-decoration: none;
+        transition: transform .22s ease, box-shadow .22s ease, background .22s ease;
+      }
+
+      .mobile-ui-link:hover,
+      .mobile-ui-link:focus-visible {
+        background:
+          linear-gradient(135deg, rgba(255,255,255,.97) 0%, rgba(198, 240, 255, .98) 52%, rgba(179, 255, 225, .98) 100%);
+        border-color: rgba(15, 118, 110, .72);
+        box-shadow: 0 24px 44px rgba(6, 90, 120, .3);
+        transform: translateY(-3px);
+      }
+
+      .mobile-ui-link:focus-visible {
+        outline: 3px solid rgba(14, 116, 144, .55);
+        outline-offset: 2px;
       }
 
       .web-shell {
